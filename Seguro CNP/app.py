@@ -5,13 +5,10 @@ import logging
 from datetime import datetime
 from tabulate import tabulate
 
-# Importar a função do seu ETL
-from etl.extraction import rodar_etl
-
 # ------------------------------------------------------
 # Configuração do log e do Streamlit
 # ------------------------------------------------------
-log_file_path = r"C:\Users\u512228\Documents\etl_log.log"
+log_file_path = r"C:\logs\system_log.log"
 logging.basicConfig(
     filename=log_file_path,
     level=logging.INFO,
@@ -25,8 +22,6 @@ st.title("Sistema Seguro CNP")
 # Configuração do Banco de Dados (SQLAlchemy)
 # ------------------------------------------------------
 DATABASE_URI = "mariadb+mariadbconnector://root:@localhost:3306/gecaf"
-
-# Criar engine (opcional criar função get_engine())
 engine = create_engine(DATABASE_URI)
 
 def exibir_dados_em_tabela(df: pd.DataFrame):
@@ -60,7 +55,16 @@ elif menu == "Relatório":
 
 elif menu == "Executar ETL":
     st.header("Executar ETL")
-    st.write("Clique no botão para rodar o ETL.")
-    if st.button("Rodar ETL"):
-        resultado = rodar_etl()  # Chama a função do ETL
-        st.success(resultado)     # Exibe o retorno na tela
+    # File uploader para selecionar a planilha do ETL
+    uploaded_file = st.file_uploader("Selecione a planilha para executar o ETL", type=["xlsx"])
+    if uploaded_file is not None:
+        st.write("Arquivo selecionado.")
+        if st.button("Rodar ETL"):
+            from etl.etl import rodar_etl  # Ajuste no script ETL para receber o arquivo
+            try:
+                resultado = rodar_etl(uploaded_file)
+                st.success(resultado)
+            except Exception as e:
+                st.error(f"Erro na execução do ETL: {e}")
+    else:
+        st.info("Selecione uma planilha para executar o ETL.")
