@@ -11,7 +11,7 @@ from tabulate import tabulate
 from PyQt5.QtWidgets import QApplication, QFileDialog
 
 # Configuração do log
-log_file_path = r"C:\Users\u512228\Documents\etl_log.log"
+log_file_path = r"F:\Users\Administrador\OneDrive\Documentos\etl_log.log"
 logging.basicConfig(
     filename=log_file_path,
     level=logging.INFO,

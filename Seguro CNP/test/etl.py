@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from tabulate import tabulate
 
 # Configuração do log
-log_file_path = r"C:\Users\u512228\Documents\etl_log.log"
+log_file_path = r"F:\Users\Administrador\OneDrive\Documentos\etl_log.log"
 logging.basicConfig(
     filename=log_file_path,
     level=logging.INFO,
@@ -18,7 +18,7 @@ DATABASE_URI = "mariadb+mariadbconnector://root:@localhost:3306/gecaf"
 engine = create_engine(DATABASE_URI)
 
 # Caminho do arquivo Excel
-excel_file = r"C:\Users\u512228\Documents\Base\02_Fevereiro_2025.xlsx"
+excel_file = r"F:\Users\Administrador\OneDrive\Documentos\Base\02_Fevereiro_2025.xlsx"
 
 def exibir_dados_em_tabela(df: pd.DataFrame):
     """ Exibe o DataFrame em formato de tabela """
