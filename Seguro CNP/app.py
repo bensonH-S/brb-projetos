@@ -43,7 +43,113 @@ if menu == "Dashboard":
 
 elif menu == "CNPs":
     st.header("Cadastro de CNPs")
-    st.write("Em breve, listagem e edição de CNPs...")
+
+    # Exibir registros existentes
+    try:
+        query = """
+            SELECT 
+                cnp, situacao, cnpj, razao_social, cc, telefone, telefone_proprietario,
+                email, endereco, bairro, cidade, uf, cep, latitude, longitude, observacao
+            FROM cnp_data
+            ORDER BY cnp;
+        """
+        df_cnp = pd.read_sql(query, engine)
+        st.subheader("Lista de CNPs")
+        st.dataframe(df_cnp)
+    except Exception as e:
+        st.error(f"Erro ao consultar os CNPs: {e}")
+        logging.error(f"Erro ao consultar os CNPs: {e}")
+
+    st.subheader("Adicionar Novo CNP")
+
+    with st.form("form_add_cnp", clear_on_submit=False):
+        # 1ª linha: CNP, Telefone
+        row1_col1, row1_col2 = st.columns(2)
+        new_cnp = row1_col1.text_input("CNP", value="")
+        new_telefone = row1_col2.text_input("Telefone", value="")
+
+        # 2ª linha: Situação, CNPJ
+        row2_col1, row2_col2 = st.columns(2)
+        new_situacao = row2_col1.selectbox("Situação", [1, 0], index=0)
+        new_cnpj = row2_col2.text_input("CNPJ", value="")
+
+        # 3ª linha: Razão Social, CC
+        row3_col1, row3_col2 = st.columns(2)
+        new_razao = row3_col1.text_input("Razão Social", value="")
+        new_cc = row3_col2.text_input("CC", value="")
+
+        # 4ª linha: Telefone do Proprietário, Email
+        row4_col1, row4_col2 = st.columns(2)
+        new_telefone_proprietario = row4_col1.text_input("Telefone do Proprietário", value="")
+        new_email = row4_col2.text_input("Email", value="")
+
+        # 5ª linha: Endereço, Bairro
+        row5_col1, row5_col2 = st.columns(2)
+        new_endereco = row5_col1.text_input("Endereço", value="")
+        new_bairro = row5_col2.text_input("Bairro", value="")
+
+        # 6ª linha: Cidade, UF
+        row6_col1, row6_col2 = st.columns(2)
+        new_cidade = row6_col1.text_input("Cidade", value="")
+        new_uf = row6_col2.text_input("UF", value="")
+
+        # 7ª linha: CEP, Latitude
+        row7_col1, row7_col2 = st.columns(2)
+        new_cep = row7_col1.text_input("CEP", value="")
+        new_latitude = row7_col2.text_input("Latitude", value="")
+
+        # 8ª linha: Longitude, Observação
+        row8_col1, row8_col2 = st.columns(2)
+        new_longitude = row8_col1.text_input("Longitude", value="")
+        new_observacao = row8_col2.text_input("Observação", value="")
+
+        # 9ª linha: Botão à direita
+        empty_col, button_col = st.columns([4,1])
+        submitted = button_col.form_submit_button("Adicionar CNP")
+
+    if submitted:
+        # Verificação de campos obrigatórios
+        if new_cnp.strip() == "" or new_cnpj.strip() == "" or new_razao.strip() == "":
+            st.error("Preencha os campos obrigatórios: CNP, CNPJ e Razão Social.")
+        else:
+            try:
+                query_insert = text("""
+                    INSERT INTO cnp_data (
+                        cnp, situacao, cnpj, razao_social, cc, telefone, telefone_proprietario,
+                        email, endereco, bairro, cidade, uf, cep, latitude, longitude, observacao
+                    )
+                    VALUES (
+                        :cnp, :situacao, :cnpj, :razao_social, :cc, :telefone, :telefone_proprietario,
+                        :email, :endereco, :bairro, :cidade, :uf, :cep, :latitude, :longitude, :observacao
+                    )
+                """)
+                with engine.begin() as conn:
+                    conn.execute(query_insert, {
+                        "cnp": int(new_cnp),
+                        "situacao": int(new_situacao),
+                        "cnpj": new_cnpj.strip(),
+                        "razao_social": new_razao.strip(),
+                        "cc": new_cc.strip(),
+                        "telefone": new_telefone.strip(),
+                        "telefone_proprietario": new_telefone_proprietario.strip(),
+                        "email": new_email.strip(),
+                        "endereco": new_endereco.strip(),
+                        "bairro": new_bairro.strip(),
+                        "cidade": new_cidade.strip(),
+                        "uf": new_uf.strip(),
+                        "cep": new_cep.strip(),
+                        "latitude": float(new_latitude) if new_latitude.strip() != "" else None,
+                        "longitude": float(new_longitude) if new_longitude.strip() != "" else None,
+                        "observacao": new_observacao.strip()
+                    })
+                st.success("CNP adicionado com sucesso!")
+                logging.info(f"CNP {new_cnp} adicionado com sucesso.")
+                # Reinicializar a página para limpar os campos
+                st.experimental_rerun()
+            except Exception as e:
+                st.error(f"Erro ao adicionar CNP: {e}")
+                logging.error(f"Erro ao adicionar CNP {new_cnp}: {e}")
+
 
 elif menu == "Seguro":
     st.header("Informações de Seguros")
