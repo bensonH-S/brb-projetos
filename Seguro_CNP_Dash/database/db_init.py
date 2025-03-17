@@ -1,0 +1,1 @@
+# Script para inicializar o banco de dados
