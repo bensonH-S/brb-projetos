@@ -6,16 +6,15 @@ import pandas as pd
 from database.connection import engine
 from sqlalchemy import text
 
-# Layout da página de CNPs
 layout = html.Div([
     html.H3("Cadastro das Conveniência BRB", className="text-center mb-4", style={"fontSize": "28px", "fontWeight": "bold", "color": "#007bff"}),
-    
+    # Campo de busca
     dbc.Row([
-        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3"), width=3),
+        dbc.Col(dbc.Input(id="search-cnp", type="text", placeholder="Buscar CNP...", className="mb-3"), width=3),
+        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3"), width=3)
     ], justify="start"),
-    
     dash_table.DataTable(
-        id='cnp-table',
+        id='cnp-table-interaction',
         columns=[
             {"name": "CNP", "id": "cnp", "type": "numeric"},
             {"name": "Situação", "id": "situacao", "type": "text"},
@@ -33,44 +32,56 @@ layout = html.Div([
             {'if': {'column_id': 'editar'}, 'width': '80px'},
             {'if': {'column_id': 'excluir'}, 'width': '80px'}
         ],
-        page_size=10
+        page_size=15,  # Reduzido para 15 linhas
     ),
-    
+    dcc.Store(id="edit-action", data=0),
+    # Toast para mensagem de sucesso ao editar
+    dbc.Toast(
+        "Alteração realizada com sucesso!",
+        id="save-success-toast",
+        header="Sucesso",
+        icon="success",
+        duration=2000,
+        is_open=False,
+        style={'position': 'fixed', 'top': '10px', 'right': '10px', 'width': '300px', 'zIndex': 1000}
+    ),
+    # Toast para mensagem de sucesso ao excluir
+    dbc.Toast(
+        "CNP excluído com sucesso!",
+        id="delete-success-toast",
+        header="Sucesso",
+        icon="success",
+        duration=2000,
+        is_open=False,
+        style={'position': 'fixed', 'top': '10px', 'right': '10px', 'width': '300px', 'zIndex': 1000}
+    ),
+    # Modal de edição
     dbc.Modal([
         dbc.ModalHeader("Adicionar/Editar CNP"),
         dbc.ModalBody([
-            html.Div(id="modal-content"),
-            dbc.Alert(
-                "Alteração realizada com sucesso!",
-                id="save-success-alert",
-                color="success",
-                dismissable=False,
-                is_open=False,
-                duration=3000
-            )
+            html.Div(id="modal-content")
         ]),
         dbc.ModalFooter([
             dbc.Button("Salvar", id="save-cnp", color="success"),
             dbc.Button("Cancelar", id="close-modal", color="danger"),
-        ]),
+        ])
     ], id="modal-cnp", is_open=False),
-    
+    # Modal de exclusão
     dbc.Modal([
         dbc.ModalHeader("Confirmação de Exclusão"),
         dbc.ModalBody("Tem certeza que deseja excluir este CNP? Esta ação não pode ser desfeita."),
         dbc.ModalFooter([
             dbc.Button("Excluir", id="confirm-delete", color="danger"),
             dbc.Button("Cancelar", id="cancel-delete", color="secondary"),
-        ]),
+        ])
     ], id="modal-delete", is_open=False)
 ])
 
-# Callback para carregar os dados da tabela
 @dash.callback(
-    Output("cnp-table", "data"),
-    Input("cnp-table", "id")
+    Output("cnp-table-interaction", "data"),
+    [Input("cnp-table-interaction", "id"), Input("search-cnp", "value")]
 )
-def load_cnp_data(_):
+def load_cnp_data(_, search_value):
     try:
         with engine.connect() as conn:
             query = text("SELECT cnp, situacao, cnpj, razao_social FROM cnp_data")
@@ -78,22 +89,22 @@ def load_cnp_data(_):
             df["situacao"] = df["situacao"].apply(lambda x: "ATIVA" if x == 1 else "INATIVA")
             df["editar"] = "✏️ Editar"
             df["excluir"] = "🗑️ Excluir"
+            # Filtrar pelo CNP, se houver valor no campo de busca
+            if search_value:
+                df = df[df["cnp"].astype(str).str.contains(search_value, case=False, na=False)]
         return df.to_dict("records")
     except Exception as e:
         print(f"Erro ao carregar dados: {e}")
         return []
 
-# Callback para abrir o modal de edição
 @dash.callback(
-    [Output("modal-cnp", "is_open", allow_duplicate=True), Output("modal-content", "children")],
-    [Input("cnp-table", "active_cell"), Input("open-modal", "n_clicks")],
-    State("cnp-table", "data"),
+    [Output("modal-cnp", "is_open"), Output("modal-content", "children"), Output("edit-action", "data")],
+    [Input("cnp-table-interaction", "active_cell"), Input("open-modal", "n_clicks"), Input("edit-action", "data")],
+    State("cnp-table-interaction", "data"),
     prevent_initial_call=True
 )
-def open_edit_modal(active_cell, n_clicks, table_data):
+def open_edit_modal(active_cell, n_clicks, edit_action, table_data):
     ctx = callback_context.triggered[0]["prop_id"]
-    
-    # Modal para adicionar novo CNP
     if ctx == "open-modal.n_clicks" and n_clicks:
         modal_content = html.Div([
             dbc.Row([dbc.Col(dbc.Label("CNP:"), width=4), dbc.Col(dbc.Input(id="input-cnp", type="text", placeholder="Digite o CNP"), width=8)], className="mb-2"),
@@ -111,19 +122,16 @@ def open_edit_modal(active_cell, n_clicks, table_data):
             dbc.Row([dbc.Col(dbc.Label("CEP:"), width=4), dbc.Col(dbc.Input(id="input-cep", type="text", placeholder="Digite o CEP"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Latitude:"), width=4), dbc.Col(dbc.Input(id="input-latitude", type="number", placeholder="Digite a Latitude"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Longitude:"), width=4), dbc.Col(dbc.Input(id="input-longitude", type="number", placeholder="Digite a Longitude"), width=8)], className="mb-2"),
-            dbc.Row([dbc.Col(dbc.Label("Observação:"), width=4), dbc.Col(dbc.Input(id="input-observacao", type="text", placeholder="Digite a Observação"), width=8)], className="mb-2"),
+            dbc.Row([dbc.Col(dbc.Label("Observação:"), width=4), dbc.Col(dbc.Input(id="input-observacao", type="text", placeholder="Digite a Observação"), width=8)], className="mb-2")
         ])
-        return True, modal_content
-    
-    # Modal para editar CNP existente
-    if ctx == "cnp-table.active_cell" and active_cell and active_cell["column_id"] == "editar":
+        return True, modal_content, edit_action + 1
+    if ctx == "cnp-table-interaction.active_cell" and active_cell and active_cell["column_id"] == "editar":
         row = active_cell["row"]
         selected_cnp = table_data[row]
         with engine.connect() as conn:
             query = text("SELECT * FROM cnp_data WHERE cnp = :cnp")
             result = conn.execute(query, {"cnp": selected_cnp["cnp"]}).fetchone()
             data = dict(result._mapping) if result else selected_cnp
-        
         modal_content = html.Div([
             dbc.Row([dbc.Col(dbc.Label("CNP:"), width=4), dbc.Col(dbc.Input(id="input-cnp", type="text", value=data["cnp"], disabled=True), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Situação:"), width=4), dbc.Col(dcc.Dropdown(id="input-situacao", options=[{"label": "ATIVA", "value": 1}, {"label": "INATIVA", "value": 0}], value=data["situacao"], clearable=False), width=8)], className="mb-2"),
@@ -140,17 +148,15 @@ def open_edit_modal(active_cell, n_clicks, table_data):
             dbc.Row([dbc.Col(dbc.Label("CEP:"), width=4), dbc.Col(dbc.Input(id="input-cep", type="text", value=data["cep"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Latitude:"), width=4), dbc.Col(dbc.Input(id="input-latitude", type="number", value=data["latitude"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Longitude:"), width=4), dbc.Col(dbc.Input(id="input-longitude", type="number", value=data["longitude"]), width=8)], className="mb-2"),
-            dbc.Row([dbc.Col(dbc.Label("Observação:"), width=4), dbc.Col(dbc.Input(id="input-observacao", type="text", value=data["observacao"]), width=8)], className="mb-2"),
+            dbc.Row([dbc.Col(dbc.Label("Observação:"), width=4), dbc.Col(dbc.Input(id="input-observacao", type="text", value=data["observacao"]), width=8)], className="mb-2")
         ])
-        return True, modal_content
-    
-    return False, None
+        return True, modal_content, edit_action + 1
+    return False, None, edit_action
 
-# Callback para abrir o modal de exclusão
 @dash.callback(
     Output("modal-delete", "is_open"),
-    Input("cnp-table", "active_cell"),
-    State("cnp-table", "data"),
+    Input("cnp-table-interaction", "active_cell"),
+    State("cnp-table-interaction", "data"),
     prevent_initial_call=True
 )
 def open_delete_modal(active_cell, table_data):
@@ -158,23 +164,21 @@ def open_delete_modal(active_cell, table_data):
         return True
     return False
 
-# Callback para confirmar a exclusão
 @dash.callback(
-    [Output("modal-delete", "is_open", allow_duplicate=True), Output("cnp-table", "data", allow_duplicate=True)],
+    [Output("modal-delete", "is_open", allow_duplicate=True), 
+     Output("cnp-table-interaction", "data", allow_duplicate=True), 
+     Output("delete-success-toast", "is_open")],
     [Input("confirm-delete", "n_clicks"), Input("cancel-delete", "n_clicks")],
-    State("cnp-table", "data"),
-    State("cnp-table", "active_cell"),
+    State("cnp-table-interaction", "data"),
+    State("cnp-table-interaction", "active_cell"),
     prevent_initial_call=True
 )
 def confirm_delete(confirm_clicks, cancel_clicks, table_data, active_cell):
     ctx = callback_context.triggered[0]["prop_id"]
-    
     if not active_cell:
-        return False, table_data
-    
+        return False, table_data, False
     row = active_cell["row"]
     selected_cnp = table_data[row]["cnp"]
-    
     if ctx == "confirm-delete.n_clicks" and confirm_clicks:
         try:
             with engine.connect() as conn:
@@ -184,21 +188,19 @@ def confirm_delete(confirm_clicks, cancel_clicks, table_data, active_cell):
                     if result.rowcount > 0:
                         print(f"CNP {selected_cnp} excluído com sucesso do banco de dados.")
             updated_data = [row for row in table_data if row["cnp"] != selected_cnp]
-            return False, updated_data
+            return False, updated_data, True
         except Exception as e:
             print(f"Erro ao excluir CNP do banco de dados: {e}")
-            return False, table_data
-    
+            return False, table_data, False
     elif ctx == "cancel-delete.n_clicks" and cancel_clicks:
-        return False, table_data
-    
-    return True, table_data
+        return False, table_data, False
+    return True, table_data, False
 
-# Callback para salvar alterações
 @dash.callback(
-    [Output("cnp-table", "data", allow_duplicate=True), 
+    [Output("cnp-table-interaction", "data", allow_duplicate=True), 
      Output("modal-cnp", "is_open", allow_duplicate=True), 
-     Output("save-success-alert", "is_open")],
+     Output("save-success-toast", "is_open"), 
+     Output("cnp-table-interaction", "active_cell", allow_duplicate=True)],
     [Input("save-cnp", "n_clicks"), Input("close-modal", "n_clicks")],
     [State("input-cnp", "value"), State("input-situacao", "value"), 
      State("input-cnpj", "value"), State("input-razao", "value"), 
@@ -208,17 +210,18 @@ def confirm_delete(confirm_clicks, cancel_clicks, table_data, active_cell):
      State("input-cidade", "value"), State("input-uf", "value"), 
      State("input-cep", "value"), State("input-latitude", "value"), 
      State("input-longitude", "value"), State("input-observacao", "value"), 
-     State("cnp-table", "data")],
+     State("cnp-table-interaction", "data")],
     prevent_initial_call=True
 )
 def save_or_cancel_cnp(save_clicks, cancel_clicks, cnp, situacao, cnpj, razao_social, cc, telefone, 
                        telefone_proprietario, email, endereco, bairro, cidade, uf, cep, latitude, 
                        longitude, observacao, table_data):
     ctx = callback_context.triggered[0]["prop_id"]
-    
     if ctx == "close-modal.n_clicks" and cancel_clicks:
-        return table_data, False, False
-    
+        temp_data = table_data.copy()
+        if temp_data and 'editar' in temp_data[0]:
+            temp_data[0]['editar'] += " "
+        return temp_data, False, False, None
     if ctx == "save-cnp.n_clicks" and save_clicks:
         try:
             with engine.connect() as conn:
@@ -257,21 +260,8 @@ def save_or_cancel_cnp(save_clicks, cancel_clicks, cnp, situacao, cnpj, razao_so
                 df["situacao"] = df["situacao"].apply(lambda x: "ATIVA" if x == 1 else "INATIVA")
                 df["editar"] = "✏️ Editar"
                 df["excluir"] = "🗑️ Excluir"
-            return df.to_dict("records"), True, True
+            return df.to_dict("records"), False, True, None
         except Exception as e:
             print(f"Erro ao salvar CNP: {e}")
-            return table_data, False, False
-    
-    return table_data, True, False
-
-# Callback para fechar o modal após o alerta
-@dash.callback(
-    Output("modal-cnp", "is_open", allow_duplicate=True),
-    Input("save-success-alert", "is_open"),
-    State("modal-cnp", "is_open"),
-    prevent_initial_call=True
-)
-def close_modal_after_alert(alert_is_open, modal_is_open):
-    if not alert_is_open and modal_is_open:
-        return False
-    return modal_is_open
+            return table_data, False, False, None
+    return table_data, True, False, None
