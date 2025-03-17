@@ -102,7 +102,7 @@ def open_edit_modal(active_cell, n_clicks, table_data):
             dbc.Row([dbc.Col(dbc.Label("Razão Social:"), width=4), dbc.Col(dbc.Input(id="input-razao", type="text", placeholder="Digite a Razão Social"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("CC:"), width=4), dbc.Col(dbc.Input(id="input-cc", type="text", placeholder="Digite o CC"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Telefone:"), width=4), dbc.Col(dbc.Input(id="input-telefone", type="text", placeholder="Digite o Telefone"), width=8)], className="mb-2"),
-            dbc.Row([dbc.Col(dbc.Label("Telefone Proprietário:"), width=4), dbc.Col(dbc.Input(id="input-telefone-proprietario", type="text", placeholder="Digite o Telefone do Proprietário"), width=8)], className="mb-2"),
+            dbc.Row([dbc.Col(dbc.Label("Tel. Prop.:"), width=4), dbc.Col(dbc.Input(id="input-telefone-proprietario", type="text", placeholder="Digite o Telefone do Proprietário"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Email:"), width=4), dbc.Col(dbc.Input(id="input-email", type="email", placeholder="Digite o Email"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Endereço:"), width=4), dbc.Col(dbc.Input(id="input-endereco", type="text", placeholder="Digite o Endereço"), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Bairro:"), width=4), dbc.Col(dbc.Input(id="input-bairro", type="text", placeholder="Digite o Bairro"), width=8)], className="mb-2"),
@@ -119,7 +119,6 @@ def open_edit_modal(active_cell, n_clicks, table_data):
     if ctx == "cnp-table.active_cell" and active_cell and active_cell["column_id"] == "editar":
         row = active_cell["row"]
         selected_cnp = table_data[row]
-        # Carrega todos os dados da linha do banco para o modal
         with engine.connect() as conn:
             query = text("SELECT * FROM cnp_data WHERE cnp = :cnp")
             result = conn.execute(query, {"cnp": selected_cnp["cnp"]}).fetchone()
@@ -132,7 +131,7 @@ def open_edit_modal(active_cell, n_clicks, table_data):
             dbc.Row([dbc.Col(dbc.Label("Razão Social:"), width=4), dbc.Col(dbc.Input(id="input-razao", type="text", value=data["razao_social"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("CC:"), width=4), dbc.Col(dbc.Input(id="input-cc", type="text", value=data["cc"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Telefone:"), width=4), dbc.Col(dbc.Input(id="input-telefone", type="text", value=data["telefone"]), width=8)], className="mb-2"),
-            dbc.Row([dbc.Col(dbc.Label("Telefone Proprietário:"), width=4), dbc.Col(dbc.Input(id="input-telefone-proprietario", type="text", value=data["telefone_proprietario"]), width=8)], className="mb-2"),
+            dbc.Row([dbc.Col(dbc.Label("Tel. Prop.:"), width=4), dbc.Col(dbc.Input(id="input-telefone-proprietario", type="text", value=data["telefone_proprietario"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Email:"), width=4), dbc.Col(dbc.Input(id="input-email", type="email", value=data["email"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Endereço:"), width=4), dbc.Col(dbc.Input(id="input-endereco", type="text", value=data["endereco"]), width=8)], className="mb-2"),
             dbc.Row([dbc.Col(dbc.Label("Bairro:"), width=4), dbc.Col(dbc.Input(id="input-bairro", type="text", value=data["bairro"]), width=8)], className="mb-2"),
