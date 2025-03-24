@@ -221,31 +221,26 @@ with engine.begin() as conn:
             "multiseguros": row["multiseguros"]
         })
 
-        # Obter o seguro_id (id da tabela seguradora) para o CNP
-        seguro_id_query = text("SELECT id FROM seguradora WHERE cnp = :cnp")
-        seguro_id = conn.execute(seguro_id_query, {"cnp": row["cnp"]}).scalar()
-        logging.info(f"Seguro ID {seguro_id} obtido para CNP {row['cnp']}")
-
-        # Inserir as parcelas na tabela pag_seguradora
+        # Inserir as parcelas na tabela pag_seguradora usando o cnp diretamente
         for parcela in parcelas_to_insert:
             if parcela["cnp"] != row["cnp"]:
                 continue
             query_parcela = text("""
                 INSERT INTO pag_seguradora (
-                    seguro_id, numero_parcela, data_vencimento, status
+                    cnp, numero_parcela, data_vencimento, status
                 ) VALUES (
-                    :seguro_id, :numero_parcela, :data_vencimento, :status
+                    :cnp, :numero_parcela, :data_vencimento, :status
                 ) ON DUPLICATE KEY UPDATE
                     data_vencimento=VALUES(data_vencimento),
                     status=VALUES(status);
             """)
             conn.execute(query_parcela, {
-                "seguro_id": seguro_id,
+                "cnp": parcela["cnp"],
                 "numero_parcela": parcela["numero_parcela"],
                 "data_vencimento": parcela["data_vencimento"],
                 "status": parcela["status"]
             })
-            logging.info(f"Parcela {parcela['numero_parcela']} inserida para seguro_id {seguro_id} (CNP {row['cnp']})")
+            logging.info(f"Parcela {parcela['numero_parcela']} inserida para CNP {row['cnp']}")
 
 logging.info("Importação concluída com sucesso!")
 print("✅ Importação finalizada com sucesso!")
