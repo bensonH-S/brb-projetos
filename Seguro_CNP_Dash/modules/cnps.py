@@ -7,12 +7,14 @@ from database.connection import engine
 from sqlalchemy import text
 
 layout = html.Div([
-    html.H3("Cadastro das Conveniência BRB", className="text-center mb-4", style={"fontSize": "28px", "fontWeight": "bold", "color": "#007bff"}),
-    # Campo de busca
+    html.H3("Cadastro das Conveniência BRB", className="text-center mb-4", 
+            style={"fontSize": "28px", "fontWeight": "bold", "color": "#007bff", "marginTop": "30px"}),  # Ajustado marginTop
+    # Campo de busca e botão
     dbc.Row([
-        dbc.Col(dbc.Input(id="search-cnp", type="text", placeholder="Buscar CNP...", className="mb-3"), width=3),
-        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3"), width=3)
-    ], justify="start"),
+        dbc.Col(dbc.Input(id="search-cnp", type="text", placeholder="Buscar CNP...", className="mb-3"), width=4),
+        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3"), 
+                width=8, className="d-flex justify-content-end"),  # Alinhado à direita
+    ], justify="between"),  # Distribuir os elementos entre os lados
     dash_table.DataTable(
         id='cnp-table-interaction',
         columns=[

@@ -3,6 +3,11 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from modules import dashboard, cnps, seguro, relatorios, etl_page  # Importando o módulo de ETL
+import logging
+
+# Desativar logs do servidor Flask/Werkzeug
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 # Inicializar a aplicação Dash
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
@@ -22,7 +27,7 @@ app.layout = html.Div([
                 dbc.NavLink("Relatórios", href="/relatorios", active="exact"),
                 dbc.NavLink("Executar ETL", href="/etl", active="exact"),
             ], vertical=True, pills=True, className="mt-3"),
-        ], width=2, style={"position": "fixed", "height": "100vh", "overflow-y": "auto", "background-color": "#003087", "color": "white"}),
+        ], width=2, style={"position": "fixed", "height": "100vh", "overflow-y": "auto", "background-color": "#EDEDED", "color": "white"}),
         
         # Ajustar o conteúdo principal para não sobrepor o menu
         dbc.Col(id="page-content", width=10, style={"margin-left": "16.67%"}),
@@ -48,4 +53,4 @@ def render_page_content(pathname):
 app.callback(Output("page-content", "children"), [Input("url", "pathname")])(render_page_content)
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(debug=False, host='0.0.0.0', port=8050)

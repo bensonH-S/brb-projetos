@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, text
 import logging
 from datetime import datetime, timedelta
 from tabulate import tabulate
+from database.connection import engine
 
 def rodar_etl(uploaded_file):
     """
@@ -19,9 +20,6 @@ def rodar_etl(uploaded_file):
     )
     logging.info("Iniciando o processo de ETL...")
 
-    # Conexão com o banco de dados
-    DATABASE_URI = "mariadb+mariadbconnector://root:@localhost:3306/gecaf"
-    engine = create_engine(DATABASE_URI)
 
     # Leitura da planilha usando o arquivo enviado
     try:

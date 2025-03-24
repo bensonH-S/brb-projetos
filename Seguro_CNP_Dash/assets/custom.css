@@ -1,0 +1,17 @@
+.modal-content {
+    overflow: visible !important;
+}
+
+.modal-dialog {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+.date-input {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+}

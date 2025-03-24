@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 # Caminho do arquivo Excel
-excel_file = r"F:\Users\Administrador\OneDrive\Documentos\FOLLOW UP CNP 2025.xlsx"
+excel_file = r"C:\Users\u512228\Documents\Base\FOLLOW UP CNP 2025.xlsx"
 sheet_name = "FOLLOW UP"
 
 # Leitura do arquivo Excel
