@@ -12,3 +12,299 @@
 
 2025-03-24 14:23:04,797 - INFO - Dash is running on http://0.0.0.0:8050/
 
+2025-03-24 20:09:34,601 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:15:06,188 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:31:10,539 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:38:38,861 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:42:16,328 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:44:50,761 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:52:01,984 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:53:22,619 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:53:34,963 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:53:40,781 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:53:41,726 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:02,086 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:04,597 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:08,495 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:08,795 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:08,959 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:13,445 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:13,808 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:54:13,942 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
+    cb = self.callback_map[output]
+         ~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\햞ea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
+    raise KeyError(msg) from missing_callback_function
+KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
+2025-03-24 20:56:49,526 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 20:59:51,116 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:02:00,630 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:08:55,255 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:15:03,313 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:17:44,566 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:24:07,559 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:27:29,827 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-24 21:29:07,940 - INFO - Dash is running on http://0.0.0.0:8050/
+

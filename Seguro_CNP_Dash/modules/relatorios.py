@@ -10,6 +10,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import cm
 import io
 import base64
 
@@ -51,7 +52,6 @@ layout = html.Div([
             {"name": "Vencimento", "id": "vencimento", "type": "text"},
             {"name": "Valor Cobertura", "id": "valor_cobertura", "type": "text"},
             {"name": "Valor Parcela", "id": "valor_parcela", "type": "text"},
-            {"name": "Observação", "id": "obs", "type": "text"}
         ],
         data=[],
         style_table={'overflowX': 'auto', 'border': '1px solid #ddd'},
@@ -78,18 +78,17 @@ def load_report_data(filter_cnp, start_date, end_date):
                 s.inicio_vigencia_seguro,
                 s.vencimento,
                 s.valor_cobertura,
-                s.valor_parcela,
-                s.obs
+                s.valor_parcela
             FROM cnp_data d
             LEFT JOIN seguradora s ON d.cnp = s.cnp
         """)
         df = pd.read_sql(query, conn)
 
         df["inicio_vigencia_seguro"] = df["inicio_vigencia_seguro"].apply(
-            lambda x: x.strftime("%d/%m/%Y") if pd.notnull(x) else ""
+            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""  # Ajustado para dd/mm/aa
         )
         df["vencimento"] = df["vencimento"].apply(
-            lambda x: x.strftime("%d/%m/%Y") if pd.notnull(x) else ""
+            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""  # Ajustado para dd/mm/aa
         )
         df["valor_cobertura"] = df["valor_cobertura"].apply(
             lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
@@ -104,7 +103,7 @@ def load_report_data(filter_cnp, start_date, end_date):
         if start_date and end_date:
             start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
             end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
-            df["vencimento_dt"] = pd.to_datetime(df["vencimento"], format="%d/%m/%Y", errors='coerce')
+            df["vencimento_dt"] = pd.to_datetime(df["vencimento"], format="%d/%m/%y", errors='coerce')
             df = df[
                 (df["vencimento_dt"] >= start_date) &
                 (df["vencimento_dt"] <= end_date)
@@ -124,15 +123,39 @@ def export_to_pdf(n_clicks, table_data):
         return None
 
     buffer = io.BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=A4)
+    doc = SimpleDocTemplate(buffer, pagesize=A4, leftMargin=1*cm, rightMargin=1*cm, topMargin=1*cm, bottomMargin=1*cm)
     elements = []
 
     styles = getSampleStyleSheet()
-    title = Paragraph("Relatório de Seguros", styles['Heading1'])
-    elements.append(title)
-    elements.append(Spacer(1, 12))
+    # Estilo personalizado para o título
+    title_style = styles['Heading1']
+    title_style.alignment = 1  # Centralizado
+    title_style.fontSize = 16
+    title_style.spaceAfter = 12
 
-    data = [["CNP", "Razão Social", "Início Vigência", "Vencimento", "Valor Cobertura", "Valor Parcela", "Observação"]]
+    # Estilo para subtítulo (data de geração)
+    subtitle_style = styles['Normal']
+    subtitle_style.alignment = 1
+    subtitle_style.fontSize = 10
+    subtitle_style.textColor = colors.grey
+    subtitle_style.spaceAfter = 20
+
+    # Estilo para o rodapé
+    footer_style = styles['Normal']
+    footer_style.alignment = 1
+    footer_style.fontSize = 8
+    footer_style.textColor = colors.grey
+
+    # Cabeçalho
+    title = Paragraph("Relatório de Seguros", title_style)
+    current_date = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    subtitle = Paragraph(f"Gerado em: {current_date}", subtitle_style)
+    elements.append(title)
+    elements.append(subtitle)
+    elements.append(Spacer(1, 30))  # Aumentado o espaço antes da tabela
+
+    # Dados da tabela
+    data = [["CNP", "Razão Social", "Início Vigência", "Vencimento", "Valor Cobertura", "Valor Parcela"]]
     for row in table_data:
         data.append([
             str(row["cnp"]),
@@ -140,25 +163,34 @@ def export_to_pdf(n_clicks, table_data):
             row["inicio_vigencia_seguro"],
             row["vencimento"],
             row["valor_cobertura"],
-            row["valor_parcela"],
-            row["obs"] if row["obs"] else ""
+            row["valor_parcela"]
         ])
 
-    table = Table(data)
+    # Definir larguras das colunas
+    col_widths = [40, 230, 80, 80, 80, 80]  # Mantidas as larguras ajustadas
+
+    table = Table(data, colWidths=col_widths)
     table.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#007bff")),
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('FONTSIZE', (0, 0), (-1, 0), 10),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('BACKGROUND', (0, 1), (-1, -1), colors.white),
         ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 1), (-1, -1), 10),
+        ('FONTSIZE', (0, 1), (-1, -1), 9),
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('BOX', (0, 0), (-1, -1), 1, colors.black),  # Borda externa
     ]))
     elements.append(table)
+
+    # Rodapé
+    elements.append(Spacer(1, 24))
+    footer = Paragraph("Relatório gerado pelo CentralSeg GECAF - Central de Seguros para Gestão, Controle e Apoio Financeiro", footer_style)
+    elements.append(footer)
 
     doc.build(elements)
     buffer.seek(0)
