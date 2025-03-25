@@ -10,9 +10,12 @@ from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.lib.units import cm
+from reportlab.lib.units import mm, cm
 import io
 import base64
+
+# Definir o tamanho personalizado para metade do A4 (210 mm x 148.5 mm)
+HALF_A4 = (210*mm, 148.5*mm)  # Largura do A4 (210 mm), altura é metade do A4 (297 mm / 2)
 
 layout = html.Div([
     html.H3("Relatórios de Seguros", className="text-center mb-4", 
@@ -85,10 +88,10 @@ def load_report_data(filter_cnp, start_date, end_date):
         df = pd.read_sql(query, conn)
 
         df["inicio_vigencia_seguro"] = df["inicio_vigencia_seguro"].apply(
-            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""  # Ajustado para dd/mm/aa
+            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""
         )
         df["vencimento"] = df["vencimento"].apply(
-            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""  # Ajustado para dd/mm/aa
+            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""
         )
         df["valor_cobertura"] = df["valor_cobertura"].apply(
             lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
@@ -123,27 +126,27 @@ def export_to_pdf(n_clicks, table_data):
         return None
 
     buffer = io.BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=A4, leftMargin=1*cm, rightMargin=1*cm, topMargin=1*cm, bottomMargin=1*cm)
+    doc = SimpleDocTemplate(buffer, pagesize=HALF_A4, leftMargin=1*cm, rightMargin=1*cm, topMargin=1*cm, bottomMargin=1*cm)
     elements = []
 
     styles = getSampleStyleSheet()
     # Estilo personalizado para o título
     title_style = styles['Heading1']
     title_style.alignment = 1  # Centralizado
-    title_style.fontSize = 16
-    title_style.spaceAfter = 12
+    title_style.fontSize = 14  # Ajustado para caber melhor
+    title_style.spaceAfter = 8
 
     # Estilo para subtítulo (data de geração)
     subtitle_style = styles['Normal']
     subtitle_style.alignment = 1
-    subtitle_style.fontSize = 10
+    subtitle_style.fontSize = 8  # Ajustado para caber melhor
     subtitle_style.textColor = colors.grey
-    subtitle_style.spaceAfter = 20
+    subtitle_style.spaceAfter = 10
 
     # Estilo para o rodapé
     footer_style = styles['Normal']
     footer_style.alignment = 1
-    footer_style.fontSize = 8
+    footer_style.fontSize = 7  # Ajustado para caber melhor
     footer_style.textColor = colors.grey
 
     # Cabeçalho
@@ -152,7 +155,7 @@ def export_to_pdf(n_clicks, table_data):
     subtitle = Paragraph(f"Gerado em: {current_date}", subtitle_style)
     elements.append(title)
     elements.append(subtitle)
-    elements.append(Spacer(1, 30))  # Aumentado o espaço antes da tabela
+    elements.append(Spacer(1, 10))
 
     # Dados da tabela
     data = [["CNP", "Razão Social", "Início Vigência", "Vencimento", "Valor Cobertura", "Valor Parcela"]]
@@ -167,7 +170,7 @@ def export_to_pdf(n_clicks, table_data):
         ])
 
     # Definir larguras das colunas
-    col_widths = [40, 230, 80, 80, 80, 80]  # Mantidas as larguras ajustadas
+    col_widths = [40, 230, 80, 80, 80, 80]
 
     table = Table(data, colWidths=col_widths)
     table.setStyle(TableStyle([
@@ -175,20 +178,20 @@ def export_to_pdf(n_clicks, table_data):
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 10),
-        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('FONTSIZE', (0, 0), (-1, 0), 8),  # Ajustado para caber melhor
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
         ('BACKGROUND', (0, 1), (-1, -1), colors.white),
         ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 1), (-1, -1), 9),
+        ('FONTSIZE', (0, 1), (-1, -1), 7),  # Ajustado para caber melhor
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-        ('BOX', (0, 0), (-1, -1), 1, colors.black),  # Borda externa
+        ('BOX', (0, 0), (-1, -1), 1, colors.black),
     ]))
     elements.append(table)
 
     # Rodapé
-    elements.append(Spacer(1, 24))
+    elements.append(Spacer(1, 10))
     footer = Paragraph("Relatório gerado pelo CentralSeg GECAF - Central de Seguros para Gestão, Controle e Apoio Financeiro", footer_style)
     elements.append(footer)
 
