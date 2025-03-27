@@ -6,6 +6,7 @@ import pandas as pd
 from database.connection import engine
 from sqlalchemy import text
 import datetime
+from datetime import timedelta
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib import colors
@@ -17,34 +18,50 @@ import base64
 # Definir o tamanho personalizado para metade do A4 (210 mm x 148.5 mm)
 HALF_A4 = (210*mm, 148.5*mm)  # Largura do A4 (210 mm), altura é metade do A4 (297 mm / 2)
 
+# Layout da página ajustado para espaçamento consistente com seguro.py
 layout = html.Div([
+    # Título com margem inferior de 24px (mb-4), igual ao seguro.py
     html.H3("Relatórios de Seguros", className="text-center mb-4", 
-            style={"fontSize": "28px", "fontWeight": "bold", "color": "#007bff", "marginTop": "30px"}),
-    # Filtros
+            style={"fontSize": "28px", "fontWeight": "bold", "color": "#023e7c", "marginTop": "30px"}),
+    
+    # Filtros em uma linha com espaçamento uniforme
     dbc.Row([
+        # Campo de busca por CNP
+        dbc.Col(
+            dbc.Input(id="filter-cnp", type="text", 
+                      placeholder="Digite o CNP...", 
+                      className="mb-3",  # Margem inferior de 16px, como em seguro.py
+                      style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px'}),
+            width=4
+        ),
+        # Filtros de data e botão de exportar
         dbc.Col([
-            html.Div([
-                dbc.Label("Buscar por CNP:", className="mb-1"),
-                dbc.Input(id="filter-cnp", type="text", placeholder="Digite o CNP...", 
-                          style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px'})
-            ])
-        ], width=4),
-        dbc.Col([
-            html.Div([
-                html.Div([
-                    dbc.Label("Data de Vencimento:", className="mb-1", style={'width': '150px'}),
-                    html.Div([
-                        dbc.Input(id="start-date-filter", type="date", 
-                                  style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px', 'width': '150px', 'marginRight': '10px'}),
-                        dbc.Input(id="end-date-filter", type="date", 
-                                  style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px', 'width': '150px'}),
-                        dbc.Button("Exportar como PDF", id="export-pdf-btn", color="primary", className="ms-2", 
-                                   style={'width': '150px', 'fontSize': '14px', 'padding': '6px'})
-                    ], style={'display': 'flex', 'gap': '10px'})
-                ], style={'display': 'flex', 'flexDirection': 'column'}),
-            ])
-        ], width=8, className="d-flex justify-content-end align-items-end")
-    ], justify="between"),
+            dbc.Row([
+                # Data inicial
+                dbc.Col(
+                    dbc.Input(id="start-date-filter", type="date", 
+                              className="mb-3",  # Margem inferior de 16px
+                              style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px', 'width': '150px'}),
+                    width=4
+                ),
+                # Data final
+                dbc.Col(
+                    dbc.Input(id="end-date-filter", type="date", 
+                              className="mb-3",  # Margem inferior de 16px
+                              style={'border': '1px solid #ced4da', 'borderRadius': '4px', 'padding': '6px', 'fontSize': '14px', 'width': '150px'}),
+                    width=4
+                ),
+                # Botão de exportar
+                dbc.Col(
+                    dbc.Button("Exportar como PDF", id="export-pdf-btn", color="primary", 
+                               className="mb-3",  # Margem inferior de 16px
+                               style={'width': '150px', 'fontSize': '14px', 'padding': '6px', 'backgroundColor': '#023e7c', 'borderColor': '#023e7c'}),
+                    width=4
+                ),
+            ], justify="end")  # Alinha os elementos à direita
+        ], width=8, className="d-flex justify-content-end"),
+    ], justify="between"),  # Espaçamento uniforme entre as colunas
+    
     # Tabela
     dash_table.DataTable(
         id='report-table',
@@ -53,13 +70,23 @@ layout = html.Div([
             {"name": "Razão Social", "id": "razao_social", "type": "text"},
             {"name": "Início Vigência", "id": "inicio_vigencia_seguro", "type": "text"},
             {"name": "Vencimento", "id": "vencimento", "type": "text"},
+            {"name": "Média Últ. 12 Meses", "id": "media_ultimos_12_meses", "type": "text"},
             {"name": "Valor Cobertura", "id": "valor_cobertura", "type": "text"},
-            {"name": "Valor Parcela", "id": "valor_parcela", "type": "text"},
+            {"name": "Valor Proposta Cobertura", "id": "valor_proposto", "type": "text"},
         ],
         data=[],
         style_table={'overflowX': 'auto', 'border': '1px solid #ddd'},
-        style_header={'backgroundColor': '#007bff', 'color': 'white', 'fontWeight': 'bold', 'textAlign': 'center'},
-        style_data={'textAlign': 'center', 'border': '1px solid #ddd', 'fontSize': '14px'},
+        style_header={'backgroundColor': '#023e7c', 'color': 'white', 'fontWeight': 'bold', 'textAlign': 'center'},
+        style_data={'border': '1px solid #ddd', 'fontSize': '14px'},
+        style_data_conditional=[
+            {'if': {'column_id': 'razao_social'}, 'textAlign': 'left'},
+            {'if': {'column_id': 'cnp'}, 'textAlign': 'center'},
+            {'if': {'column_id': 'inicio_vigencia_seguro'}, 'textAlign': 'center'},
+            {'if': {'column_id': 'vencimento'}, 'textAlign': 'center'},
+            {'if': {'column_id': 'media_ultimos_12_meses'}, 'textAlign': 'center'},
+            {'if': {'column_id': 'valor_cobertura'}, 'textAlign': 'center'},
+            {'if': {'column_id': 'valor_proposto'}, 'textAlign': 'center'},
+        ],
         style_cell={'padding': '8px'},
         page_size=15,
     ),
@@ -73,17 +100,39 @@ layout = html.Div([
      Input("end-date-filter", "value")]
 )
 def load_report_data(filter_cnp, start_date, end_date):
+    # Mapa de meses para construir as colunas dos últimos 12 meses
+    mes_map = {
+        "01": "jan", "02": "fev", "03": "mar", "04": "abr",
+        "05": "mai", "06": "jun", "07": "jul", "08": "ago",
+        "09": "set", "10": "out", "11": "nov", "12": "dez"
+    }
+
+    # Obter os últimos 12 meses a partir da data atual
+    ultimos_12_meses = []
+    data_atual = datetime.datetime.now()
+    for i in range(12):
+        data_retroativa = data_atual - timedelta(days=i * 30)
+        mes_retroativo = data_retroativa.strftime("%m")
+        ano_retroativo = data_retroativa.strftime("%y")
+        coluna_mes = f"{mes_map[mes_retroativo]}_{ano_retroativo}"
+        ultimos_12_meses.append(coluna_mes)
+
+    # Construir a expressão para somar os valores dos últimos 12 meses
+    expressao_soma = "+".join(f"COALESCE(`{coluna}`, 0)" for coluna in ultimos_12_meses)
+
     with engine.connect() as conn:
-        query = text("""
+        query = text(f"""
             SELECT 
                 d.cnp,
                 d.razao_social,
                 s.inicio_vigencia_seguro,
                 s.vencimento,
+                COALESCE(ROUND(({expressao_soma}) / 12, 2), 0) AS media_ultimos_12_meses,
                 s.valor_cobertura,
-                s.valor_parcela
+                s.valor_proposto
             FROM cnp_data d
             LEFT JOIN seguradora s ON d.cnp = s.cnp
+            LEFT JOIN cnp_historico h ON d.cnp = h.cnp
         """)
         df = pd.read_sql(query, conn)
 
@@ -93,10 +142,13 @@ def load_report_data(filter_cnp, start_date, end_date):
         df["vencimento"] = df["vencimento"].apply(
             lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""
         )
+        df["media_ultimos_12_meses"] = df["media_ultimos_12_meses"].apply(
+            lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
+        )
         df["valor_cobertura"] = df["valor_cobertura"].apply(
             lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
         )
-        df["valor_parcela"] = df["valor_parcela"].apply(
+        df["valor_proposto"] = df["valor_proposto"].apply(
             lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
         )
 
@@ -158,32 +210,38 @@ def export_to_pdf(n_clicks, table_data):
     elements.append(Spacer(1, 10))
 
     # Dados da tabela
-    data = [["CNP", "Razão Social", "Início Vigência", "Vencimento", "Valor Cobertura", "Valor Parcela"]]
+    data = [["CNP", "Razão Social", "Início\nVigência", "Vencimento", "Média Últ.\n12 Meses", "Valor\nCobertura", "Valor Proposta\nCobertura"]]
     for row in table_data:
         data.append([
             str(row["cnp"]),
             row["razao_social"],
             row["inicio_vigencia_seguro"],
             row["vencimento"],
+            row["media_ultimos_12_meses"],
             row["valor_cobertura"],
-            row["valor_parcela"]
+            row["valor_proposto"]
         ])
 
-    # Definir larguras das colunas
-    col_widths = [40, 230, 80, 80, 80, 80]
+    # Definir larguras das colunas (em pontos)
+    col_widths = [35, 240, 55, 55, 65, 65, 65]  # Total: 580 pontos
 
     table = Table(data, colWidths=col_widths)
     table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#007bff")),
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#023e7c")),  # Alterado para #023e7c
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
-        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+        ('ALIGN', (0, 1), (0, -1), 'CENTER'),
+        ('ALIGN', (1, 1), (1, -1), 'LEFT'),
+        ('ALIGN', (2, 1), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 8),  # Ajustado para caber melhor
+        ('FONTSIZE', (0, 0), (-1, 0), 8),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+        ('LEFTPADDING', (0, 0), (-1, -1), 2),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 2),
         ('BACKGROUND', (0, 1), (-1, -1), colors.white),
         ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 1), (-1, -1), 7),  # Ajustado para caber melhor
+        ('FONTSIZE', (0, 1), (-1, -1), 7),
         ('GRID', (0, 0), (-1, -1), 1, colors.black),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
         ('BOX', (0, 0), (-1, -1), 1, colors.black),
@@ -192,7 +250,7 @@ def export_to_pdf(n_clicks, table_data):
 
     # Rodapé
     elements.append(Spacer(1, 10))
-    footer = Paragraph("Relatório gerado pelo CentralSeg GECAF - Central de Seguros para Gestão, Controle e Apoio Financeiro", footer_style)
+    footer = Paragraph("Relatório gerado pelo CentralSeg GECAF - Gerência de Operações e Logística de Canais Físicos", footer_style)
     elements.append(footer)
 
     doc.build(elements)

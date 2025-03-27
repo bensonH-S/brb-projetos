@@ -1,4 +1,3 @@
-# Script para ETL
 import pandas as pd
 from sqlalchemy import create_engine, text
 import logging
@@ -19,7 +18,6 @@ def rodar_etl(uploaded_file):
         format="%(asctime)s - %(levelname)s - %(message)s",
     )
     logging.info("Iniciando o processo de ETL...")
-
 
     # Leitura da planilha usando o arquivo enviado
     try:
@@ -133,9 +131,8 @@ def rodar_etl(uploaded_file):
             })
 
     logging.info(f"Tabela cnp_historico atualizada com sucesso para a coluna {coluna_mes_atual}.")
-    logging.info("ETL concluído com sucesso!")
 
-    # --- IMPLEMENTAÇÃO ADICIONAL: ATUALIZAR valor_cobertura na tabela seguradora ---
+    # --- IMPLEMENTAÇÃO ADICIONAL: ATUALIZAR valor_proposto na tabela seguradora ---
 
     # Obter as colunas da tabela cnp_historico novamente (para garantir que a variável esteja definida)
     with engine.connect() as conn:
@@ -152,17 +149,17 @@ def rodar_etl(uploaded_file):
         ultimos_12_meses.append(coluna_mes)
 
     # Construir a expressão para somar os valores dos últimos 12 meses
-    expressao_soma = "+".join(ultimos_12_meses)
+    expressao_soma = "+".join(f"COALESCE(`{coluna}`, 0)" for coluna in ultimos_12_meses)
 
     # Gerar a query SQL para obter a média dos últimos 12 meses
     query_media = f"""
-        SELECT cnp, COALESCE(ROUND(SUM({expressao_soma}) / 12, 2), 0) AS media_mensal
+        SELECT cnp, COALESCE(ROUND(({expressao_soma}) / 12, 2), 0) AS media_mensal
         FROM cnp_historico
         GROUP BY cnp;
     """
     df_media = pd.read_sql(query_media, engine)
 
-    # Aplicar a regra da apólice para definir o valor da cobertura
+    # Aplicar a regra da apólice para definir o valor da cobertura proposta
     def definir_cobertura(media_mensal):
         if media_mensal <= 70000:
             return 70000
@@ -179,22 +176,22 @@ def rodar_etl(uploaded_file):
         else:
             return 200000
 
-    df_media["valor_cobertura"] = df_media["media_mensal"].apply(definir_cobertura)
+    df_media["valor_proposto"] = df_media["media_mensal"].apply(definir_cobertura)
 
-    # Atualizar a tabela seguradora com o valor da cobertura calculado
+    # Atualizar a tabela seguradora com o valor proposto calculado
     with engine.begin() as conn:
         for _, row in df_media.iterrows():
             query_update = text("""
                 UPDATE seguradora
-                SET valor_cobertura = :valor_cobertura
+                SET valor_proposto = :valor_proposto
                 WHERE cnp = :cnp;
             """)
             conn.execute(query_update, {
-                "valor_cobertura": row["valor_cobertura"],
+                "valor_proposto": row["valor_proposto"],
                 "cnp": int(row["cnp"])
             })
 
-    logging.info("Tabela seguradora atualizada com sucesso.")
+    logging.info("Tabela seguradora atualizada com sucesso na coluna valor_proposto.")
     logging.info("ETL concluído com sucesso!")
     
     return "ETL executado com sucesso!"

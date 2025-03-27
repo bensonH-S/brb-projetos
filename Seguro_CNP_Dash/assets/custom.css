@@ -1,17 +1,63 @@
+/* Estilização para evitar problemas de overflow nos modais */
 .modal-content {
-    overflow: visible !important;
+    overflow: visible !important;  /* Garante que o conteúdo do modal não seja cortado */
 }
 
 .modal-dialog {
-    overflow: visible !important;
-    position: relative !important;
+    overflow: visible !important;  /* Permite que o modal se ajuste ao conteúdo */
+    position: relative !important;  /* Define a posição relativa para melhor controle */
 }
 
+/* Estilo personalizado para campos de entrada de data */
 .date-input {
-    width: 100%;
-    height: 38px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 0 10px;
-    font-size: 14px;
+    width: 100%;  /* Ocupa toda a largura disponível */
+    height: 38px;  /* Altura padrão para consistência com outros inputs */
+    border: 1px solid #ced4da;  /* Borda cinza clara padrão do Bootstrap */
+    border-radius: 4px;  /* Bordas arredondadas */
+    padding: 0 10px;  /* Espaçamento interno */
+    font-size: 14px;  /* Tamanho da fonte para legibilidade */
+}
+
+/* Sobrescreve a cor padrão dos botões primários do Bootstrap */
+.btn-primary {
+    background-color: #023e7c !important;  /* Azul escuro personalizado */
+    border-color: #023e7c !important;  /* Borda na mesma cor do fundo */
+    color: white !important;  /* Texto branco para contraste */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #022f5e !important;  /* Tom mais escuro para interações */
+    border-color: #022f5e !important;  /* Borda ajustada para hover/focus */
+    color: white !important;  /* Mantém o texto branco */
+}
+
+/* Estilo para links de navegação ativos */
+.nav-link.active {
+    background-color: #023e7c !important;  /* Azul escuro para o item ativo */
+    color: white !important;  /* Texto branco para contraste */
+}
+
+/* Estilo padrão para links de navegação */
+.nav-link {
+    color: #023e7c !important;  /* Cor padrão do texto dos links */
+}
+
+/* Efeito hover nos links de navegação */
+.nav-link:hover {
+    background-color: #d3d3d3 !important;  /* Cinza claro ao passar o mouse */
+    color: #023e7c !important;  /* Mantém a cor do texto */
+}
+
+/* Estilo para links genéricos na aplicação */
+a {
+    color: #023e7c !important;  /* Azul escuro para todos os links */
+}
+
+/* Efeito hover e focus nos links genéricos */
+a:hover,
+a:focus {
+    color: #022f5e !important;  /* Tom mais escuro para interações */
 }

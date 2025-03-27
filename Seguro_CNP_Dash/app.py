@@ -36,7 +36,6 @@ app.layout = html.Div([
 
 # Callback para trocar de página
 def render_page_content(pathname):
-    # Removidos os prints de debug
     if pathname == "/" or pathname == "/dashboard":
         return dashboard.layout
     elif pathname == "/cnps":

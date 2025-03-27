@@ -8,11 +8,12 @@ from sqlalchemy import text
 
 layout = html.Div([
     html.H3("Cadastro das Conveniência BRB", className="text-center mb-4", 
-            style={"fontSize": "28px", "fontWeight": "bold", "color": "#007bff", "marginTop": "30px"}),  # Ajustado marginTop
+            style={"fontSize": "28px", "fontWeight": "bold", "color": "#023e7c", "marginTop": "30px"}),  # Ajustado marginTop
     # Campo de busca e botão
     dbc.Row([
         dbc.Col(dbc.Input(id="search-cnp", type="text", placeholder="Buscar CNP...", className="mb-3"), width=4),
-        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3"), 
+        dbc.Col(dbc.Button("+ Adicionar Novo CNP", id="open-modal", color="primary", className="mb-3",
+                           style={'backgroundColor': '#023e7c', 'borderColor': '#023e7c'}), 
                 width=8, className="d-flex justify-content-end"),  # Alinhado à direita
     ], justify="between"),  # Distribuir os elementos entre os lados
     dash_table.DataTable(
@@ -27,7 +28,7 @@ layout = html.Div([
         ],
         data=[],
         style_table={'overflowX': 'auto', 'border': '1px solid #ddd'},
-        style_header={'backgroundColor': '#007bff', 'color': 'white', 'fontWeight': 'bold', 'textAlign': 'center'},
+        style_header={'backgroundColor': '#023e7c', 'color': 'white', 'fontWeight': 'bold', 'textAlign': 'center'},
         style_data={'textAlign': 'center', 'border': '1px solid #ddd', 'fontSize': '14px'},
         style_cell={'padding': '8px'},
         style_cell_conditional=[

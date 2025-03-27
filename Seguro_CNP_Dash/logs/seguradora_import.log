@@ -6,305 +6,526 @@
 
 2025-03-24 12:28:27,935 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-24 12:43:04,604 - INFO - Dash is running on http://0.0.0.0:8050/
+2025-03-26 16:57:20,621 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-24 14:16:32,227 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 14:23:04,797 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:09:34,601 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:15:06,188 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:31:10,539 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:38:38,861 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:42:16,328 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:44:50,761 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:52:01,984 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 20:53:22,619 - ERROR - Exception on /_dash-update-component [POST]
+2025-03-26 16:58:03,239 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-26 16:58:03,278 - INFO - Parcela 1 inserida para CNP 822
+2025-03-26 16:58:03,279 - INFO - Parcela 2 inserida para CNP 822
+2025-03-26 16:58:03,280 - INFO - Parcela 3 inserida para CNP 822
+2025-03-26 16:58:03,281 - INFO - Parcela 4 inserida para CNP 822
+2025-03-26 16:58:03,282 - INFO - Parcela 5 inserida para CNP 822
+2025-03-26 16:58:03,286 - INFO - Parcela 1 inserida para CNP 848
+2025-03-26 16:58:03,287 - INFO - Parcela 2 inserida para CNP 848
+2025-03-26 16:58:03,288 - INFO - Parcela 3 inserida para CNP 848
+2025-03-26 16:58:03,289 - INFO - Parcela 4 inserida para CNP 848
+2025-03-26 16:58:03,291 - INFO - Parcela 5 inserida para CNP 848
+2025-03-26 16:58:03,295 - INFO - Parcela 1 inserida para CNP 809
+2025-03-26 16:58:03,295 - INFO - Parcela 2 inserida para CNP 809
+2025-03-26 16:58:03,296 - INFO - Parcela 3 inserida para CNP 809
+2025-03-26 16:58:03,297 - INFO - Parcela 4 inserida para CNP 809
+2025-03-26 16:58:03,298 - INFO - Parcela 5 inserida para CNP 809
+2025-03-26 16:58:03,302 - INFO - Parcela 1 inserida para CNP 805
+2025-03-26 16:58:03,303 - INFO - Parcela 2 inserida para CNP 805
+2025-03-26 16:58:03,304 - INFO - Parcela 3 inserida para CNP 805
+2025-03-26 16:58:03,306 - INFO - Parcela 4 inserida para CNP 805
+2025-03-26 16:58:03,307 - INFO - Parcela 5 inserida para CNP 805
+2025-03-26 16:58:03,310 - INFO - Parcela 1 inserida para CNP 803
+2025-03-26 16:58:03,311 - INFO - Parcela 2 inserida para CNP 803
+2025-03-26 16:58:03,312 - INFO - Parcela 3 inserida para CNP 803
+2025-03-26 16:58:03,313 - INFO - Parcela 4 inserida para CNP 803
+2025-03-26 16:58:03,313 - INFO - Parcela 5 inserida para CNP 803
+2025-03-26 16:58:03,315 - INFO - Parcela 1 inserida para CNP 811
+2025-03-26 16:58:03,316 - INFO - Parcela 2 inserida para CNP 811
+2025-03-26 16:58:03,316 - INFO - Parcela 3 inserida para CNP 811
+2025-03-26 16:58:03,317 - INFO - Parcela 4 inserida para CNP 811
+2025-03-26 16:58:03,317 - INFO - Parcela 5 inserida para CNP 811
+2025-03-26 16:58:03,320 - INFO - Parcela 1 inserida para CNP 813
+2025-03-26 16:58:03,320 - INFO - Parcela 2 inserida para CNP 813
+2025-03-26 16:58:03,321 - INFO - Parcela 3 inserida para CNP 813
+2025-03-26 16:58:03,322 - INFO - Parcela 4 inserida para CNP 813
+2025-03-26 16:58:03,324 - INFO - Parcela 5 inserida para CNP 813
+2025-03-26 16:58:03,327 - INFO - Parcela 1 inserida para CNP 818
+2025-03-26 16:58:03,328 - INFO - Parcela 2 inserida para CNP 818
+2025-03-26 16:58:03,329 - INFO - Parcela 3 inserida para CNP 818
+2025-03-26 16:58:03,329 - INFO - Parcela 4 inserida para CNP 818
+2025-03-26 16:58:03,330 - INFO - Parcela 5 inserida para CNP 818
+2025-03-26 16:58:03,333 - INFO - Parcela 1 inserida para CNP 824
+2025-03-26 16:58:03,334 - INFO - Parcela 2 inserida para CNP 824
+2025-03-26 16:58:03,335 - INFO - Parcela 3 inserida para CNP 824
+2025-03-26 16:58:03,336 - INFO - Parcela 4 inserida para CNP 824
+2025-03-26 16:58:03,337 - INFO - Parcela 5 inserida para CNP 824
+2025-03-26 16:58:03,342 - INFO - Parcela 1 inserida para CNP 829
+2025-03-26 16:58:03,343 - INFO - Parcela 2 inserida para CNP 829
+2025-03-26 16:58:03,343 - INFO - Parcela 3 inserida para CNP 829
+2025-03-26 16:58:03,344 - INFO - Parcela 4 inserida para CNP 829
+2025-03-26 16:58:03,344 - INFO - Parcela 5 inserida para CNP 829
+2025-03-26 16:58:03,347 - INFO - Parcela 1 inserida para CNP 839
+2025-03-26 16:58:03,348 - INFO - Parcela 2 inserida para CNP 839
+2025-03-26 16:58:03,349 - INFO - Parcela 3 inserida para CNP 839
+2025-03-26 16:58:03,350 - INFO - Parcela 4 inserida para CNP 839
+2025-03-26 16:58:03,350 - INFO - Parcela 5 inserida para CNP 839
+2025-03-26 16:58:03,793 - INFO - Parcela 1 inserida para CNP 846
+2025-03-26 16:58:03,794 - INFO - Parcela 2 inserida para CNP 846
+2025-03-26 16:58:03,794 - INFO - Parcela 3 inserida para CNP 846
+2025-03-26 16:58:03,795 - INFO - Parcela 4 inserida para CNP 846
+2025-03-26 16:58:03,795 - INFO - Parcela 5 inserida para CNP 846
+2025-03-26 16:58:03,798 - INFO - Parcela 1 inserida para CNP 845
+2025-03-26 16:58:03,798 - INFO - Parcela 2 inserida para CNP 845
+2025-03-26 16:58:03,799 - INFO - Parcela 3 inserida para CNP 845
+2025-03-26 16:58:03,799 - INFO - Parcela 4 inserida para CNP 845
+2025-03-26 16:58:03,800 - INFO - Parcela 5 inserida para CNP 845
+2025-03-26 16:58:03,850 - INFO - Importação concluída com sucesso!
+2025-03-26 16:58:26,716 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:53:34,963 - ERROR - Exception on /_dash-update-component [POST]
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\modules\seguro.py", line 453, in open_seguro_modal
+    row = table_data[active_cell["row"]]
+                     ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-03-26 16:58:36,709 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:53:40,781 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\modules\seguro.py", line 453, in open_seguro_modal
+    row = table_data[active_cell["row"]]
+                     ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-03-26 17:00:11,944 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 12:12:04,763 - INFO - Dash is running on http://0.0.0.0:8050/
 
+2025-03-27 12:13:14,983 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:53:41,726 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\modules\seguro.py", line 453, in open_seguro_modal
+    row = table_data[active_cell["row"]]
+                     ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-03-27 12:14:31,645 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 12:26:45,267 - INFO - Dash is running on http://0.0.0.0:8050/
 
+2025-03-27 12:34:15,197 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-27 12:37:15,310 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-27 12:38:21,773 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-27 12:58:10,424 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-27 13:08:34,944 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-03-27 13:08:54,978 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:02,086 - ERROR - Exception on /_dash-update-component [POST]
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\modules\seguro.py", line 420, in open_seguro_modal
+    row = table_data[active_cell["row"]]
+                     ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-03-27 13:08:55,678 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
     rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:04,597 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "c:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\modules\seguro.py", line 420, in open_seguro_modal
+    row = table_data[active_cell["row"]]
+                     ~~~~~~~~~~~^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-03-27 13:43:32,535 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 13:52:29,351 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('0\x86¦\x99\x9c\\\x84©Sª')
+2025-03-27 13:52:29,354 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01Í')
+2025-03-27 13:52:30,262 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request version ('×\x17ýEDi\x00\x05\x00\x03\x02h2\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-27 13:52:30,265 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request syntax ('\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03´=îv\x98Ó¨1\xad¤9V:Ãuyê\\kA=¶ÂÉq')
+2025-03-27 13:58:12,530 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+2025-03-27 13:58:12,531 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\xad::\x00\x00ÿ\x01\x00\x01\x00\x003\x00+\x00)')
+2025-03-27 13:58:12,535 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('Te\x9e\x89@R\x7fÕä\x02ºeHf')
+2025-03-27 13:58:12,536 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+2025-03-27 13:58:15,526 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+2025-03-27 13:58:15,529 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('¶ÁYY$\x8eLá{;\x19ÚêÖþ9ú\x17ÝabÂiOôT\x8aDÌ3Äy\x06a*sç~\x0f+z1\x95Á\x7fÕ\x91ôÇ§¹?\x8f°Åª\x7f\x19\x1aOJ¶ÏJ¿ï»\x99¦\x1a\x1bt*\x08\x89_ÔÜ¤ØÇ\x8c«tYH}\x9cá\x9f±³p\x84)dÙ\x19yÁ\x90^û\x12,ó8þ¬\x87\x077$\x16\x9aJh>àÞ>!\x8eén?.\x82\x14¼\x00')
+2025-03-27 13:58:15,530 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00\x00+\x00\x07\x06::\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-27 13:58:15,533 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03pªP2\x81Ãó\\\x82rDþbÔ+Ò\x7fNãÆMÕ\x84K\x1b\x89')
+2025-03-27 14:20:40,366 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03Ç"úMÔ©aVüáþâÀ>\\Âú?Å\x93')
+2025-03-27 14:20:40,372 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad request version ('\x06ø\x93Z<3Fæ\x8bÍµg\x92\x17l£ð\x19R\x00¨ÍÏ\x9eËìé.é¾ç5Di\x00\x05\x00\x03\x02h2ÿ\x01\x00\x01\x00\x00-\x00\x02\x01\x01\x00+\x00\x07\x06ºº\x03\x04\x03\x03\x00')
+2025-03-27 14:20:41,369 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01ÍZZ\x00\x00\x003\x00+\x00)')
+2025-03-27 14:20:41,374 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93')
+2025-03-27 14:23:07,723 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('\x00\x02\x01\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-27 14:23:07,727 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('¯z\x8cZ\x16Ý\x8a\x08^tB±ìI?²\x95')
+2025-03-27 14:23:07,729 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00')
+2025-03-27 14:23:07,733 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93::\x00\x00\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03ÿ\x01\x00\x01\x00\x00\x17\x00\x00\x00')
+2025-03-27 14:30:51,640 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:08,495 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 14:48:06,384 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 15:04:04,164 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:08,795 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 15:12:20,275 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 15:21:43,693 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:08,959 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 15:27:49,801 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 15:29:51,903 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:13,445 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 15:30:16,622 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 15:30:16,647 - INFO - Parcela 1 inserida para CNP 822
+2025-03-27 15:30:16,647 - INFO - Parcela 2 inserida para CNP 822
+2025-03-27 15:30:16,743 - INFO - Parcela 3 inserida para CNP 822
+2025-03-27 15:30:16,745 - INFO - Parcela 4 inserida para CNP 822
+2025-03-27 15:30:16,745 - INFO - Parcela 5 inserida para CNP 822
+2025-03-27 15:30:16,748 - INFO - Parcela 1 inserida para CNP 848
+2025-03-27 15:30:16,748 - INFO - Parcela 2 inserida para CNP 848
+2025-03-27 15:30:16,749 - INFO - Parcela 3 inserida para CNP 848
+2025-03-27 15:30:16,749 - INFO - Parcela 4 inserida para CNP 848
+2025-03-27 15:30:16,750 - INFO - Parcela 5 inserida para CNP 848
+2025-03-27 15:30:16,752 - INFO - Parcela 1 inserida para CNP 809
+2025-03-27 15:30:16,752 - INFO - Parcela 2 inserida para CNP 809
+2025-03-27 15:30:16,753 - INFO - Parcela 3 inserida para CNP 809
+2025-03-27 15:30:16,753 - INFO - Parcela 4 inserida para CNP 809
+2025-03-27 15:30:16,754 - INFO - Parcela 5 inserida para CNP 809
+2025-03-27 15:30:16,756 - INFO - Parcela 1 inserida para CNP 805
+2025-03-27 15:30:16,756 - INFO - Parcela 2 inserida para CNP 805
+2025-03-27 15:30:16,757 - INFO - Parcela 3 inserida para CNP 805
+2025-03-27 15:30:16,758 - INFO - Parcela 4 inserida para CNP 805
+2025-03-27 15:30:16,758 - INFO - Parcela 5 inserida para CNP 805
+2025-03-27 15:30:16,760 - INFO - Parcela 1 inserida para CNP 803
+2025-03-27 15:30:16,761 - INFO - Parcela 2 inserida para CNP 803
+2025-03-27 15:30:16,761 - INFO - Parcela 3 inserida para CNP 803
+2025-03-27 15:30:16,762 - INFO - Parcela 4 inserida para CNP 803
+2025-03-27 15:30:16,763 - INFO - Parcela 5 inserida para CNP 803
+2025-03-27 15:30:16,764 - INFO - Parcela 1 inserida para CNP 811
+2025-03-27 15:30:16,765 - INFO - Parcela 2 inserida para CNP 811
+2025-03-27 15:30:16,765 - INFO - Parcela 3 inserida para CNP 811
+2025-03-27 15:30:16,766 - INFO - Parcela 4 inserida para CNP 811
+2025-03-27 15:30:16,766 - INFO - Parcela 5 inserida para CNP 811
+2025-03-27 15:30:16,768 - INFO - Parcela 1 inserida para CNP 813
+2025-03-27 15:30:16,768 - INFO - Parcela 2 inserida para CNP 813
+2025-03-27 15:30:16,769 - INFO - Parcela 3 inserida para CNP 813
+2025-03-27 15:30:16,769 - INFO - Parcela 4 inserida para CNP 813
+2025-03-27 15:30:16,770 - INFO - Parcela 5 inserida para CNP 813
+2025-03-27 15:30:16,772 - INFO - Parcela 1 inserida para CNP 818
+2025-03-27 15:30:16,772 - INFO - Parcela 2 inserida para CNP 818
+2025-03-27 15:30:16,773 - INFO - Parcela 3 inserida para CNP 818
+2025-03-27 15:30:16,773 - INFO - Parcela 4 inserida para CNP 818
+2025-03-27 15:30:16,774 - INFO - Parcela 5 inserida para CNP 818
+2025-03-27 15:30:16,776 - INFO - Parcela 1 inserida para CNP 824
+2025-03-27 15:30:16,777 - INFO - Parcela 2 inserida para CNP 824
+2025-03-27 15:30:16,777 - INFO - Parcela 3 inserida para CNP 824
+2025-03-27 15:30:16,778 - INFO - Parcela 4 inserida para CNP 824
+2025-03-27 15:30:16,778 - INFO - Parcela 5 inserida para CNP 824
+2025-03-27 15:30:16,780 - INFO - Parcela 1 inserida para CNP 829
+2025-03-27 15:30:16,781 - INFO - Parcela 2 inserida para CNP 829
+2025-03-27 15:30:16,781 - INFO - Parcela 3 inserida para CNP 829
+2025-03-27 15:30:16,782 - INFO - Parcela 4 inserida para CNP 829
+2025-03-27 15:30:16,782 - INFO - Parcela 5 inserida para CNP 829
+2025-03-27 15:30:16,784 - INFO - Parcela 1 inserida para CNP 839
+2025-03-27 15:30:16,785 - INFO - Parcela 2 inserida para CNP 839
+2025-03-27 15:30:16,785 - INFO - Parcela 3 inserida para CNP 839
+2025-03-27 15:30:16,786 - INFO - Parcela 4 inserida para CNP 839
+2025-03-27 15:30:16,786 - INFO - Parcela 5 inserida para CNP 839
+2025-03-27 15:30:16,788 - INFO - Parcela 1 inserida para CNP 846
+2025-03-27 15:30:16,789 - INFO - Parcela 2 inserida para CNP 846
+2025-03-27 15:30:16,789 - INFO - Parcela 3 inserida para CNP 846
+2025-03-27 15:30:16,790 - INFO - Parcela 4 inserida para CNP 846
+2025-03-27 15:30:16,791 - INFO - Parcela 5 inserida para CNP 846
+2025-03-27 15:30:16,793 - INFO - Parcela 1 inserida para CNP 845
+2025-03-27 15:30:16,793 - INFO - Parcela 2 inserida para CNP 845
+2025-03-27 15:30:16,794 - INFO - Parcela 3 inserida para CNP 845
+2025-03-27 15:30:16,794 - INFO - Parcela 4 inserida para CNP 845
+2025-03-27 15:30:16,795 - INFO - Parcela 5 inserida para CNP 845
+2025-03-27 15:30:16,828 - INFO - Importação concluída com sucesso!
+2025-03-27 15:31:38,671 - INFO - Iniciando o processo de ETL...
+2025-03-27 15:31:44,358 - INFO - Planilha carregada com sucesso.
+2025-03-27 15:31:44,423 - INFO - Coluna do mês determinada a partir da planilha: dez_24
+2025-03-27 15:31:45,101 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna dez_24.
+2025-03-27 15:31:45,251 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
+2025-03-27 15:31:45,251 - INFO - ETL concluído com sucesso!
+2025-03-27 15:42:51,276 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 15:43:10,340 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:13,808 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 15:43:41,466 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 16:07:42,086 - INFO - Iniciando o processo de ETL...
+2025-03-27 16:07:49,716 - INFO - Planilha carregada com sucesso.
+2025-03-27 16:07:49,719 - INFO - Coluna do mês determinada a partir da planilha: dez_24
+2025-03-27 16:07:50,179 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna dez_24.
+2025-03-27 16:07:50,197 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
+2025-03-27 16:07:50,197 - INFO - ETL concluído com sucesso!
+2025-03-27 16:08:52,951 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 16:08:52,984 - INFO - Parcela 1 inserida para CNP 822
+2025-03-27 16:08:52,986 - INFO - Parcela 2 inserida para CNP 822
+2025-03-27 16:08:53,521 - INFO - Parcela 3 inserida para CNP 822
+2025-03-27 16:08:53,522 - INFO - Parcela 4 inserida para CNP 822
+2025-03-27 16:08:53,522 - INFO - Parcela 5 inserida para CNP 822
+2025-03-27 16:08:53,526 - INFO - Parcela 1 inserida para CNP 848
+2025-03-27 16:08:53,527 - INFO - Parcela 2 inserida para CNP 848
+2025-03-27 16:08:53,528 - INFO - Parcela 3 inserida para CNP 848
+2025-03-27 16:08:53,529 - INFO - Parcela 4 inserida para CNP 848
+2025-03-27 16:08:53,529 - INFO - Parcela 5 inserida para CNP 848
+2025-03-27 16:08:53,532 - INFO - Parcela 1 inserida para CNP 809
+2025-03-27 16:08:53,532 - INFO - Parcela 2 inserida para CNP 809
+2025-03-27 16:08:53,533 - INFO - Parcela 3 inserida para CNP 809
+2025-03-27 16:08:53,533 - INFO - Parcela 4 inserida para CNP 809
+2025-03-27 16:08:53,534 - INFO - Parcela 5 inserida para CNP 809
+2025-03-27 16:08:53,537 - INFO - Parcela 1 inserida para CNP 805
+2025-03-27 16:08:53,538 - INFO - Parcela 2 inserida para CNP 805
+2025-03-27 16:08:53,538 - INFO - Parcela 3 inserida para CNP 805
+2025-03-27 16:08:53,539 - INFO - Parcela 4 inserida para CNP 805
+2025-03-27 16:08:53,541 - INFO - Parcela 5 inserida para CNP 805
+2025-03-27 16:08:53,544 - INFO - Parcela 1 inserida para CNP 803
+2025-03-27 16:08:53,544 - INFO - Parcela 2 inserida para CNP 803
+2025-03-27 16:08:53,545 - INFO - Parcela 3 inserida para CNP 803
+2025-03-27 16:08:53,546 - INFO - Parcela 4 inserida para CNP 803
+2025-03-27 16:08:53,547 - INFO - Parcela 5 inserida para CNP 803
+2025-03-27 16:08:53,549 - INFO - Parcela 1 inserida para CNP 811
+2025-03-27 16:08:53,549 - INFO - Parcela 2 inserida para CNP 811
+2025-03-27 16:08:53,550 - INFO - Parcela 3 inserida para CNP 811
+2025-03-27 16:08:53,550 - INFO - Parcela 4 inserida para CNP 811
+2025-03-27 16:08:53,551 - INFO - Parcela 5 inserida para CNP 811
+2025-03-27 16:08:53,554 - INFO - Parcela 1 inserida para CNP 813
+2025-03-27 16:08:53,555 - INFO - Parcela 2 inserida para CNP 813
+2025-03-27 16:08:53,555 - INFO - Parcela 3 inserida para CNP 813
+2025-03-27 16:08:53,557 - INFO - Parcela 4 inserida para CNP 813
+2025-03-27 16:08:53,558 - INFO - Parcela 5 inserida para CNP 813
+2025-03-27 16:08:53,561 - INFO - Parcela 1 inserida para CNP 818
+2025-03-27 16:08:53,562 - INFO - Parcela 2 inserida para CNP 818
+2025-03-27 16:08:53,562 - INFO - Parcela 3 inserida para CNP 818
+2025-03-27 16:08:53,563 - INFO - Parcela 4 inserida para CNP 818
+2025-03-27 16:08:53,564 - INFO - Parcela 5 inserida para CNP 818
+2025-03-27 16:08:53,566 - INFO - Parcela 1 inserida para CNP 824
+2025-03-27 16:08:53,566 - INFO - Parcela 2 inserida para CNP 824
+2025-03-27 16:08:53,567 - INFO - Parcela 3 inserida para CNP 824
+2025-03-27 16:08:53,568 - INFO - Parcela 4 inserida para CNP 824
+2025-03-27 16:08:53,569 - INFO - Parcela 5 inserida para CNP 824
+2025-03-27 16:08:53,572 - INFO - Parcela 1 inserida para CNP 829
+2025-03-27 16:08:53,572 - INFO - Parcela 2 inserida para CNP 829
+2025-03-27 16:08:53,572 - INFO - Parcela 3 inserida para CNP 829
+2025-03-27 16:08:53,573 - INFO - Parcela 4 inserida para CNP 829
+2025-03-27 16:08:53,574 - INFO - Parcela 5 inserida para CNP 829
+2025-03-27 16:08:53,577 - INFO - Parcela 1 inserida para CNP 839
+2025-03-27 16:08:53,578 - INFO - Parcela 2 inserida para CNP 839
+2025-03-27 16:08:53,579 - INFO - Parcela 3 inserida para CNP 839
+2025-03-27 16:08:53,580 - INFO - Parcela 4 inserida para CNP 839
+2025-03-27 16:08:53,581 - INFO - Parcela 5 inserida para CNP 839
+2025-03-27 16:08:53,583 - INFO - Parcela 1 inserida para CNP 846
+2025-03-27 16:08:53,584 - INFO - Parcela 2 inserida para CNP 846
+2025-03-27 16:08:53,585 - INFO - Parcela 3 inserida para CNP 846
+2025-03-27 16:08:53,585 - INFO - Parcela 4 inserida para CNP 846
+2025-03-27 16:08:53,586 - INFO - Parcela 5 inserida para CNP 846
+2025-03-27 16:08:53,589 - INFO - Parcela 1 inserida para CNP 845
+2025-03-27 16:08:53,590 - INFO - Parcela 2 inserida para CNP 845
+2025-03-27 16:08:53,590 - INFO - Parcela 3 inserida para CNP 845
+2025-03-27 16:08:53,591 - INFO - Parcela 4 inserida para CNP 845
+2025-03-27 16:08:53,592 - INFO - Parcela 5 inserida para CNP 845
+2025-03-27 16:08:53,730 - INFO - Importação concluída com sucesso!
+2025-03-27 16:10:46,471 - INFO - Iniciando o processo de ETL...
+2025-03-27 16:10:52,628 - INFO - Planilha carregada com sucesso.
+2025-03-27 16:10:52,631 - INFO - Coluna do mês determinada a partir da planilha: fev_25
+2025-03-27 16:10:52,959 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna fev_25.
+2025-03-27 16:10:53,461 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
+2025-03-27 16:10:53,461 - INFO - ETL concluído com sucesso!
+2025-03-27 16:43:31,914 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:54:13,942 - ERROR - Exception on /_dash-update-component [POST]
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1301, in dispatch
-    cb = self.callback_map[output]
-         ~~~~~~~~~~~~~~~~~^^^^^^^^
-KeyError: '..download-pdf-link.href...download-pdf-link.children..'
+2025-03-27 16:45:26,726 - INFO - Dash is running on http://0.0.0.0:8050/
 
-The above exception was the direct cause of the following exception:
+2025-03-27 16:51:22,558 - INFO - Dash is running on http://0.0.0.0:8050/
 
-Traceback (most recent call last):
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1371, in dispatch
-    raise KeyError(msg) from missing_callback_function
-KeyError: "Callback function not found for output '..download-pdf-link.href...download-pdf-link.children..', perhaps you forgot to prepend the '@'?"
-2025-03-24 20:56:49,526 - INFO - Dash is running on http://0.0.0.0:8050/
+2025-03-27 17:01:18,037 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-24 20:59:51,116 - INFO - Dash is running on http://0.0.0.0:8050/
+2025-03-27 20:12:03,309 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-24 21:02:00,630 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:08:55,255 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:15:03,313 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:17:44,566 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:24:07,559 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:27:29,827 - INFO - Dash is running on http://0.0.0.0:8050/
-
-2025-03-24 21:29:07,940 - INFO - Dash is running on http://0.0.0.0:8050/
-
+2025-03-27 20:31:08,676 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 820, 825, 832, 837, 844, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 20:31:08,699 - INFO - Parcela 1 inserida para CNP 822
+2025-03-27 20:31:08,700 - INFO - Parcela 2 inserida para CNP 822
+2025-03-27 20:31:08,700 - INFO - Parcela 3 inserida para CNP 822
+2025-03-27 20:31:08,701 - INFO - Parcela 4 inserida para CNP 822
+2025-03-27 20:31:08,701 - INFO - Parcela 5 inserida para CNP 822
+2025-03-27 20:31:08,703 - INFO - Parcela 1 inserida para CNP 848
+2025-03-27 20:31:08,703 - INFO - Parcela 2 inserida para CNP 848
+2025-03-27 20:31:08,704 - INFO - Parcela 3 inserida para CNP 848
+2025-03-27 20:31:08,704 - INFO - Parcela 4 inserida para CNP 848
+2025-03-27 20:31:08,708 - INFO - Parcela 5 inserida para CNP 848
+2025-03-27 20:31:08,710 - INFO - Parcela 1 inserida para CNP 809
+2025-03-27 20:31:08,710 - INFO - Parcela 2 inserida para CNP 809
+2025-03-27 20:31:08,710 - INFO - Parcela 3 inserida para CNP 809
+2025-03-27 20:31:08,711 - INFO - Parcela 4 inserida para CNP 809
+2025-03-27 20:31:08,711 - INFO - Parcela 5 inserida para CNP 809
+2025-03-27 20:31:08,717 - INFO - Parcela 1 inserida para CNP 805
+2025-03-27 20:31:08,718 - INFO - Parcela 2 inserida para CNP 805
+2025-03-27 20:31:08,718 - INFO - Parcela 3 inserida para CNP 805
+2025-03-27 20:31:08,719 - INFO - Parcela 4 inserida para CNP 805
+2025-03-27 20:31:08,719 - INFO - Parcela 5 inserida para CNP 805
+2025-03-27 20:31:08,721 - INFO - Parcela 1 inserida para CNP 803
+2025-03-27 20:31:08,721 - INFO - Parcela 2 inserida para CNP 803
+2025-03-27 20:31:08,722 - INFO - Parcela 3 inserida para CNP 803
+2025-03-27 20:31:08,722 - INFO - Parcela 4 inserida para CNP 803
+2025-03-27 20:31:08,723 - INFO - Parcela 5 inserida para CNP 803
+2025-03-27 20:31:08,724 - INFO - Parcela 1 inserida para CNP 811
+2025-03-27 20:31:08,725 - INFO - Parcela 2 inserida para CNP 811
+2025-03-27 20:31:08,725 - INFO - Parcela 3 inserida para CNP 811
+2025-03-27 20:31:08,725 - INFO - Parcela 4 inserida para CNP 811
+2025-03-27 20:31:08,726 - INFO - Parcela 5 inserida para CNP 811
+2025-03-27 20:31:08,728 - INFO - Parcela 1 inserida para CNP 813
+2025-03-27 20:31:08,728 - INFO - Parcela 2 inserida para CNP 813
+2025-03-27 20:31:08,728 - INFO - Parcela 3 inserida para CNP 813
+2025-03-27 20:31:08,729 - INFO - Parcela 4 inserida para CNP 813
+2025-03-27 20:31:08,729 - INFO - Parcela 5 inserida para CNP 813
+2025-03-27 20:31:08,732 - INFO - Parcela 1 inserida para CNP 818
+2025-03-27 20:31:08,732 - INFO - Parcela 2 inserida para CNP 818
+2025-03-27 20:31:08,733 - INFO - Parcela 3 inserida para CNP 818
+2025-03-27 20:31:08,733 - INFO - Parcela 4 inserida para CNP 818
+2025-03-27 20:31:08,734 - INFO - Parcela 5 inserida para CNP 818
+2025-03-27 20:31:08,735 - INFO - Parcela 1 inserida para CNP 817
+2025-03-27 20:31:08,736 - INFO - Parcela 2 inserida para CNP 817
+2025-03-27 20:31:08,736 - INFO - Parcela 3 inserida para CNP 817
+2025-03-27 20:31:08,737 - INFO - Parcela 4 inserida para CNP 817
+2025-03-27 20:31:08,737 - INFO - Parcela 5 inserida para CNP 817
+2025-03-27 20:31:08,739 - INFO - Parcela 1 inserida para CNP 824
+2025-03-27 20:31:08,739 - INFO - Parcela 2 inserida para CNP 824
+2025-03-27 20:31:08,740 - INFO - Parcela 3 inserida para CNP 824
+2025-03-27 20:31:08,740 - INFO - Parcela 4 inserida para CNP 824
+2025-03-27 20:31:08,741 - INFO - Parcela 5 inserida para CNP 824
+2025-03-27 20:31:08,742 - INFO - Parcela 1 inserida para CNP 829
+2025-03-27 20:31:08,743 - INFO - Parcela 2 inserida para CNP 829
+2025-03-27 20:31:08,743 - INFO - Parcela 3 inserida para CNP 829
+2025-03-27 20:31:08,744 - INFO - Parcela 4 inserida para CNP 829
+2025-03-27 20:31:08,744 - INFO - Parcela 5 inserida para CNP 829
+2025-03-27 20:31:08,746 - INFO - Parcela 1 inserida para CNP 839
+2025-03-27 20:31:08,747 - INFO - Parcela 2 inserida para CNP 839
+2025-03-27 20:31:08,747 - INFO - Parcela 3 inserida para CNP 839
+2025-03-27 20:31:08,748 - INFO - Parcela 4 inserida para CNP 839
+2025-03-27 20:31:08,748 - INFO - Parcela 5 inserida para CNP 839
+2025-03-27 20:31:08,750 - INFO - Parcela 1 inserida para CNP 846
+2025-03-27 20:31:08,750 - INFO - Parcela 2 inserida para CNP 846
+2025-03-27 20:31:08,751 - INFO - Parcela 3 inserida para CNP 846
+2025-03-27 20:31:08,751 - INFO - Parcela 4 inserida para CNP 846
+2025-03-27 20:31:08,752 - INFO - Parcela 5 inserida para CNP 846
+2025-03-27 20:31:08,753 - INFO - Parcela 1 inserida para CNP 850
+2025-03-27 20:31:08,754 - INFO - Parcela 2 inserida para CNP 850
+2025-03-27 20:31:08,754 - INFO - Parcela 3 inserida para CNP 850
+2025-03-27 20:31:08,755 - INFO - Parcela 4 inserida para CNP 850
+2025-03-27 20:31:08,755 - INFO - Parcela 5 inserida para CNP 850
+2025-03-27 20:31:08,757 - INFO - Parcela 1 inserida para CNP 845
+2025-03-27 20:31:08,757 - INFO - Parcela 2 inserida para CNP 845
+2025-03-27 20:31:08,758 - INFO - Parcela 3 inserida para CNP 845
+2025-03-27 20:31:08,758 - INFO - Parcela 4 inserida para CNP 845
+2025-03-27 20:31:08,759 - INFO - Parcela 5 inserida para CNP 845
+2025-03-27 20:31:08,761 - INFO - Importação concluída com sucesso!
