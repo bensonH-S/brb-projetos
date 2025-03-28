@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/03/2025 às 01:24
+-- Tempo de geração: 28/03/2025 às 01:23
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -159,16 +159,6 @@ INSERT INTO `pag_seguradora` (`id`, `cnp`, `numero_parcela`, `data_vencimento`, 
 (13, 809, 3, NULL, 'PENDENTE', NULL, NULL),
 (14, 809, 4, NULL, 'PENDENTE', NULL, NULL),
 (15, 809, 5, NULL, 'PENDENTE', NULL, NULL),
-(16, 805, 1, '2024-05-15', 'PAGO', NULL, NULL),
-(17, 805, 2, '2024-06-15', 'PAGO', NULL, NULL),
-(18, 805, 3, '2024-07-15', 'PAGO', NULL, NULL),
-(19, 805, 4, '2024-08-15', 'PAGO', NULL, NULL),
-(20, 805, 5, '2024-09-15', 'PAGO', NULL, NULL),
-(21, 803, 1, '2025-03-15', 'PENDENTE', NULL, NULL),
-(22, 803, 2, '2025-04-15', 'PENDENTE', NULL, NULL),
-(23, 803, 3, '2025-05-15', 'PENDENTE', NULL, NULL),
-(24, 803, 4, '2025-06-15', 'PENDENTE', NULL, NULL),
-(25, 803, 5, '2025-07-15', 'PENDENTE', NULL, NULL),
 (26, 811, 1, NULL, 'EMITIR', NULL, NULL),
 (27, 811, 2, NULL, 'EMITIR', NULL, NULL),
 (28, 811, 3, NULL, 'EMITIR', NULL, NULL),
@@ -192,7 +182,7 @@ INSERT INTO `pag_seguradora` (`id`, `cnp`, `numero_parcela`, `data_vencimento`, 
 (46, 824, 1, '2025-01-15', 'PAGO', NULL, NULL),
 (47, 824, 2, '2025-02-15', 'PAGO', NULL, NULL),
 (48, 824, 3, '2025-03-15', 'PENDENTE', NULL, NULL),
-(49, 824, 4, '2025-04-15', 'PENDENTE', NULL, NULL),
+(49, 824, 4, '2025-04-15', 'PAGO', NULL, NULL),
 (50, 824, 5, '2025-05-15', 'PENDENTE', NULL, NULL),
 (51, 829, 1, NULL, 'EMITIR', NULL, NULL),
 (52, 829, 2, NULL, 'EMITIR', NULL, NULL),
@@ -218,7 +208,82 @@ INSERT INTO `pag_seguradora` (`id`, `cnp`, `numero_parcela`, `data_vencimento`, 
 (72, 845, 2, '2025-02-15', 'PAGO', NULL, NULL),
 (73, 845, 3, '2025-03-15', 'PENDENTE', NULL, NULL),
 (74, 845, 4, '2025-04-15', 'PENDENTE', NULL, NULL),
-(75, 845, 5, '2025-05-15', 'PENDENTE', NULL, NULL);
+(75, 845, 5, '2025-05-15', 'PENDENTE', NULL, NULL),
+(76, 822, 1, '2024-09-15', 'PAGO', NULL, NULL),
+(77, 822, 2, '2024-10-15', 'PAGO', NULL, NULL),
+(78, 822, 3, '2024-11-15', 'PAGO', NULL, NULL),
+(79, 822, 4, '2024-12-15', 'PENDENTE', NULL, NULL),
+(80, 822, 5, '2025-01-15', 'PENDENTE', NULL, NULL),
+(81, 848, 1, '2024-09-15', 'PAGO', NULL, NULL),
+(82, 848, 2, '2024-10-15', 'PENDENTE', NULL, NULL),
+(83, 848, 3, '2024-11-15', 'PENDENTE', NULL, NULL),
+(84, 848, 4, '2024-12-15', 'PENDENTE', NULL, NULL),
+(85, 848, 5, '2025-01-15', 'PENDENTE', NULL, NULL),
+(86, 809, 1, NULL, 'PENDENTE', NULL, NULL),
+(87, 809, 2, NULL, 'PENDENTE', NULL, NULL),
+(88, 809, 3, NULL, 'PENDENTE', NULL, NULL),
+(89, 809, 4, NULL, 'PENDENTE', NULL, NULL),
+(90, 809, 5, NULL, 'PENDENTE', NULL, NULL),
+(91, 805, 1, '2024-05-15', 'PAGO', NULL, NULL),
+(92, 805, 2, '2024-06-15', 'PAGO', NULL, NULL),
+(93, 805, 3, '2024-07-15', 'PAGO', NULL, NULL),
+(94, 805, 4, '2024-08-15', 'PAGO', NULL, NULL),
+(95, 805, 5, '2024-09-15', 'PAGO', NULL, NULL),
+(96, 803, 1, '2025-03-15', 'PENDENTE', NULL, NULL),
+(97, 803, 2, '2025-04-15', 'PENDENTE', NULL, NULL),
+(98, 803, 3, '2025-05-15', 'PENDENTE', NULL, NULL),
+(99, 803, 4, '2025-06-15', 'PENDENTE', NULL, NULL),
+(100, 803, 5, '2025-07-15', 'PENDENTE', NULL, NULL),
+(101, 811, 1, NULL, 'EMITIR', NULL, NULL),
+(102, 811, 2, NULL, 'EMITIR', NULL, NULL),
+(103, 811, 3, NULL, 'EMITIR', NULL, NULL),
+(104, 811, 4, NULL, 'EMITIR', NULL, NULL),
+(105, 811, 5, NULL, 'EMITIR', NULL, NULL),
+(106, 813, 1, NULL, 'EMITIR', NULL, NULL),
+(107, 813, 2, NULL, 'EMITIR', NULL, NULL),
+(108, 813, 3, NULL, 'EMITIR', NULL, NULL),
+(109, 813, 4, NULL, 'EMITIR', NULL, NULL),
+(110, 813, 5, NULL, 'EMITIR', NULL, NULL),
+(111, 818, 1, '2024-05-15', 'PAGO', NULL, NULL),
+(112, 818, 2, '2024-06-15', 'PAGO', NULL, NULL),
+(113, 818, 3, '2024-07-15', 'PAGO', NULL, NULL),
+(114, 818, 4, '2024-08-15', 'PAGO', NULL, NULL),
+(115, 818, 5, '2024-09-15', 'PAGO', NULL, NULL),
+(116, 817, 1, '2024-01-16', 'PAGO', NULL, NULL),
+(117, 817, 2, '2024-02-15', 'PAGO', NULL, NULL),
+(118, 817, 3, '2024-03-15', 'PAGO', NULL, NULL),
+(119, 817, 4, '2024-04-15', 'PAGO', NULL, NULL),
+(120, 817, 5, '2024-05-15', 'PAGO', NULL, NULL),
+(121, 824, 1, '2025-01-15', 'PAGO', NULL, NULL),
+(122, 824, 2, '2025-02-15', 'PAGO', NULL, NULL),
+(123, 824, 3, '2025-03-15', 'PENDENTE', NULL, NULL),
+(124, 824, 4, '2025-04-15', 'PENDENTE', NULL, NULL),
+(125, 824, 5, '2025-05-15', 'PENDENTE', NULL, NULL),
+(126, 829, 1, NULL, 'EMITIR', NULL, NULL),
+(127, 829, 2, NULL, 'EMITIR', NULL, NULL),
+(128, 829, 3, NULL, 'EMITIR', NULL, NULL),
+(129, 829, 4, NULL, 'EMITIR', NULL, NULL),
+(130, 829, 5, NULL, 'EMITIR', NULL, NULL),
+(131, 839, 1, '2024-01-15', 'PAGO', NULL, NULL),
+(132, 839, 2, '2024-02-15', 'PAGO', NULL, NULL),
+(133, 839, 3, '2024-03-15', 'PENDENTE', NULL, NULL),
+(134, 839, 4, '2024-04-15', 'PENDENTE', NULL, NULL),
+(135, 839, 5, '2024-05-15', 'PENDENTE', NULL, NULL),
+(136, 846, 1, '2024-05-25', 'PENDENTE', NULL, NULL),
+(137, 846, 2, '2024-06-25', 'PENDENTE', NULL, NULL),
+(138, 846, 3, '2024-07-25', 'PENDENTE', NULL, NULL),
+(139, 846, 4, '2024-08-25', 'PENDENTE', NULL, NULL),
+(140, 846, 5, '2024-09-25', 'PENDENTE', NULL, NULL),
+(141, 850, 1, '2024-06-15', 'PAGO', NULL, NULL),
+(142, 850, 2, '2024-07-15', 'PAGO', NULL, NULL),
+(143, 850, 3, '2024-08-15', 'PAGO', NULL, NULL),
+(144, 850, 4, '2024-09-15', 'PAGO', NULL, NULL),
+(145, 850, 5, '2024-10-15', 'PAGO', NULL, NULL),
+(146, 845, 1, '2025-01-15', 'PAGO', NULL, NULL),
+(147, 845, 2, '2025-02-15', 'PAGO', NULL, NULL),
+(148, 845, 3, '2025-03-15', 'PENDENTE', NULL, NULL),
+(149, 845, 4, '2025-04-15', 'PENDENTE', NULL, NULL),
+(150, 845, 5, '2025-05-15', 'PENDENTE', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -231,6 +296,7 @@ CREATE TABLE `seguradora` (
   `inicio_vigencia_seguro` date DEFAULT NULL,
   `vencimento` date DEFAULT NULL,
   `valor_cobertura` decimal(15,2) DEFAULT NULL,
+  `valor_proposto` decimal(15,2) DEFAULT NULL,
   `valor_parcela` decimal(15,2) DEFAULT NULL,
   `forma_de_pgt` varchar(20) DEFAULT NULL,
   `situacao_proposta` varchar(50) DEFAULT NULL,
@@ -243,22 +309,22 @@ CREATE TABLE `seguradora` (
 -- Despejando dados para a tabela `seguradora`
 --
 
-INSERT INTO `seguradora` (`cnp`, `inicio_vigencia_seguro`, `vencimento`, `valor_cobertura`, `valor_parcela`, `forma_de_pgt`, `situacao_proposta`, `obs`, `apolice`, `multiseguros`) VALUES
-(803, '2024-12-01', '2025-12-01', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000320271', 'CADASTRAR'),
-(805, '2024-04-15', '2025-04-15', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314771', 'CADASTRAR'),
-(809, '2024-01-11', '2025-01-11', 0.00, 0.00, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
-(811, '2025-02-06', '2026-02-06', 70000.00, 629.89, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
-(813, '2025-02-01', '2026-02-01', 100000.00, 899.84, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
-(817, '2024-01-04', '2025-01-04', 90000.00, 809.86, 'boleto', 'A', 'CONFIRMAR O STATUS DO CNP.', '1351000310271', NULL),
-(818, '2024-04-15', '2025-04-15', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314571', NULL),
-(822, '2024-07-31', '2025-07-31', 70000.00, 629.89, 'boleto', 'A', 'APÓLICE CANCELADA POR FALTA DE PGTO', '1351000315871', NULL),
-(824, '2024-12-01', '2025-12-01', 90000.00, 809.86, 'boleto', 'A', 'Sem pendência ', '1351000319071', NULL),
-(829, '2025-02-01', '2026-02-01', 70000.00, 629.89, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
-(839, '2024-12-01', '2025-12-01', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000318071', NULL),
-(845, '2024-12-01', '2025-12-01', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000318171', 'CADASTRAR'),
-(846, '2024-04-15', '2025-04-15', 70000.00, 629.89, 'boleto', 'A', 'CONFIRMAR O STATUS DO CNP.', '1351000314671', NULL),
-(848, '2024-07-31', '2025-07-31', 70000.00, 629.89, 'boleto', 'A', 'APÓLICE CANCELADA POR FALTA DE PGTO', '1351000315671', NULL),
-(850, '2024-04-15', '2025-04-15', 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314871', 'CADASTRAR');
+INSERT INTO `seguradora` (`cnp`, `inicio_vigencia_seguro`, `vencimento`, `valor_cobertura`, `valor_proposto`, `valor_parcela`, `forma_de_pgt`, `situacao_proposta`, `obs`, `apolice`, `multiseguros`) VALUES
+(803, '2024-12-01', '2025-12-01', 70000.00, NULL, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000320271', 'CADASTRAR'),
+(805, '2024-04-15', '2025-04-15', 70000.00, NULL, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314771', 'CADASTRAR'),
+(809, '2024-01-11', '2025-01-11', 0.00, 70000.00, 0.00, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
+(811, '2025-02-06', '2026-02-06', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
+(813, '2025-02-01', '2026-02-01', 100000.00, 90000.00, 899.84, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
+(817, '2024-01-04', '2025-01-04', 90000.00, 70000.00, 809.86, 'boleto', 'A', 'CONFIRMAR O STATUS DO CNP.', '1351000310271', NULL),
+(818, '2024-04-15', '2025-04-15', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314571', NULL),
+(822, '2024-07-31', '2025-07-31', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'APÓLICE CANCELADA POR FALTA DE PGTO', '1351000315871', NULL),
+(824, '2024-12-01', '2025-12-01', 90000.00, 70000.00, 809.86, 'boleto', 'A', 'Sem pendência ', '1351000319071', NULL),
+(829, '2025-02-01', '2026-02-01', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Aguardando emissão da apólice', NULL, NULL),
+(839, '2024-12-01', '2025-12-01', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000318071', NULL),
+(845, '2024-12-01', '2025-12-01', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000318171', 'CADASTRAR'),
+(846, '2024-04-15', '2025-04-15', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'CONFIRMAR O STATUS DO CNP.', '1351000314671', NULL),
+(848, '2024-07-31', '2025-07-31', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'APÓLICE CANCELADA POR FALTA DE PGTO', '1351000315671', NULL),
+(850, '2024-04-15', '2025-04-15', 70000.00, 70000.00, 629.89, 'boleto', 'A', 'Sem pendência ', '1351000314871', 'CADASTRAR');
 
 --
 -- Índices para tabelas despejadas
@@ -297,7 +363,7 @@ ALTER TABLE `seguradora`
 -- AUTO_INCREMENT de tabela `pag_seguradora`
 --
 ALTER TABLE `pag_seguradora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- Restrições para tabelas despejadas
