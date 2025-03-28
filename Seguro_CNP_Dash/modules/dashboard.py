@@ -17,9 +17,13 @@ import plotly.graph_objects as go  # Para gráficos mais personalizados
 
 # Definição do layout do dashboard
 layout = html.Div([
-    # Título do dashboard, centralizado, com estilo padronizado
-    html.H3("Dashboard - Gestão de Seguros", className="text-center mb-4",
-            style={"fontSize": "30px", "fontWeight": "bold", "color": "#023e7c", "marginTop": "20px"}),
+    # Cabeçalho com título e versão
+    html.Div([
+        html.H3("Dashboard - Gestão de Seguros", className="text-center mb-2",
+                style={"fontSize": "32px", "fontWeight": "bold", "color": "#023e7c", "marginTop": "20px", "textShadow": "2px 2px 4px rgba(0,0,0,0.1)"}),
+        html.Div("Versão: v100.01", className="text-center mb-4",
+                 style={"fontSize": "14px", "color": "#666", "fontStyle": "italic"})
+    ]),
 
     # Linha com o campo de busca
     dbc.Row([
@@ -28,91 +32,99 @@ layout = html.Div([
             dbc.Input(id="search-dashboard", type="text",
                       placeholder="Buscar por CNP ou Razão Social...",
                       className="mb-3",
-                      style={"borderRadius": "5px", "border": "1px solid #023e7c"}),
+                      style={"borderRadius": "5px", "border": "2px solid #023e7c", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)", "padding": "10px"}),
             width=4, style={"margin": "0 auto"}
         ),
-    ], justify="center", className="mb-3"),
+    ], justify="center", className="mb-4"),
 
     # Linha com cards de resumo geral
-    html.Hr(className="my-4", style={"borderColor": "#023e7c"}),  # Linha divisória
+    html.Hr(className="my-4", style={"borderColor": "#023e7c", "borderWidth": "2px"}),  # Linha divisória
     html.H4("Resumo Geral", className="text-center mb-4",
-            style={"fontSize": "24px", "fontWeight": "bold", "color": "#023e7c"}),
+            style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c", "textShadow": "1px 1px 3px rgba(0,0,0,0.1)"}),
     dbc.Row([
         # Card 1: Número total de CNPs
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H5("Total de CNPs", className="card-title text-center", style={"fontSize": "16px"}),
-                    html.H3(id="total-cnps", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px"}),
+                    html.H5("Total de CNPs", className="card-title text-center", style={"fontSize": "16px", "color": "#023e7c"}),
+                    html.H3(id="total-cnps", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px", "fontWeight": "bold"}),
                 ])
-            ], style={"border": "1px solid #023e7c", "borderRadius": "8px", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)"})
-        ], width=3, className="mb-3"),
+            ], style={"border": "2px solid #023e7c", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.2)", "background": "linear-gradient(135deg, #f5f7fa, #c3cfe2)"})
+        ], width=3, className="mb-4"),
         # Card 2: Número de seguros ativos
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H5("Seguros Ativos", className="card-title text-center", style={"fontSize": "16px"}),
-                    html.H3(id="seguros-ativos", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px"}),
+                    html.H5("Seguros Ativos", className="card-title text-center", style={"fontSize": "16px", "color": "#023e7c"}),
+                    html.H3(id="seguros-ativos", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px", "fontWeight": "bold"}),
                 ])
-            ], style={"border": "1px solid #023e7c", "borderRadius": "8px", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)"})
-        ], width=3, className="mb-3"),
+            ], style={"border": "2px solid #023e7c", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.2)", "background": "linear-gradient(135deg, #f5f7fa, #c3cfe2)"})
+        ], width=3, className="mb-4"),
         # Card 3: Valor total de cobertura
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H5("Valor Total de Cobertura", className="card-title text-center", style={"fontSize": "16px"}),
-                    html.H3(id="valor-total-cobertura", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px"}),
+                    html.H5("Valor Total de Cobertura", className="card-title text-center", style={"fontSize": "16px", "color": "#023e7c"}),
+                    html.H3(id="valor-total-cobertura", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px", "fontWeight": "bold"}),
                 ])
-            ], style={"border": "1px solid #023e7c", "borderRadius": "8px", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)"})
-        ], width=3, className="mb-3"),
+            ], style={"border": "2px solid #023e7c", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.2)", "background": "linear-gradient(135deg, #f5f7fa, #c3cfe2)"})
+        ], width=3, className="mb-4"),
         # Card 4: Seguros que vencem no mês subsequente
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H5("Próximos Vencimentos", className="card-title text-center", style={"fontSize": "16px"}),
-                    html.H3(id="seguros-proximos-vencer", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px"}),
+                    html.H5("Próximos Vencimentos", className="card-title text-center", style={"fontSize": "16px", "color": "#023e7c"}),
+                    html.H3(id="seguros-proximos-vencer", className="card-text text-center", style={"color": "#023e7c", "fontSize": "24px", "fontWeight": "bold"}),
                 ])
-            ], style={"border": "1px solid #023e7c", "borderRadius": "8px", "boxShadow": "0 2px 5px rgba(0,0,0,0.1)"})
-        ], width=3, className="mb-3"),
-    ], justify="center", className="mb-4"),
+            ], style={"border": "2px solid #023e7c", "borderRadius": "10px", "boxShadow": "0 4px 8px rgba(0,0,0,0.2)", "background": "linear-gradient(135deg, #f5f7fa, #c3cfe2)"})
+        ], width=3, className="mb-4"),
+    ], justify="center", className="mb-5"),
 
     # Seção de Gráficos
-    html.Hr(className="my-4", style={"borderColor": "#023e7c"}),  # Linha divisória
-    html.H4("Análise Visual", className="text-center mb-4",
-            style={"fontSize": "24px", "fontWeight": "bold", "color": "#023e7c"}),
+    html.Hr(className="my-5", style={"borderColor": "#023e7c", "borderWidth": "2px"}),  # Linha divisória
+    html.H4("Análise Visual", className="text-center mb-5",
+            style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c", "textShadow": "1px 1px 3px rgba(0,0,0,0.1)"}),
 
     # Linha 1: Top 5 CNPs e Status de Pagamento
     dbc.Row([
         # Gráfico 1: Top 5 CNPs que Mais Produziram nos Últimos 12 Meses
         dbc.Col([
-            html.H5("Top 5 CNPs que Mais Produziram nos Últimos 12 Meses", className="text-center mb-3", style={"fontSize": "18px"}),
-            dcc.Graph(id="grafico-top-valor-cobertura")
-        ], width=6),
+            html.Div([
+                html.H5("Top 5 CNPs que Mais Produziram nos Últimos 12 Meses", className="text-center mb-3", style={"fontSize": "18px", "color": "#023e7c", "fontWeight": "bold"}),
+                dcc.Graph(id="grafico-top-valor-cobertura")
+            ], style={"backgroundColor": "#f9f9f9", "borderRadius": "10px", "padding": "20px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)"})
+        ], width=6, className="mb-5"),
         # Gráfico 2: Distribuição do Status de Pagamento
         dbc.Col([
-            html.H5("Distribuição do Status de Pagamento", className="text-center mb-3", style={"fontSize": "18px"}),
-            dcc.Graph(id="grafico-status-pagamento")
-        ], width=6),
-    ], className="mb-4"),
+            html.Div([
+                html.H5("Distribuição do Status de Pagamento", className="text-center mb-3", style={"fontSize": "18px", "color": "#023e7c", "fontWeight": "bold"}),
+                dcc.Graph(id="grafico-status-pagamento")
+            ], style={"backgroundColor": "#f9f9f9", "borderRadius": "10px", "padding": "20px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)"})
+        ], width=6, className="mb-5"),
+    ], justify="center", className="mb-5"),
 
-    # Linha 2: Vencimentos ao Longo do Tempo e Valor de Cobertura por Status
+    # Linha 2: Vencimentos ao Longo do Tempo e Evolução da Média dos Top 5 CNPs
     dbc.Row([
         # Gráfico 3: Vencimentos ao Longo do Tempo
         dbc.Col([
-            html.H5("Vencimentos ao Longo do Tempo", className="text-center mb-3", style={"fontSize": "18px"}),
-            dcc.Graph(id="grafico-vencimentos-tempo")
-        ], width=6),
-        # Gráfico 4: Valor de Cobertura e Proposto por Status de Pagamento
+            html.Div([
+                html.H5("Vencimentos ao Longo do Tempo", className="text-center mb-3", style={"fontSize": "18px", "color": "#023e7c", "fontWeight": "bold"}),
+                dcc.Graph(id="grafico-vencimentos-tempo")
+            ], style={"backgroundColor": "#f9f9f9", "borderRadius": "10px", "padding": "20px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)"})
+        ], width=6, className="mb-5"),
+        # Gráfico 4: Evolução da Média Mensal dos Top 5 CNPs
         dbc.Col([
-            html.H5("Valores por Status de Pagamento", className="text-center mb-3", style={"fontSize": "18px"}),
-            dcc.Graph(id="grafico-valores-por-status")
-        ], width=6),
-    ], className="mb-4"),
+            html.Div([
+                html.H5("Evolução da Média Mensal dos Top 5 CNPs", className="text-center mb-3", style={"fontSize": "18px", "color": "#023e7c", "fontWeight": "bold"}),
+                dcc.Graph(id="grafico-evolucao-top5")
+            ], style={"backgroundColor": "#f9f9f9", "borderRadius": "10px", "padding": "20px", "boxShadow": "0 4px 8px rgba(0,0,0,0.1)"})
+        ], width=6, className="mb-5"),
+    ], justify="center", className="mb-5"),
 
     # Tabela interativa para exibir os dados dos CNPs e seguros
-    html.Hr(className="my-4", style={"borderColor": "#023e7c"}),  # Linha divisória
-    html.H4("Detalhes dos Seguros", className="text-center mb-4",
-            style={"fontSize": "24px", "fontWeight": "bold", "color": "#023e7c"}),
+    html.Hr(className="my-5", style={"borderColor": "#023e7c", "borderWidth": "2px"}),  # Linha divisória
+    html.H4("Detalhes dos Seguros", className="text-center mb-5",
+            style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c", "textShadow": "1px 1px 3px rgba(0,0,0,0.1)"}),
     dash_table.DataTable(
         id='dashboard-table',
         # Definição das colunas da tabela
@@ -128,11 +140,11 @@ layout = html.Div([
         ],
         data=[],  # Dados inicialmente vazios (serão preenchidos via callback)
         # Estilo da tabela
-        style_table={'overflowX': 'auto', 'border': '1px solid #023e7c', 'borderRadius': '8px'},
+        style_table={'overflowX': 'auto', 'border': '2px solid #023e7c', 'borderRadius': '10px', 'boxShadow': '0 4px 8px rgba(0,0,0,0.2)', 'marginBottom': '50px'},
         style_header={'backgroundColor': '#023e7c', 'color': 'white',
-                      'fontWeight': 'bold', 'textAlign': 'center', 'border': '1px solid #023e7c'},
-        style_data={'textAlign': 'center', 'border': '1px solid #023e7c', 'fontSize': '14px'},
-        style_cell={'padding': '10px'},
+                      'fontWeight': 'bold', 'textAlign': 'center', 'border': '1px solid #023e7c', 'fontSize': '16px'},
+        style_data={'textAlign': 'center', 'border': '1px solid #023e7c', 'fontSize': '14px', 'backgroundColor': '#f9f9f9'},
+        style_cell={'padding': '12px'},
         # Estilo condicional para o status de pagamento
         style_data_conditional=[
             {
@@ -175,7 +187,7 @@ layout = html.Div([
         Output("grafico-top-valor-cobertura", "figure"),
         Output("grafico-status-pagamento", "figure"),
         Output("grafico-vencimentos-tempo", "figure"),
-        Output("grafico-valores-por-status", "figure"),
+        Output("grafico-evolucao-top5", "figure"),
     ],
     [Input("dashboard-table", "id"), Input("search-dashboard", "value")]
 )
@@ -296,30 +308,39 @@ def load_dashboard_data(_, search_value):
 
             # Calcula a média dos últimos 12 meses para cada CNP
             df_historico["media_12_meses"] = df_historico[meses_12].mean(axis=1, skipna=True)
-            df_historico["media_12_meses"] = df_historico["media_12_meses"].fillna(0)  # Substitui NaN por 0
+            # Converte explicitamente para float para evitar o FutureWarning
+            df_historico["media_12_meses"] = df_historico["media_12_meses"].astype(float).fillna(0)
 
-            # Seleciona apenas as colunas necessárias (cnp e média)
+            # Gráfico 1: Top 5 CNPs que Mais Produziram nos Últimos 12 Meses
             df_top_valor = df_historico[["cnp", "media_12_meses"]].copy()
             df_top_valor = df_top_valor.sort_values(by="media_12_meses", ascending=False).head(5)  # Top 5
             df_top_valor["label"] = df_top_valor["cnp"].astype(str)  # Usar apenas o número do CNP como rótulo
-
-            # Gráfico 1: Top 5 CNPs que Mais Produziram nos Últimos 12 Meses
-            fig_top_valor = px.bar(
-                df_top_valor,
-                x="label",
-                y="media_12_meses",
-                title="Top 5 CNPs que Mais Produziram nos Últimos 12 Meses",
-                labels={"media_12_meses": "Média Mensal (R$)", "label": "CNP"},
-                color_discrete_sequence=["#023e7c"]
-            )
+            fig_top_valor = go.Figure(data=[
+                go.Bar(
+                    x=df_top_valor["label"],
+                    y=df_top_valor["media_12_meses"],
+                    marker=dict(
+                        color=["#1f77b4", "#4e9bd4", "#7bbde3", "#a8d5f0", "#d1e9f9"],
+                        line=dict(color="#ffffff", width=2)
+                    ),
+                    text=df_top_valor["media_12_meses"].apply(lambda x: f"R$ {x:,.2f}"),
+                    textposition="outside",
+                    textfont=dict(size=12, color="#023e7c"),
+                    hoverinfo="x+y"
+                )
+            ])
             fig_top_valor.update_layout(
-                title={"x": 0.5, "xanchor": "center", "font": {"size": 16}},
+                title="",
                 xaxis_title="CNP",
                 yaxis_title="Média Mensal (R$)",
-                xaxis={"tickangle": 0},  # Sem rotação, já que os rótulos são curtos (apenas números)
-                plot_bgcolor="white",
-                paper_bgcolor="white",
-                font={"color": "#023e7c"}
+                xaxis=dict(tickangle=0, title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                yaxis=dict(title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                font=dict(color="#023e7c"),
+                margin=dict(l=50, r=50, t=30, b=50),
+                showlegend=False,
+                height=400
             )
 
             # Gráfico 2: Distribuição do Status de Pagamento (Donut)
@@ -330,74 +351,103 @@ def load_dashboard_data(_, search_value):
                     go.Pie(
                         labels=df_status["status_pagamento"],
                         values=df_status["contagem"],
-                        hole=0.4,
-                        marker_colors=["#90EE90", "#FFFF99", "#FF9999", "#D3D3D3", "#A9A9A9"],
+                        hole=0.5,
+                        marker=dict(
+                            colors=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
+                            line=dict(color="#ffffff", width=2)
+                        ),
                         textinfo="percent+label",
-                        textposition="inside"
+                        textposition="inside",
+                        textfont=dict(size=14, color="#ffffff"),
+                        hoverinfo="label+percent",
+                        pull=[0.05, 0, 0, 0, 0]  # Destaca a primeira fatia
                     )
                 ]
             )
             fig_status_pagamento.update_layout(
-                title="Distribuição do Status de Pagamento",
-                title_x=0.5,
+                title="",
                 showlegend=True,
-                plot_bgcolor="white",
-                paper_bgcolor="white",
-                font={"color": "#023e7c"}
+                legend=dict(orientation="h", yanchor="bottom", y=-0.2, xanchor="center", x=0.5),
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                font=dict(color="#023e7c"),
+                margin=dict(l=50, r=50, t=30, b=50),
+                height=400
             )
 
             # Gráfico 3: Vencimentos ao Longo do Tempo (Linha)
             df["mes_vencimento"] = df["vencimento_date"].dt.to_period("M").astype(str)
             df_vencimentos = df[df["mes_vencimento"] != "NaT"].groupby("mes_vencimento").size().reset_index(name="contagem")
             df_vencimentos = df_vencimentos.sort_values("mes_vencimento")
-            fig_vencimentos = px.line(
-                df_vencimentos,
-                x="mes_vencimento",
-                y="contagem",
-                title="Vencimentos ao Longo do Tempo",
-                labels={"mes_vencimento": "Mês de Vencimento", "contagem": "Número de Seguros"},
-                color_discrete_sequence=["#023e7c"],
-                markers=True
-            )
-            fig_vencimentos.update_layout(
-                title={"x": 0.5, "xanchor": "center", "font": {"size": 16}},
-                xaxis_title="Mês de Vencimento",
-                yaxis_title="Número de Seguros",
-                xaxis={"tickangle": 45},
-                plot_bgcolor="white",
-                paper_bgcolor="white",
-                font={"color": "#023e7c"}
-            )
-
-            # Gráfico 4: Valor de Cobertura e Proposto por Status de Pagamento (Barras Agrupadas)
-            df_valores_status = df.groupby("status_pagamento").agg({
-                "valor_cobertura_num": "sum",
-                "valor_proposto_num": "sum"
-            }).reset_index()
-            fig_valores_status = go.Figure(data=[
-                go.Bar(
-                    name="Valor de Cobertura",
-                    x=df_valores_status["status_pagamento"],
-                    y=df_valores_status["valor_cobertura_num"],
-                    marker_color="#023e7c"
-                ),
-                go.Bar(
-                    name="Valor Proposto",
-                    x=df_valores_status["status_pagamento"],
-                    y=df_valores_status["valor_proposto_num"],
-                    marker_color="#4682B4"
+            fig_vencimentos = go.Figure(data=[
+                go.Scatter(
+                    x=df_vencimentos["mes_vencimento"],
+                    y=df_vencimentos["contagem"],
+                    mode="lines+markers",
+                    line=dict(color="#1f77b4", width=3),
+                    marker=dict(size=10, color="#ff7f0e", line=dict(width=2, color="#ffffff")),
+                    hoverinfo="x+y",
+                    text=df_vencimentos["contagem"],
+                    textposition="top center",
+                    textfont=dict(size=12, color="#023e7c")
                 )
             ])
-            fig_valores_status.update_layout(
-                title="Valores por Status de Pagamento",
-                title_x=0.5,
-                xaxis_title="Status Pagamento",
+            fig_vencimentos.update_layout(
+                title="",
+                xaxis_title="Mês de Vencimento",
+                yaxis_title="Número de Seguros",
+                xaxis=dict(tickangle=45, title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                yaxis=dict(title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                font=dict(color="#023e7c"),
+                margin=dict(l=50, r=50, t=30, b=50),
+                showlegend=False,
+                height=400
+            )
+
+            # Gráfico 4: Evolução da Média Mensal dos Top 5 CNPs (Linhas)
+            top_5_cnps = df_top_valor["cnp"].tolist()  # Lista dos Top 5 CNPs
+            df_evolucao = df_historico[df_historico["cnp"].isin(top_5_cnps)][["cnp"] + meses_12]
+            df_evolucao_melted = df_evolucao.melt(id_vars=["cnp"], value_vars=meses_12, var_name="mes", value_name="valor")
+            df_evolucao_melted["cnp"] = df_evolucao_melted["cnp"].astype(str)
+            # Mapeia os nomes dos meses para um formato mais legível
+            mes_map = {
+                "abr_24": "Abr/24", "mai_24": "Mai/24", "jun_24": "Jun/24", "jul_24": "Jul/24",
+                "ago_24": "Ago/24", "set_24": "Set/24", "out_24": "Out/24", "nov_24": "Nov/24",
+                "dez_24": "Dez/24", "jan_25": "Jan/25", "fev_25": "Fev/25", "mar_25": "Mar/25"
+            }
+            df_evolucao_melted["mes"] = df_evolucao_melted["mes"].map(mes_map)
+            fig_evolucao = go.Figure()
+            colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
+            for i, cnp in enumerate(top_5_cnps):
+                df_cnp = df_evolucao_melted[df_evolucao_melted["cnp"] == str(cnp)]
+                fig_evolucao.add_trace(
+                    go.Scatter(
+                        x=df_cnp["mes"],
+                        y=df_cnp["valor"],
+                        mode="lines+markers",
+                        name=f"CNP {cnp}",
+                        line=dict(color=colors[i % len(colors)], width=3),
+                        marker=dict(size=10, line=dict(width=2, color="#ffffff")),
+                        hoverinfo="x+y",
+                        text=df_cnp["valor"].apply(lambda x: f"R$ {x:,.2f}" if pd.notnull(x) else "N/A"),
+                        textposition="top center",
+                        textfont=dict(size=12, color="#023e7c")
+                    )
+                )
+            fig_evolucao.update_layout(
+                title="",
+                xaxis_title="Mês",
                 yaxis_title="Valor (R$)",
-                barmode="group",
-                plot_bgcolor="white",
-                paper_bgcolor="white",
-                font={"color": "#023e7c"},
-                legend={"x": 1, "y": 1, "bgcolor": "rgba(255,255,255,0.8)"}
+                xaxis=dict(tickangle=45, title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                yaxis=dict(title_font=dict(size=14, color="#023e7c"), tickfont=dict(size=12, color="#023e7c")),
+                plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)",
+                font=dict(color="#023e7c"),
+                margin=dict(l=50, r=50, t=30, b=50),
+                legend=dict(orientation="h", yanchor="bottom", y=-0.4, xanchor="center", x=0.5),
+                height=400
             )
 
         # Remove colunas auxiliares antes de retornar os dados para a tabela
@@ -412,7 +462,7 @@ def load_dashboard_data(_, search_value):
             fig_top_valor,
             fig_status_pagamento,
             fig_vencimentos,
-            fig_valores_status
+            fig_evolucao
         )
 
     except Exception as e:
