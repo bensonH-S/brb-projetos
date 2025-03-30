@@ -1,8 +1,9 @@
+# app.py
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
-from modules import dashboard, cnps, seguro, relatorios, etl_page  # Importando o módulo de ETL
+from modules import dashboard, cnps, seguro, relatorios, etl_page, sobre  # Importando o novo módulo Sobre
 import logging
 
 # Desativar logs do servidor Flask/Werkzeug
@@ -26,6 +27,7 @@ app.layout = html.Div([
                 dbc.NavLink("Seguro", href="/seguro", active="exact"),
                 dbc.NavLink("Relatórios", href="/relatorios", active="exact"),
                 dbc.NavLink("Executar ETL", href="/etl", active="exact"),
+                dbc.NavLink("Sobre", href="/sobre", active="exact"),  # Nova aba "Sobre"
             ], vertical=True, pills=True, className="mt-3"),
         ], width=2, style={"position": "fixed", "height": "100vh", "overflow-y": "auto", "background-color": "#EDEDED", "color": "white"}),
         
@@ -46,6 +48,8 @@ def render_page_content(pathname):
         return relatorios.layout
     elif pathname == "/etl":
         return etl_page.layout
+    elif pathname == "/sobre":  # Nova rota para a página "Sobre"
+        return sobre.layout
     else:
         return html.H3("404 - Página não encontrada")
 
