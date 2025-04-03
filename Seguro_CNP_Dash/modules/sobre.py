@@ -202,91 +202,154 @@ def update_graph_top_cnps(search_value):
     return figure
             """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
         ]
-
     elif doc_type == "manual_uso":
         return [
-            html.H4("Manual de Uso", className="mb-3",
-                    style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
-            html.P("Este manual explica como usar a aplicação Seguro CNP Dash de forma eficiente.", style={"color": "#666"}),
-            html.Hr(),
+        html.H4("Manual de Uso", className="mb-3",
+                style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
+        html.P("Esse Manual explica como usar a aplicação CentralSeg de forma eficiente.", style={"color": "#666"}),
+        html.Hr(),
 
-            # Introdução
-            html.H5("Introdução", style={"color": "#023e7c"}),
-            html.P("A aplicação Seguro CNP Dash foi desenvolvida para gerenciar informações de seguros de CNPs, "
-                   "oferecendo um dashboard interativo, relatórios e um pipeline de ETL para atualização de dados.", style={"color": "#666"}),
+        # Introdução
+        html.H5("Introdução", style={"color": "#023e7c"}),
+        html.P("Esse Manual explica como usar a aplicação CentralSeg de forma eficiente.", style={"color": "#666"}),
 
-            # Navegação
-            html.H5("Navegação", style={"color": "#023e7c"}),
-            html.P("Use o menu lateral para acessar as diferentes seções da aplicação:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("Dashboard: visualize métricas e gráficos gerais, como os top 5 CNPs e a evolução de produção."),
-                html.Li("CNPs: gerencie informações dos CNPs, como razão social, endereço e contato."),
-                html.Li("Seguro: consulte detalhes dos seguros, incluindo datas de vigência e valores."),
-                html.Li("Relatórios: gere relatórios personalizados com base nos dados disponíveis."),
-                html.Li("Executar ETL: atualize os dados do dashboard com informações recentes do banco de dados."),
-                html.Li("Sobre: acesse informações sobre a aplicação (você está aqui)."),
-            ], style={"color": "#666"}),
-            # Placeholder para imagem (ex.: captura de tela do menu lateral)
-            html.P("Imagem: Menu lateral da aplicação", style={"color": "#666"}),
-            html.Img(src="/assets/menu_lateral.png", style={"width": "50%", "margin": "0 auto", "display": "block"}),
+        # Navegação
+        html.H5("Navegação", style={"color": "#023e7c"}),
+        html.P("Use o menu lateral para acessar as diferentes seções da aplicação:", style={"color": "#666"}),
+        html.Ul([
+            html.Li("Dashboard: visualize métricas e gráficos gerais, como os top 5 CNPs, vencimento ao longo do tempo, "
+                    "distribuição do status de pagamento, evolução de produção e detalhes dos seguros através de uma tabela. "
+                    "É possível filtrar por CNP também."),
+            html.Li("CNPs: gerencie informações dos CNPs, como razão social, endereço e contato, pode incluir, editar e deletar também."),
+            html.Li("Seguro: consulte detalhes dos seguros, incluindo datas de vigência e valores. É possível importar os dados do seguro "
+                    "através da planilha que a seguradora encaminhar para o BRB para realizar a importação bastar clicar em importar seguro."),
+            html.Li("Relatórios: gere relatórios personalizados com base nos dados disponíveis. Conseguimos identificar quais conveniência "
+                    "estão preste a vence filtrando essa informação no campo da data logo ao lado do botão ‘Exportar como PDF’."),
+            html.Li("Exportar como PDF: essa é uma opção foi implementada para gerar um relatório em pdf com algumas informações do CNP, "
+                    "do seguro e do valor proposto do seguro, com base na movimentação dos últimos 12 meses."),
+            html.Li("Executar ETL: Esse modulo serve para extrair os dados de (Recolhimento 005) e (Malote AG 107) gerado pelo EIS e armazenar "
+                    "a informação da média de movimentação no banco de dados."),
+            html.Li("Sobre: Acessa informações sobre manual de uso, documentação técnica e diagrama e estrutura do banco de dados."),
+        ], style={"color": "#666"}),
 
-            # Como Executar o ETL
-            html.H5("Como Executar o ETL", style={"color": "#023e7c"}),
-            html.P("Na aba 'Executar ETL', siga os passos abaixo:", style={"color": "#666"}),
-            html.Ol([
-                html.Li("Clique na aba 'Executar ETL' no menu lateral."),
-                html.Li("Clique no botão 'Executar ETL' para iniciar o processo."),
-                html.Li("Aguarde a mensagem de confirmação (ex.: 'ETL executado com sucesso!')."),
-                html.Li("Volte ao Dashboard para visualizar os dados atualizados."),
-            ], style={"color": "#666"}),
-            # Placeholder para imagem (ex.: captura de tela da aba ETL)
-            html.P("Imagem: Aba Executar ETL", style={"color": "#666"}),
-            html.Img(src="/assets/aba_etl.png", style={"width": "50%", "margin": "0 auto", "display": "block"}),
-
-            # Regras para Contratação e Gerenciamento do Seguro
-            html.H5("Regras para Contratação e Gerenciamento do Seguro", style={"color": "#023e7c"}),
-            html.P("Esta seção detalha as regras e procedimentos para a contratação e gerenciamento do seguro dos CNPs.", style={"color": "#666"}),
-            html.Ul([
-                html.Li("O valor de cobertura é definido pelo Banco, levando-se em conta sua média de movimentação financeira diária, referente aos últimos 12 (doze) meses."),
-                html.Li("Algumas regras devem ser observadas para a contratação do seguro:"),
-                html.Ul([
-                    html.Li("Capital segurado: R$ 100.000,00 (Cem mil reais):"),
-                    html.Ul([
-                        html.Li("Valor de cobertura destinada a novos CNPs, uma vez que ainda não há registros de transações para que possa ser realizado o cálculo da média de movimentação financeira. Entende-se por Correspondentes Novos aqueles que nunca operaram como Conveniência BRB ou ainda aquelas áreas no qual nunca houve Correspondentes."),
-                        html.Li("Para os CNPs que encontram-se em atividade, este valor de cobertura somente será permitida se a média de movimentação de numerário for entre R$ 70.000,00 e R$ 100.000,00 (cem mil reais)."),
-                    ]),
-                    html.Li("Capital segurado: R$ 70.000,00 (Setenta mil reais):"),
-                    html.Ul([
-                        html.Li("Para este tipo de cobertura de seguro, a média de movimentação do CNP deve estar inferior ao valor de R$ 70.000,00 (Setenta mil reais)."),
-                    ]),
-                    html.Li("Capital segurado: R$ 150.000,00 (Cento e cinquenta mil reais):"),
-                    html.Ul([
-                        html.Li("Para este tipo de cobertura de seguro, a média de movimentação do CNP deve estar entre os valores de R$ 100.000,00 (Cem mil reais) a R$ 150.000,00 (Cento e cinquenta mil reais)."),
-                    ]),
-                    html.Li("Capital segurado: R$ 200.000,00 (Duzentos mil reais):"),
-                    html.Ul([
-                        html.Li("Para este tipo de cobertura, a média de movimentação do CNP deve ser superior ao valor de R$ 150.000,00 (Cento e cinquenta mil reais)."),
-                    ]),
+        # Para que Serve o ETL e Como Executar?
+        html.H5("Para que Serve o ETL e Como Executar?", style={"color": "#023e7c"}),
+        html.P("Executar ETL: Esse modulo serve para extrair os dados de (Recolhimento 005) e (Malote AG 107) gerado pelo EIS, com base nesses "
+               "dados extraídos identificar qual é a média de movimentação de cada CNP e aplicar o valor proposto do seguro.", style={"color": "#666"}),
+        html.P("Regras do valor proposto:", style={"color": "#666"}),
+        html.Table([
+            html.Thead(
+                html.Tr([
+                    html.Th("Média Mensal", style={"color": "#023e7c", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Th("Valor Proposto da Cobertura", style={"color": "#023e7c", "border": "1px solid #ddd", "padding": "8px"}),
+                ])
+            ),
+            html.Tbody([
+                html.Tr([
+                    html.Td("<= R$ 70.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 70.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
                 ]),
-                html.Li("O valor de cobertura é calculado pela GECOR e comunicado à Corretora de Seguros. Para definição do valor de cobertura de cada Correspondente, leva-se em conta sua média de movimentação financeira diária, referente aos últimos 12 (doze) meses. O cálculo considera a seguinte fórmula: {Recolhimentos - [36602 (Cheques de malotes) - 3160 (Créditos de agências)] / 22 = movimentação financeira do CNP}."),
-                html.Li("Para novos contratos referentes a correspondentes existentes e que possuem movimentação registrada, o valor da cobertura do seguro não poderá ser iniciado em R$ 100.000,00 (cem mil reais). Nesse caso, considera-se a média de movimentação do correspondente."),
-                html.Li("Caso o valor do seguro não seja suficiente para cobrir o valor sinistrado, a empresa deve recolher ao Banco a diferença devida, observadas as condições ajustadas contratualmente e previstas neste Manual."),
-                html.Li("Compete ainda, à Conveniência BRB, realizar anualmente por ocasião do vencimento, a renovação do seguro contratado assim como efetuar os endossos necessários, comunicando à Seguradora a ocorrência de quaisquer eventos ou alterações ocorridas na respectiva apólice."),
-                html.Li("Nos casos de perdas não cobertas pelo seguro, indenização paga pela seguradora não suficiente para cobrir o valor sinistrado, diferenças de caixa e valores oriundos de sinistros não regularizados no prazo contratual, o BRB promoverá cobrança da quantia devida, por meio de glosa dos valores a serem pagos mensalmente à Conveniência BRB e mediante débito direto em sua conta de depósito à vista. Se não houver saldo que suporte o débito respectivo, o Banco poderá, ainda, promover a cobrança por meio judicial sem prejuízo da aplicação de outras penalidades cabíveis."),
-            ], style={"color": "#666"}),
+                html.Tr([
+                    html.Td("<= R$ 90.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 90.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+                html.Tr([
+                    html.Td("<= R$ 100.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 100.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+                html.Tr([
+                    html.Td("<= R$ 120.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 120.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+                html.Tr([
+                    html.Td("<= R$ 150.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 150.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+                html.Tr([
+                    html.Td("<= R$ 180.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 180.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+                html.Tr([
+                    html.Td("> R$ 180.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                    html.Td("R$ 200.000,00", style={"color": "#666", "border": "1px solid #ddd", "padding": "8px"}),
+                ]),
+            ])
+        ], style={"width": "100%", "borderCollapse": "collapse", "marginBottom": "20px"}),
+        html.P("Para executar o ETL, siga os passos abaixo:", style={"color": "#666"}),
+        html.Ol([
+            html.Li("Clique na aba 'Executar ETL' no menu lateral."),
+            html.Li("Clique no botão 'Executar ETL' para iniciar o processo."),
+            html.Li("Aguarde a mensagem de confirmação (ex.: 'ETL executado com sucesso!')."),
+            html.Li("Volte ao Dashboard para visualizar os dados atualizados."),
+        ], style={"color": "#666"}),
 
-            # Dicas de Uso
-            html.H5("Dicas de Uso", style={"color": "#023e7c"}),
-            html.P("Algumas dicas para aproveitar ao máximo a aplicação:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("Use os filtros na aba Dashboard para personalizar a visualização dos dados (ex.: filtrar por CNP ou período)."),
-                html.Li("Certifique-se de que o banco de dados MySQL está acessível antes de executar o ETL."),
-                html.Li("Na aba Relatórios, exporte os dados para CSV para análises externas."),
-            ], style={"color": "#666"}),
-            # Placeholder para imagem (ex.: captura de tela do Dashboard com filtros)
-            html.P("Imagem: Dashboard com filtros aplicados", style={"color": "#666"}),
-            html.Img(src="/assets/dashboard_filtros.png", style={"width": "50%", "margin": "0 auto", "display": "block"}),
-        ]
+        # Regras para Contratação e Gerenciamento do Seguro
+        html.H5("Regras para Contratação e Gerenciamento do Seguro", style={"color": "#023e7c"}),
+        html.P("Esta seção detalha as regras e procedimentos para a contratação e gerenciamento do seguro dos CNPs.", style={"color": "#666"}),
+        html.Ul([
+            html.Li("O valor de cobertura é definido pelo Banco, levando-se em conta sua média de movimentação financeira diária, "
+                    "referente aos últimos 12 (doze) meses."),
+            html.Li("O valor de cobertura é calculado pela GECOR e comunicado à Corretora de Seguros. Para definição do valor de cobertura "
+                    "de cada Correspondente, leva-se em conta sua média de movimentação financeira diária, referente aos últimos 12 (doze) "
+                    "meses. O cálculo considera a seguinte fórmula: RECOLHIMENTO (005) - MALOTE AG (107) / 22 = movimentação financeira do CNP."),
+            html.Li("Para novos contratos referentes a correspondentes existentes e que possuem movimentação registrada, o valor da cobertura "
+                    "do seguro não poderá ser iniciado em R$ 100.000,00 (cem mil reais). Nesse caso, considera-se a média de movimentação "
+                    "do correspondente."),
+            html.Li("Compete ainda, à Conveniência BRB, realizar anualmente por ocasião do vencimento, a renovação do seguro contratado assim "
+                    "como efetuar os endossos necessários, comunicando à Seguradora a ocorrência de quaisquer eventos ou alterações ocorridas "
+                    "na respectiva apólice."),
+            html.Li("Nos casos de perdas não cobertas pelo seguro, indenização paga pela seguradora não suficiente para cobrir o valor sinistrado, "
+                    "diferenças de caixa e valores oriundos de sinistros não regularizados no prazo contratual, o BRB promoverá cobrança da quantia "
+                    "devida, por meio de glosa dos valores a serem pagos mensalmente à Conveniência BRB e mediante débito direto em sua conta de "
+                    "depósito à vista. Se não houver saldo que suporte o débito respectivo, o Banco poderá, ainda, promover a cobrança por meio "
+                    "judicial sem prejuízo da aplicação de outras penalidades cabíveis."),
+        ], style={"color": "#666"}),
+
+        # Acessar Dados no EIS
+        html.H5("Acessar Dados no EIS", style={"color": "#023e7c"}),
+        html.H6("Recolhimento e Suprimento", style={"color": "#023e7c"}),
+        html.Ol([
+            html.Li("Acesse EIS > Auditoria."),
+            html.Li("Selecione Recolhimento e Suprimento."),
+            html.Li("Configuração > Desmarcar Todas > Marcar 005 > OK."),
+            html.Li("Inserir período desejado."),
+            html.Li("Dependência: 0600 a 0899."),
+            html.Li("Transação: 025300 a 025400."),
+            html.Li("Marcar: Resultado p/ Excel."),
+            html.Li("Clicar em Pesquisar."),
+        ], style={"color": "#666"}),
+        html.H6("Cheque de Malote", style={"color": "#023e7c"}),
+        html.Ol([
+            html.Li("Acesse EIS > Auditoria."),
+            html.Li("Selecione Cheque de Malote."),
+            html.Li("Configuração > Desmarcar Todas > Marcar 89 > OK."),
+            html.Li("Inserir período desejado."),
+            html.Li("Dependência: 0600 a 0899."),
+            html.Li("Transação: 036602 a 036602."),
+            html.Li("Marcar: Resultado p/ Excel."),
+            html.Li("Clicar em Pesquisar."),
+        ], style={"color": "#666"}),
+        html.H6("Créditos de Agência", style={"color": "#023e7c"}),
+        html.Ol([
+            html.Li("Acesse EIS > Auditoria."),
+            html.Li("Selecione Créditos de Agência."),
+            html.Li("Configuração > Desmarcar Todas > Marcar 107 > OK."),
+            html.Li("Inserir período desejado."),
+            html.Li("Dependência: 0011 a 0599."),
+            html.Li("Transação: 316000 a 316999."),
+            html.Li("Marcar: Resultado p/ Excel."),
+            html.Li("Clicar em Pesquisar."),
+        ], style={"color": "#666"}),
+
+        # Dicas de Uso
+        html.H5("Dicas de Uso", style={"color": "#023e7c"}),
+        html.P("Algumas dicas para aproveitar ao máximo a aplicação:", style={"color": "#666"}),
+        html.Ul([
+            html.Li("Use os filtros na aba Dashboard para personalizar a visualização dos dados (ex.: filtrar por CNP ou período)."),
+            html.Li("Certifique-se de que o banco de dados MySQL está acessível antes de executar o ETL."),
+            html.Li("Na aba Relatórios, exporte os dados para PDF para análises externas."),
+        ], style={"color": "#666"}),
+    ]
 
     else:
         return html.P("Selecione uma opção no menu acima.", style={"color": "#666"})
