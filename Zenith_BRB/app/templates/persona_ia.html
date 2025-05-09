@@ -12,8 +12,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: #EEECE8;
-            color: #040C42;
+            background: #E8E9F3;
+            color: #023E7C;
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -35,7 +35,7 @@
             left: 0;
             height: 100%;
             width: 250px;
-            background: #040C42;
+            background: #023E7C;
             padding: 30px 15px;
             z-index: 2;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
@@ -65,7 +65,7 @@
         }
 
         .sidebar .nav-link {
-            color: #EEECE8;
+            color: #E8E9F3;
             display: block;
             padding: 12px 15px;
             transition: background 0.3s, color 0.3s, transform 0.3s;
@@ -73,7 +73,6 @@
             margin-bottom: 10px;
             font-size: 0.9rem;
             text-transform: uppercase;
-            font-weight: 600;
         }
 
         .sidebar .nav-link i {
@@ -82,8 +81,8 @@
 
         .sidebar .nav-link:hover,
         .sidebar .nav-link.active {
-            color: #EEECE8;
-            background: #BC7201;
+            color: #E8E9F3;
+            background: #009FE3;
             transform: translateX(5px);
         }
 
@@ -100,7 +99,7 @@
             gap: 20px;
             width: 100%;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: #E8E9F3;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             z-index: 2;
@@ -126,8 +125,8 @@
         }
 
         .persona-form .edit-button {
-            background: #BC7201;
-            color: #EEECE8;
+            background: #009FE3;
+            color: #E8E9F3;
             border: none;
             padding: 6px 12px;
             border-radius: 6px;
@@ -138,7 +137,7 @@
         }
 
         .persona-form .edit-button:hover {
-            background: #A65D00;
+            background: #007BB5;
         }
 
         .persona-form p {
@@ -161,15 +160,15 @@
         .persona-form select {
             width: 100%;
             padding: 8px;
-            border: 1px solid #040C42;
+            border: 1px solid #023E7C;
             border-radius: 8px;
             font-size: 0.95rem;
             font-family: 'Inter', sans-serif;
         }
 
         .persona-form button:not(.edit-button) {
-            background: #BC7201;
-            color: #EEECE8;
+            background: #009FE3;
+            color: #E8E9F3;
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -179,7 +178,7 @@
         }
 
         .persona-form button:not(.edit-button):hover {
-            background: #A65D00;
+            background: #007BB5;
         }
 
         .conversation-tabs {
@@ -190,23 +189,23 @@
 
         .conversation-tabs button {
             padding: 8px 16px;
-            border: 1px solid #040C42;
+            border: 1px solid #023E7C;
             border-radius: 8px;
-            background: #f8f9fa;
-            color: #040C42;
+            background: #E8E9F3;
+            color: #023E7C;
             font-size: 0.95rem;
             cursor: pointer;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
         .conversation-tabs button:hover:not(.active) {
-            background: #e6e9ff;
+            background: #C7E6F5;
         }
 
         .conversation-tabs button.active {
-            background: #040C42;
-            color: #EEECE8;
-            border-color: #040C42;
+            background: #023E7C;
+            color: #E8E9F3;
+            border-color: #023E7C;
         }
 
         .response-length-options {
@@ -242,7 +241,7 @@
         .guideline-item input {
             flex-grow: 1;
             padding: 8px;
-            border: 1px solid #040C42;
+            border: 1px solid #023E7C;
             border-radius: 8px;
             font-size: 0.95rem;
         }
@@ -250,18 +249,18 @@
         .guideline-item button {
             background: transparent;
             border: none;
-            color: #040C42;
+            color: #023E7C;
             cursor: pointer;
             padding: 5px;
         }
 
         .guideline-item button:hover {
-            color: #BC7201;
+            color: #009FE3;
         }
 
         .add-guideline-btn {
-            background: #BC7201;
-            color: #EEECE8;
+            background: #009FE3;
+            color: #E8E9F3;
             border: none;
             padding: 8px 16px;
             border-radius: 8px;
@@ -273,7 +272,7 @@
         }
 
         .add-guideline-btn:hover {
-            background: #A65D00;
+            background: #007BB5;
         }
 
         @media (max-width: 768px) {
@@ -337,8 +336,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('main.logout') }}">
-                    <i class="bi bi-box-arrow-right"></i> Sair
+                <a class="nav-link" href="{{ url_for('main.painel') }}">
+                    <i class="bi bi-arrow-left"></i> Voltar
                 </a>
             </li>
         </ul>
@@ -489,14 +488,14 @@
         particlesJS('particles-js', {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#BC7201' },
+                color: { value: '#009FE3' },
                 shape: { type: 'circle' },
                 opacity: { value: 0.5, random: true },
                 size: { value: 3, random: true },
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: '#040C42',
+                    color: '#023E7C',
                     opacity: 0.4,
                     width: 1
                 },
