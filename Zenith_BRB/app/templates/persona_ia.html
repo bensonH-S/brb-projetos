@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona de IA - Zenith IA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #EEECE8;
+            color: #040C42;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: #040C42;
+            padding: 30px 15px;
+            z-index: 2;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar .logo {
+            position: relative;
+            width: 100%;
+            max-width: 220px;
+            height: 80px;
+            margin: 0 auto 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .sidebar .logo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+            opacity: 1;
+        }
+
+        .sidebar .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .sidebar .nav-link {
+            color: #EEECE8;
+            display: block;
+            padding: 12px 15px;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            color: #EEECE8;
+            background: #BC7201;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        .persona-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            z-index: 2;
+            position: relative;
+            pointer-events: auto;
+        }
+
+        .persona-form * {
+            pointer-events: auto;
+        }
+
+        .persona-form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .persona-form h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .persona-form .edit-button {
+            background: #BC7201;
+            color: #EEECE8;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            cursor: pointer;
+        }
+
+        .persona-form .edit-button:hover {
+            background: #A65D00;
+        }
+
+        .persona-form p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .persona-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .persona-form label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .persona-form input,
+        .persona-form select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #040C42;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .persona-form button:not(.edit-button) {
+            background: #BC7201;
+            color: #EEECE8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: background 0.3s ease;
+            font-weight: 600;
+        }
+
+        .persona-form button:not(.edit-button):hover {
+            background: #A65D00;
+        }
+
+        .conversation-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .conversation-tabs button {
+            padding: 8px 16px;
+            border: 1px solid #040C42;
+            border-radius: 8px;
+            background: #f8f9fa;
+            color: #040C42;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .conversation-tabs button:hover:not(.active) {
+            background: #e6e9ff;
+        }
+
+        .conversation-tabs button.active {
+            background: #040C42;
+            color: #EEECE8;
+            border-color: #040C42;
+        }
+
+        .response-length-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .response-length-options label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+        }
+
+        .response-length-options input[type="radio"] {
+            width: auto;
+        }
+
+        .guidelines-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .guideline-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guideline-item input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #040C42;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .guideline-item button {
+            background: transparent;
+            border: none;
+            color: #040C42;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .guideline-item button:hover {
+            color: #BC7201;
+        }
+
+        .add-guideline-btn {
+            background: #BC7201;
+            color: #EEECE8;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .add-guideline-btn:hover {
+            background: #A65D00;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .persona-form-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .persona-form .edit-button {
+                align-self: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Zenith IA Logo">
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'main.treinar_ia' else '' }}" href="{{ url_for('main.treinar_ia') }}">
+                    <i class="bi bi-robot"></i> Modelo Zenith
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'main.persona_ia' else '' }}" href="{{ url_for('main.persona_ia') }}">
+                    <i class="bi bi-person"></i> Persona Zenith
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ 'active' if request.endpoint == 'main.acoes' else '' }}" href="{{ url_for('main.acoes') }}">
+                    <i class="bi bi-gear"></i> Ações
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-tools"></i> Ferramentas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-file-earmark-text"></i> Formulários
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-chat"></i> Ensine Seu Agente
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('main.logout') }}">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="persona-form">
+            <div class="persona-form-header">
+                <h2>Persona de IA</h2>
+                <button id="edit-persona" class="edit-button">Editar</button>
+            </div>
+            <p>Crie e personalize a personalidade da sua Zenith IA, definindo como ela se comunica e age para oferecer uma experiência única e inteligente.</p>
+            <div class="form-group">
+                <label for="agent-name">Nome do Agente</label>
+                <input type="text" id="agent-name" placeholder="Dê um nome ao seu Agente" value="{{ persona.nome_agente if persona else '' }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="agent-role">Função do Agente</label>
+                <select id="agent-role" disabled>
+                    <option value="Customer Support Specialist" {{ 'selected' if persona and persona.funcao_agente == 'Customer Support Specialist' else '' }}>Customer Support Specialist</option>
+                    <option value="Technical Support Agent" {{ 'selected' if persona and persona.funcao_agente == 'Technical Support Agent' else '' }}>Technical Support Agent</option>
+                    <option value="Help Desk Representative" {{ 'selected' if persona and persona.funcao_agente == 'Help Desk Representative' else '' }}>Help Desk Representative</option>
+                    <option value="Client Service Coordinator" {{ 'selected' if persona and persona.funcao_agente == 'Client Service Coordinator' else '' }}>Client Service Coordinator</option>
+                    <option value="Vendedor" {{ 'selected' if persona and persona.funcao_agente == 'Vendedor' else '' }}>Vendedor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agent-language">Idioma padrão</label>
+                <select id="agent-language" disabled>
+                    <option value="Português" {{ 'selected' if persona and persona.idioma in ['Português', 'PORTUGUES'] else '' }}>Português</option>
+                    <option value="Inglês" {{ 'selected' if persona and persona.idioma == 'Inglês' else '' }}>Inglês</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agent-tone">Tom de Voz</label>
+                <select id="agent-tone" disabled>
+                    <option value="Amigável" {{ 'selected' if persona and persona.tom_voz == 'Amigável' else '' }}>Amigável</option>
+                    <option value="Formal" {{ 'selected' if persona and persona.tom_voz == 'Formal' else '' }}>Formal</option>
+                    <option value="Casual" {{ 'selected' if persona and persona.tom_voz == 'Casual' else '' }}>Casual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Estilo de Conversação</label>
+                <div class="conversation-tabs">
+                    <button data-tabid="chat" class="{{ 'active' if persona and persona.estilo_conversacao == 'chat' else '' }}" disabled>Chat</button>
+                    <button data-tabid="voice" class="{{ 'active' if persona and persona.estilo_conversacao == 'voice' else '' }}" disabled>Voz</button>
+                </div>
+            </div>
+            <div class="form-group chat-tab-content">
+                <label>Tamanho da Resposta no Chat</label>
+                <div class="response-length-options">
+                    <label>
+                        <input type="radio" name="response-length" value="Minimalistas" {{ 'checked' if persona and persona.tamanho_resposta == 'Minimalistas' else '' }} disabled> Minimalistas
+                    </label>
+                    <label>
+                        <input type="radio" name="response-length" value="Curta" {{ 'checked' if persona and persona.tamanho_resposta == 'Curta' else '' }} disabled> Curta
+                    </label>
+                    <label>
+                        <input type="radio" name="response-length" value="Longa" {{ 'checked' if persona and persona.tamanho_resposta == 'Longa' else '' }} disabled> Longa
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Diretrizes do Chat</label>
+                <p class="color-navy-300">Defina regras claras sobre como seu agente deve responder nos canais de bate-papo</p>
+                <div class="guidelines-list" id="guidelines-list">
+                    {% set default_guidelines = [
+                        'Seu principal objetivo é responder perguntas e resolver problemas de forma rápida.',
+                        'Sempre forneça soluções claras e úteis.',
+                        'Seja paciente, compreensivo e profissional em cada interação.',
+                        'Mantenha um tom amigável e acessível.',
+                        'Garanta que os usuários se sintam apoiados e valorizados ao longo da conversa.'
+                    ] %}
+                    {% for i in range(1, 9) %}
+                        {% set diretriz = none %}
+                        {% if persona %}
+                            {% if i == 1 %}{% set diretriz = persona.diretrizes_1 %}
+                            {% elif i == 2 %}{% set diretriz = persona.diretrizes_2 %}
+                            {% elif i == 3 %}{% set diretriz = persona.diretrizes_3 %}
+                            {% elif i == 4 %}{% set diretriz = persona.diretrizes_4 %}
+                            {% elif i == 5 %}{% set diretriz = persona.diretrizes_5 %}
+                            {% elif i == 6 %}{% set diretriz = persona.diretrizes_6 %}
+                            {% elif i == 7 %}{% set diretriz = persona.diretrizes_7 %}
+                            {% elif i == 8 %}{% set diretriz = persona.diretrizes_8 %}
+                            {% endif %}
+                        {% endif %}
+                        {% if diretriz is not none or i <= 5 %}
+                            <div class="guideline-item">
+                                <input type="text" value="{{ diretriz if diretriz is not none else default_guidelines[i-1] if i <= 5 else '' }}" placeholder="Digite uma diretriz" disabled>
+                                <button class="remove-guideline" disabled><i class="bi bi-trash"></i></button>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <button class="add-guideline-btn" id="add-guideline" disabled>
+                    <i class="bi bi-plus-square"></i> Adicionar
+                </button>
+            </div>
+            <button id="save-persona" disabled>Salvar</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            positionClass: 'toast-top-right',
+            timeOut: 5000,
+            showMethod: 'fadeIn',
+            hideMethod: 'fadeOut',
+            toastClass: 'toast',
+            onShown: function() {
+                document.querySelectorAll('.toast').forEach(toast => {
+                    if (toast.classList.contains('toast-success')) {
+                        toast.style.backgroundColor = '#28a745';
+                        toast.style.color = '#ffffff';
+                    } else if (toast.classList.contains('toast-error')) {
+                        toast.style.backgroundColor = '#dc3545';
+                        toast.style.color = '#ffffff';
+                    }
+                });
+            }
+        };
+
+        console.log('Valores renderizados:', {
+            empresa_id: '{{ empresa_id if empresa_id is defined else "N/A" }}',
+            nome_agente: '{{ persona.nome_agente if persona else "" }}',
+            funcao_agente: '{{ persona.funcao_agente if persona else "" }}',
+            idioma: '{{ persona.idioma if persona else "" }}',
+            tom_voz: '{{ persona.tom_voz if persona else "" }}',
+            estilo_conversacao: '{{ persona.estilo_conversacao if persona else "" }}',
+            tamanho_resposta: '{{ persona.tamanho_resposta if persona else "" }}',
+            diretrizes: [
+                '{{ persona.diretrizes_1 if persona else "" }}',
+                '{{ persona.diretrizes_2 if persona else "" }}',
+                '{{ persona.diretrizes_3 if persona else "" }}',
+                '{{ persona.diretrizes_4 if persona else "" }}',
+                '{{ persona.diretrizes_5 if persona else "" }}',
+                '{{ persona.diretrizes_6 if persona else "" }}',
+                '{{ persona.diretrizes_7 if persona else "" }}',
+                '{{ persona.diretrizes_8 if persona else "" }}'
+            ]
+        });
+
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#BC7201' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#040C42',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: { enable: true, speed: 2, direction: 'none', random: true }
+            },
+            interactivity: {
+                events: { onhover: { enable: true, mode: 'repulse' } }
+            }
+        });
+
+        const tabs = document.querySelectorAll('.conversation-tabs button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                if (!this.disabled) {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        document.getElementById('edit-persona').addEventListener('click', function() {
+            console.log('Botão Editar clicado');
+            try {
+                const elements = document.querySelectorAll('.persona-form input, .persona-form select, .persona-form button:not(#edit-persona)');
+                console.log('Elementos encontrados:', elements.length);
+                elements.forEach(el => {
+                    el.disabled = false;
+                    console.log('Habilitado:', el.id || el.name || el.tagName);
+                });
+                toastr.success('Campos habilitados para edição!', 'Sucesso');
+            } catch (error) {
+                console.error('Erro ao habilitar campos:', error);
+                toastr.error('Erro ao habilitar campos: ' + error.message, 'Erro');
+            }
+        });
+
+        document.getElementById('add-guideline').addEventListener('click', function() {
+            if (this.disabled) return;
+            const guidelinesList = document.getElementById('guidelines-list');
+            const guidelineCount = guidelinesList.children.length;
+            if (guidelineCount >= 8) {
+                toastr.error('Máximo de 8 diretrizes atingido!', 'Erro');
+                return;
+            }
+            const newGuideline = document.createElement('div');
+            newGuideline.className = 'guideline-item';
+            newGuideline.innerHTML = `
+                <input type="text" placeholder="Digite uma diretriz">
+                <button class="remove-guideline"><i class="bi bi-trash"></i></button>
+            `;
+            guidelinesList.appendChild(newGuideline);
+
+            newGuideline.querySelector('.remove-guideline').addEventListener('click', function() {
+                newGuideline.remove();
+            });
+        });
+
+        document.querySelectorAll('.remove-guideline').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.disabled) {
+                    button.parentElement.remove();
+                }
+            });
+        });
+
+        document.getElementById('save-persona').addEventListener('click', function() {
+            if (this.disabled) return;
+            const agentName = document.getElementById('agent-name').value;
+            if (!agentName.trim()) {
+                toastr.error('O nome do agente é obrigatório!', 'Erro');
+                return;
+            }
+            const agentRole = document.getElementById('agent-role').value;
+            const agentLanguage = document.getElementById('agent-language').value;
+            const agentTone = document.getElementById('agent-tone').value;
+            const conversationStyle = document.querySelector('.conversation-tabs button.active').getAttribute('data-tabid');
+            const responseLength = document.querySelector('input[name="response-length"]:checked').value;
+            const chatGuidelines = Array.from(document.querySelectorAll('#guidelines-list input'))
+                .map(input => input.value)
+                .filter(value => value.trim() !== '');
+
+            const agentSettings = {
+                nome_agente: agentName,
+                funcao_agente: agentRole,
+                idioma: agentLanguage,
+                tom_voz: agentTone,
+                estilo_conversacao: conversationStyle,
+                tamanho_resposta: responseLength,
+                diretrizes: chatGuidelines
+            };
+
+            console.log('Enviando dados para salvar:', agentSettings);
+            document.getElementById('save-persona').innerText = 'Salvando...';
+            fetch('{{ url_for("main.save_persona_route") }}', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(agentSettings)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('save-persona').innerText = 'Salvar';
+                if (data.success) {
+                    toastr.success(data.message || 'Persona salva com sucesso!', 'Sucesso');
+                    document.querySelectorAll('.persona-form input, .persona-form select, .persona-form button:not(#edit-persona)').forEach(el => {
+                        el.disabled = true;
+                    });
+                } else {
+                    toastr.error(data.message || 'Erro ao salvar persona.', 'Erro');
+                }
+            })
+            .catch(error => {
+                document.getElementById('save-persona').innerText = 'Salvar';
+                console.error('Erro ao salvar:', error);
+                toastr.error('Erro ao salvar: ' + error.message, 'Erro');
+            });
+        });
+    </script>
+</body>
+</html>
