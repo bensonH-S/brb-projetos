@@ -36,71 +36,147 @@ layout = html.Div([
 def update_doc_content(doc_type):
     if doc_type == "banco_dados":
         return [
-            html.H4("Diagrama, Modelagem e Estrutura do Banco de Dados", className="mb-3",
-                    style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
-            html.P("Esta seção descreve a estrutura do banco de dados MySQL usado na aplicação Seguro CNP Dash.", style={"color": "#666"}),
-            html.Hr(),
+        html.H4("Diagrama, Modelagem e Estrutura do Banco de Dados", className="mb-3",
+                style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
+        html.P("Esta seção descreve a estrutura do banco de dados MySQL usado na aplicação CentralSeg.", style={"color": "#666"}),
+        html.Hr(),
 
-            # Diagrama do Banco de Dados
-            html.H5("Diagrama de Relacionamento", style={"color": "#023e7c"}),
-            html.P("O diagrama abaixo mostra as tabelas do banco de dados e seus relacionamentos:", style={"color": "#666"}),
-            # Placeholder para a imagem do diagrama (salve a imagem como 'diagrama_banco.png' na pasta assets)
-            html.Img(src="/assets/imagens/diagrama.png", style={"width": "80%", "margin": "0 auto", "display": "block"}),
-            html.P("Descrição do diagrama:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("cnp_data: Armazena informações básicas dos CNPs (cnp, cnpj, razao_social, etc.)."),
-                html.Li("seguradora: Contém detalhes dos seguros (cnp, inicio_vigencia_seguro, vencimento, valor_cobertura, etc.)."),
-                html.Li("pag_seguradora: Registra os pagamentos dos seguros (cnp, numero_parcela, status)."),
-                html.Li("cnp_historico: Armazena o histórico mensal de produção dos CNPs (cnp, jan_23, fev_23, ..., dez_25)."),
-                html.Li("Relacionamentos: A chave primária 'cnp' da tabela cnp_data é usada como chave estrangeira nas tabelas seguradora, pag_seguradora e cnp_historico."),
-            ], style={"color": "#666"}),
+        # Estrutura das Tabelas
+        html.H5("Estrutura das Tabelas", style={"color": "#023e7c"}),
+        html.P("Detalhes das tabelas do banco de dados e seus relacionamentos:", style={"color": "#666"}),
+        html.Ul([
+            html.Li("cnp_data: Armazena informações básicas dos CNPs (cnp, cnpj, razao_social, etc.)."),
+            html.Li("seguradora: Contém detalhes dos seguros (cnp, inicio_vigencia_seguro, vencimento, valor_cobertura, etc.)."),
+            html.Li("pag_seguradora: Registra os pagamentos dos seguros (cnp, numero_parcela, status)."),
+            html.Li("cnp_historico: Armazena o histórico mensal de produção dos CNPs (cnp, jan_23, fev_23, ..., dez_25)."),
+            html.Li("Relacionamentos: A chave primária 'cnp' da tabela cnp_data é usada como chave estrangeira nas tabelas seguradora, pag_seguradora e cnp_historico."),
+        ], style={"color": "#666"}),
+        html.P("Abaixo a query DDL das tabelas presentes no CentralSeg:", style={"color": "#666"}),
+        html.H6("gecaf.cnp_data", style={"color": "#023e7c"}),
+        html.Pre("""
+CREATE TABLE `cnp_data` (
+  `cnp` int(11) NOT NULL,
+  `situacao` tinyint(4) NOT NULL DEFAULT 1,
+  `cnpj` varchar(30) DEFAULT NULL,
+  `razao_social` varchar(255) DEFAULT NULL,
+  `cc` varchar(50) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `telefone_proprietario` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `uf` char(2) DEFAULT NULL,
+  `cep` varchar(20) DEFAULT NULL,
+  `latitude` decimal(10,6) DEFAULT NULL,
+  `longitude` decimal(10,6) DEFAULT NULL,
+  `observacao` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`cnp`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.H6("gecaf.cnp_historico", style={"color": "#023e7c"}),
+        html.Pre("""
+CREATE TABLE `cnp_historico` (
+  `cnp` int(11) NOT NULL,
+  `dez_23` decimal(15,2) DEFAULT NULL,
+  `jan_24` decimal(15,2) DEFAULT NULL,
+  `fev_24` decimal(15,2) DEFAULT NULL,
+  `mar_24` decimal(15,2) DEFAULT NULL,
+  `abr_24` decimal(15,2) DEFAULT NULL,
+  `mai_24` decimal(15,2) DEFAULT NULL,
+  `jun_24` decimal(15,2) DEFAULT NULL,
+  `jul_24` decimal(15,2) DEFAULT NULL,
+  `ago_24` decimal(15,2) DEFAULT NULL,
+  `set_24` decimal(15,2) DEFAULT NULL,
+  `out_24` decimal(15,2) DEFAULT NULL,
+  `nov_24` decimal(15,2) DEFAULT NULL,
+  `dez_24` decimal(15,2) DEFAULT NULL,
+  `jan_25` decimal(15,2) DEFAULT NULL,
+  `fev_25` decimal(15,2) DEFAULT NULL,
+  `mar_25` decimal(15,2) DEFAULT NULL,
+  `abr_25` decimal(15,2) DEFAULT NULL,
+  `mai_25` decimal(15,2) DEFAULT NULL,
+  `jun_25` decimal(15,2) DEFAULT NULL,
+  `jul_25` decimal(15,2) DEFAULT NULL,
+  `ago_25` decimal(15,2) DEFAULT NULL,
+  `set_25` decimal(15,2) DEFAULT NULL,
+  `out_25` decimal(15,2) DEFAULT NULL,
+  `nov_25` decimal(15,2) DEFAULT NULL,
+  `dez_25` decimal(15,2) DEFAULT NULL,
+  PRIMARY KEY (`cnp`),
+  CONSTRAINT `fk_cnp_historico` FOREIGN KEY (`cnp`) REFERENCES `cnp_data` (`cnp`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.H6("gecaf.pag_seguradora", style={"color": "#023e7c"}),
+        html.Pre("""
+CREATE TABLE `pag_seguradora` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cnp` int(11) NOT NULL,
+  `numero_parcela` int(11) NOT NULL CHECK (`numero_parcela` > 0),
+  `data_vencimento` date DEFAULT NULL,
+  `status` enum('PAGO','PENDENTE','EMITIR') DEFAULT NULL,
+  `data_pagamento` datetime DEFAULT NULL,
+  `usuario_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_cnp_numero_parcela` (`cnp`,`numero_parcela`),
+  CONSTRAINT `fk_pag_seguradora_cnp` FOREIGN KEY (`cnp`) REFERENCES `seguradora` (`cnp`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=361 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.H6("gecaf.seguradora", style={"color": "#023e7c"}),
+        html.Pre("""
+CREATE TABLE `seguradora` (
+  `cnp` int(11) NOT NULL,
+  `inicio_vigencia_seguro` date DEFAULT NULL,
+  `vencimento` date DEFAULT NULL,
+  `valor_cobertura` decimal(15,2) DEFAULT NULL,
+  `valor_proposto` decimal(15,2) DEFAULT NULL,
+  `valor_parcela` decimal(15,2) DEFAULT NULL,
+  `forma_de_pgt` varchar(20) DEFAULT NULL,
+  `situacao_proposta` varchar(50) DEFAULT NULL,
+  `obs` text DEFAULT NULL,
+  `apolice` varchar(50) DEFAULT NULL,
+  `multiseguros` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`cnp`),
+  CONSTRAINT `fk_seguradora_cnp` FOREIGN KEY (`cnp`) REFERENCES `cnp_data` (`cnp`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
 
-            # Estrutura das Tabelas
-            html.H5("Estrutura das Tabelas", style={"color": "#023e7c"}),
-            html.P("Detalhes das colunas de cada tabela:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("cnp_data: cnp (int, PK), cnpj (varchar), razao_social (varchar), situacao (varchar), telefone (varchar), email (varchar), endereco (varchar), bairro (varchar), cidade (varchar), uf (char), cep (varchar), latitude (float), longitude (float), observacao (text)."),
-                html.Li("seguradora: cnp (int, FK), inicio_vigencia_seguro (date), vencimento (date), valor_cobertura (decimal), valor_proposto (decimal), valor_parcela (decimal), forma_de_pgt (varchar), situacao_proposta (varchar), obs (text), apolice (varchar), multisseguros (varchar)."),
-                html.Li("pag_seguradora: id (int, PK), cnp (int, FK), numero_parcela (int), data_vencimento (date), data_pagamento (date), status (varchar), usuario_ied (varchar)."),
-                html.Li("cnp_historico: cnp (int, FK), jan_23 (decimal), fev_23 (decimal), ..., dez_25 (decimal)."),
-            ], style={"color": "#666"}),
-
-            # Como o Banco Funciona
-            html.H5("Como o Banco de Dados Funciona", style={"color": "#023e7c"}),
-            html.P("O banco de dados MySQL é usado para armazenar e gerenciar os dados da aplicação. Algumas características:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("Conexão: A aplicação se conecta ao MySQL usando SQLAlchemy com o driver mysql-connector-python."),
-                html.Li("Acesso Remoto: O MySQL pode ser configurado para aceitar conexões remotas, ajustando o bind-address e criando um usuário remoto."),
-                html.Li("Segurança: Recomenda-se usar senhas fortes, configurar SSL para criptografar conexões, e restringir o acesso por IP."),
-                html.Li("Manutenção: Índices são usados na coluna 'cnp' para melhorar a performance das consultas. Backups regulares devem ser realizados."),
-            ], style={"color": "#666"}),
-        ]
+        # Como o Banco de Dados Funciona
+        html.H5("Como o Banco de Dados Funciona", style={"color": "#023e7c"}),
+        html.P("O banco de dados MySQL é usado para armazenar e gerenciar os dados da aplicação. Algumas características:", style={"color": "#666"}),
+        html.Ul([
+            html.Li("Conexão: A aplicação se conecta ao MySQL usando SQLAlchemy com o driver mysql-connector-python."),
+            html.Li("Acesso Remoto: O MySQL pode ser configurado para aceitar conexões remotas, ajustando o bind-address e criando um usuário remoto."),
+            html.Li("Segurança: Recomenda-se usar senhas fortes, configurar SSL para criptografar conexões, e restringir o acesso por IP."),
+            html.Li("Manutenção: Índices são usados na coluna 'cnp' para melhorar a performance das consultas. Backups regulares devem ser realizados."),
+        ], style={"color": "#666"}),
+    ]
 
     elif doc_type == "info_tecnica":
         return [
-            html.H4("Informação Técnica", className="mb-3",
-                    style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
-            html.P("Esta seção contém informações técnicas detalhadas sobre a aplicação Seguro CNP Dash.", style={"color": "#666"}),
-            html.Hr(),
+        html.H4("Informação Técnica", className="mb-3",
+                style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
+        html.P("Esta seção contém informações técnicas detalhadas sobre a aplicação CentralSeg.", style={"color": "#666"}),
+        html.Hr(),
 
-            # Tecnologias Utilizadas
-            html.H5("Tecnologias Utilizadas", style={"color": "#023e7c"}),
-            html.Ul([
-                html.Li("Python 3.9+: Linguagem principal para lógica da aplicação e ETL."),
-                html.Li("Dash 2.17.1: Framework para criação do dashboard interativo."),
-                html.Li("Plotly 5.22.0: Para gráficos interativos (barras, donut, linhas)."),
-                html.Li("Pandas 2.2.2: Para manipulação de dados no ETL e dashboard."),
-                html.Li("MySQL 8.0+: Banco de dados relacional."),
-                html.Li("SQLAlchemy 2.0.31: Para conexão entre Python e MySQL."),
-                html.Li("Dash Bootstrap Components 1.6.0: Para estilização e layout responsivo."),
-                html.Li("mysql-connector-python 8.4.0: Driver para conexão com MySQL."),
-            ], style={"color": "#666"}),
-            html.P("Recomenda-se usar as versões listadas para evitar problemas de compatibilidade.", style={"color": "#666"}),
+        # Tecnologias Utilizadas
+        html.H5("Tecnologias Utilizadas", style={"color": "#023e7c"}),
+        html.Ul([
+            html.Li("Python 3.13+: Linguagem principal para lógica da aplicação e ETL."),
+            html.Li("Dash 2.18.2: Framework para criação do dashboard interativo."),
+            html.Li("Plotly 6.0.1: Para gráficos interativos (barras, donut, linhas)."),
+            html.Li("Pandas 2.2.3: Para manipulação de dados no ETL e dashboard."),
+            html.Li("MySQL 8.0+: Banco de dados relacional."),
+            html.Li("SQLAlchemy 2.0.39: Para conexão entre Python e MySQL."),
+            html.Li("Dash Bootstrap Components 1.7.1: Para estilização e layout responsivo."),
+            html.Li("mysql-connector-python 8.4.0: Driver para conexão com MySQL."),
+        ], style={"color": "#666"}),
+        html.P("Recomenda-se usar as versões listadas para evitar problemas de compatibilidade.", style={"color": "#666"}),
 
-            # Estrutura do Projeto
-            html.H5("Estrutura do Projeto", style={"color": "#023e7c"}),
-            html.P("A estrutura de pastas do projeto é a seguinte:", style={"color": "#666"}),
-            html.Pre("""
+        # Estrutura do Projeto
+        html.H5("Estrutura do Projeto", style={"color": "#023e7c"}),
+        html.P("A estrutura de pastas do projeto é a seguinte:", style={"color": "#666"}),
+        html.Pre("""
 Seguro_CNP/
 │── app.py                   # Arquivo principal da aplicação Dash
 │── requirements.txt         # Lista de dependências
@@ -132,67 +208,58 @@ Seguro_CNP/
 ├── logs/                    # Armazena logs da aplicação
 │
 └── venv/                    # Ambiente virtual (não incluso no controle de versão)
-            """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
-            html.P("Descrição dos arquivos:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("app.py: Ponto de entrada da aplicação, gerencia as rotas e o menu lateral."),
-                html.Li("requirements.txt: Lista de dependências do projeto, usada para instalar as bibliotecas necessárias."),
-                html.Li("config.py: Contém configurações globais, como portas, URLs de conexão, e outras variáveis de ambiente."),
-                html.Li("run.py: Script para iniciar a aplicação, geralmente usado em produção."),
-                html.Li("etl/etl.py: Script do pipeline de ETL (extração, transformação, carregamento)."),
-                html.Li("database/db_init.py: Script para inicializar o banco de dados, criando tabelas e inserindo dados iniciais, se necessário."),
-                html.Li("database/connection.py: Configuração da conexão com o MySQL, usando SQLAlchemy."),
-                html.Li("modules/dashboard.py: Contém o dashboard principal com gráficos e tabelas interativas."),
-                html.Li("modules/cnps.py: Gerenciamento de informações dos CNPs, como cadastro e edição."),
-                html.Li("modules/seguro.py: Detalhes dos seguros, incluindo vigência e valores."),
-                html.Li("modules/relatorios.py: Geração de relatórios personalizados."),
-                html.Li("modules/etl_page.py: Interface para executar o pipeline de ETL."),
-                html.Li("modules/sobre.py: Documentação e manual de uso (esta página)."),
-                html.Li("assets/: Contém arquivos estáticos, como imagens (ex.: logo do BRB, diagrama do banco)."),
-                html.Li("data/input/: Armazena arquivos de entrada, como Excel ou CSV, usados no ETL (se aplicável)."),
-                html.Li("data/output/: Armazena arquivos gerados, como logs ou exportações do dashboard."),
-                html.Li("logs/: Diretório para armazenar logs da aplicação, úteis para depuração."),
-                html.Li("venv/: Ambiente virtual do Python, não incluído no controle de versão."),
-            ], style={"color": "#666"}),
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.P("Descrição dos arquivos:", style={"color": "#666"}),
+        html.Ul([
+            html.Li("app.py: Ponto de entrada da aplicação, gerencia as rotas e o menu lateral."),
+            html.Li("requirements.txt: Lista de dependências do projeto, usada para instalar as bibliotecas necessárias."),
+            html.Li("config.py: Contém configurações globais, como portas, URLs de conexão, e outras variáveis de ambiente."),
+            html.Li("run.py: Script para iniciar a aplicação, geralmente usado em produção."),
+            html.Li("etl/etl.py: Script do pipeline de ETL (extração, transformação, carregamento)."),
+            html.Li("database/db_init.py: Script para inicializar o banco de dados, criando tabelas e inserindo dados iniciais, se necessário."),
+            html.Li("database/connection.py: Configuração da conexão com o MySQL, usando SQLAlchemy."),
+            html.Li("modules/dashboard.py: Contém o dashboard principal com gráficos e tabelas interativas."),
+            html.Li("modules/cnps.py: Gerenciamento de informações dos CNPs, como cadastro e edição."),
+            html.Li("modules/seguro.py: Detalhes dos seguros, incluindo vigência e valores."),
+            html.Li("modules/relatorios.py: Geração de relatórios personalizados."),
+            html.Li("modules/etl_page.py: Interface para executar o pipeline de ETL."),
+            html.Li("modules/sobre.py: Documentação e manual de uso (esta página)."),
+            html.Li("assets/: Contém arquivos estáticos, como imagens (ex.: logo do BRB, diagrama do banco)."),
+            html.Li("data/input/: Armazena arquivos de entrada, como Excel ou CSV, usados no ETL (se aplicável)."),
+            html.Li("data/output/: Armazena arquivos gerados, como logs ou exportações do dashboard."),
+            html.Li("logs/: Diretório para armazenar logs da aplicação, úteis para depuração."),
+            html.Li("venv/: Ambiente virtual do Python, não incluído no controle de versão."),
+        ], style={"color": "#666"}),
 
-            # Pipeline do Projeto
-            html.H5("Pipeline do Projeto", style={"color": "#023e7c"}),
-            html.P("O pipeline de ETL (Extração, Transformação, Carregamento) é implementado no arquivo etl.py:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("Extração: Os dados são extraídos do MySQL (tabelas cnp_data, seguradora, pag_seguradora, cnp_historico) usando SQLAlchemy."),
-                html.Li("Transformação: Os dados são processados com Pandas, incluindo formatação de datas (ex.: de 'YYYY-MM-DD' para 'DD/MM/YYYY'), "
-                        "conversão de valores monetários (ex.: formatar como R$ 1.234,56) e cálculo de métricas (ex.: média dos últimos 12 meses)."),
-                html.Li("Carregamento: Os dados transformados são salvos em arquivos CSV (ex.: dados_transformados.csv, historico_transformado.csv) "
-                        "e usados pelo dashboard."),
-            ], style={"color": "#666"}),
-            html.P("Boas práticas no ETL:", style={"color": "#666"}),
-            html.Ul([
-                html.Li("Validação de dados: Verifica se as tabelas estão vazias antes de processar."),
-                html.Li("Logging: Usa a biblioteca logging para registrar erros e progresso do ETL."),
-                html.Li("Tratamento de erros: Inclui try/except para lidar com falhas na conexão ou nos dados."),
-            ], style={"color": "#666"}),
+        # Boas Práticas no ETL
+        html.H5("Boas Práticas no ETL", style={"color": "#023e7c"}),
+        html.Ul([
+            html.Li("Validação de dados: Verifica se as tabelas estão vazias antes de processar."),
+            html.Li("Logging: Usa a biblioteca logging para registrar erros e progresso do ETL."),
+            html.Li("Tratamento de erros: Inclui try/except para lidar com falhas na conexão ou nos dados."),
+        ], style={"color": "#666"}),
 
-            # Trechos de Código
-            html.H5("Trechos de Código Importantes", style={"color": "#023e7c"}),
-            html.P("Abaixo estão alguns trechos de código importantes da aplicação:", style={"color": "#666"}),
-            html.H6("Conexão com o MySQL (database/connection.py)", style={"color": "#023e7c"}),
-            html.Pre("""
+        # Trechos de Código Importantes
+        html.H5("Trechos de Código Importantes", style={"color": "#023e7c"}),
+        html.P("Abaixo estão alguns trechos de código importantes da aplicação:", style={"color": "#666"}),
+        html.H6("Conexão com o MySQL (database/connection.py)", style={"color": "#023e7c"}),
+        html.Pre("""
 from sqlalchemy import create_engine
 
 DATABASE_URL = "mysql+mysqlconnector://usuario:senha@localhost:3306/seguro_cnp"
 engine = create_engine(DATABASE_URL)
-            """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
-            html.H6("Imports no app.py", style={"color": "#023e7c"}),
-            html.Pre("""
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.H6("Imports no app.py", style={"color": "#023e7c"}),
+        html.Pre("""
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 from modules import dashboard, cnps, seguro, relatorios, etl_page, sobre
 import logging
-            """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
-            html.H6("Callback no dashboard.py (exemplo)", style={"color": "#023e7c"}),
-            html.Pre("""
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+        html.H6("Callback no dashboard.py (exemplo)", style={"color": "#023e7c"}),
+        html.Pre("""
 @dash.callback(
     Output("graph-top-cnps", "figure"),
     [Input("filtro-busca", "value")]
@@ -200,26 +267,39 @@ import logging
 def update_graph_top_cnps(search_value):
     # Lógica para atualizar o gráfico
     return figure
-            """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
-        ]
+        """, style={"color": "#666", "backgroundColor": "#f8f9fa", "padding": "10px", "borderRadius": "5px"}),
+
+        # Configurações do Ambiente
+        html.H5("Configurações do Ambiente", style={"color": "#023e7c"}),
+        html.P("Download Python | Python.org", style={"color": "#666"}),
+        html.P("Baixe e instale um editor de código da sua preferência, mas recomendo o VSCode.", style={"color": "#666"}),
+        html.P("Faça a instalação do Python através do site oficial.", style={"color": "#666"}),
+        html.P("Siga os passos abaixo para configurar o ambiente de desenvolvimento:", style={"color": "#666"}),
+        html.Ol([
+            html.Li("Clone o repositório: git clone <URL_DO_REPOSITORIO>."),
+            html.Li("Crie um ambiente virtual: python -m venv venv."),
+            html.Li("Instale as dependências: pip install -r requirements.txt."),
+            html.Li("Baixar e instalar o XAMPP (essa aplicação serve como servidor para rodar a instância do MySQL/MariaDB)."),
+            html.Li("Fazer a importação do banco de dados; a cópia do backup encontra-se em Seguro_CNP_Dash\\database, o arquivo de backup chama-se DB_Gecaf.sql."),
+            html.Li("Configure o banco de dados MySQL e atualize as credenciais no arquivo connection.py."),
+            html.Li("Execute a aplicação: python app.py."),
+        ], style={"color": "#666"}),
+        html.P("Obs.: A aplicação vai rodar localmente (127.0.0.1) utilizando a porta 8050. O endereço é: 127.0.0.1:8050.", style={"color": "#666"}),
+    ]
     elif doc_type == "manual_uso":
         return [
-        html.H4("Manual de Uso", className="mb-3",
+        html.H4("Introdução", className="mb-3",
                 style={"fontSize": "26px", "fontWeight": "bold", "color": "#023e7c"}),
         html.P("Esse Manual explica como usar a aplicação CentralSeg de forma eficiente.", style={"color": "#666"}),
         html.Hr(),
-
-        # Introdução
-        html.H5("Introdução", style={"color": "#023e7c"}),
-        html.P("Esse Manual explica como usar a aplicação CentralSeg de forma eficiente.", style={"color": "#666"}),
 
         # Navegação
         html.H5("Navegação", style={"color": "#023e7c"}),
         html.P("Use o menu lateral para acessar as diferentes seções da aplicação:", style={"color": "#666"}),
         html.Ul([
             html.Li("Dashboard: visualize métricas e gráficos gerais, como os top 5 CNPs, vencimento ao longo do tempo, "
-                    "distribuição do status de pagamento, evolução de produção e detalhes dos seguros através de uma tabela. "
-                    "É possível filtrar por CNP também."),
+                    "distribuição do status de pagamento, evolução de produção e detalhes dos seguros através de uma tabela. "),
+                    ("É possível filtrar por CNP também."),
             html.Li("CNPs: gerencie informações dos CNPs, como razão social, endereço e contato, pode incluir, editar e deletar também."),
             html.Li("Seguro: consulte detalhes dos seguros, incluindo datas de vigência e valores. É possível importar os dados do seguro "
                     "através da planilha que a seguradora encaminhar para o BRB para realizar a importação bastar clicar em importar seguro."),

@@ -8,7 +8,7 @@
 
 2025-03-26 16:57:20,621 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-26 16:58:03,239 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-26 16:58:03,239 - WARNING - CNPs nï¿½o encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
 2025-03-26 16:58:03,278 - INFO - Parcela 1 inserida para CNP 822
 2025-03-26 16:58:03,279 - INFO - Parcela 2 inserida para CNP 822
 2025-03-26 16:58:03,280 - INFO - Parcela 3 inserida para CNP 822
@@ -74,7 +74,7 @@
 2025-03-26 16:58:03,799 - INFO - Parcela 3 inserida para CNP 845
 2025-03-26 16:58:03,799 - INFO - Parcela 4 inserida para CNP 845
 2025-03-26 16:58:03,800 - INFO - Parcela 5 inserida para CNP 845
-2025-03-26 16:58:03,850 - INFO - Importação concluída com sucesso!
+2025-03-26 16:58:03,850 - INFO - Importaï¿½ï¿½o concluï¿½da com sucesso!
 2025-03-26 16:58:26,716 - ERROR - Exception on /_dash-update-component [POST]
 Traceback (most recent call last):
   File "C:\Users\u512228\Documents\gecaf\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
@@ -250,26 +250,26 @@ Traceback (most recent call last):
 TypeError: 'NoneType' object is not subscriptable
 2025-03-27 13:43:32,535 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-27 13:52:29,351 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('0\x86¦\x99\x9c\\\x84©Sª')
-2025-03-27 13:52:29,354 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01Í')
-2025-03-27 13:52:30,262 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request version ('×\x17ýEDi\x00\x05\x00\x03\x02h2\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
-2025-03-27 13:52:30,265 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request syntax ('\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03´=îv\x98Ó¨1\xad¤9V:Ãuyê\\kA=¶ÂÉq')
+2025-03-27 13:52:29,351 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('0\x86ï¿½\x99\x9c\\\x84ï¿½Sï¿½')
+2025-03-27 13:52:29,354 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:29] code 400, message Bad request version ('ï¿½ï¿½\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01ï¿½')
+2025-03-27 13:52:30,262 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request version ('ï¿½\x17ï¿½EDi\x00\x05\x00\x03\x02h2\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-27 13:52:30,265 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:52:30] code 400, message Bad request syntax ('\x16\x03\x01\x02\x1a\x01\x00\x02\x16\x03\x03ï¿½=ï¿½v\x98Ó¨1\xadï¿½9V:ï¿½uyï¿½\\kA=ï¿½ï¿½ï¿½q')
 2025-03-27 13:58:12,530 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('\x00\x02\x01\x00\x00')
-2025-03-27 13:58:12,531 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\xad::\x00\x00ÿ\x01\x00\x01\x00\x003\x00+\x00)')
-2025-03-27 13:58:12,535 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('Te\x9e\x89@R\x7fÕä\x02ºeHf')
+2025-03-27 13:58:12,531 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('ï¿½ï¿½\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\xad::\x00\x00ï¿½\x01\x00\x01\x00\x003\x00+\x00)')
+2025-03-27 13:58:12,535 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('Te\x9e\x89@R\x7fï¿½ï¿½\x02ï¿½eHf')
 2025-03-27 13:58:12,536 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:12] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
 2025-03-27 13:58:15,526 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
-2025-03-27 13:58:15,529 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('¶ÁYY$\x8eLá{;\x19ÚêÖþ9ú\x17ÝabÂiOôT\x8aDÌ3Äy\x06a*sç~\x0f+z1\x95Á\x7fÕ\x91ôÇ§¹?\x8f°Åª\x7f\x19\x1aOJ¶ÏJ¿ï»\x99¦\x1a\x1bt*\x08\x89_ÔÜ¤ØÇ\x8c«tYH}\x9cá\x9f±³p\x84)dÙ\x19yÁ\x90^û\x12,ó8þ¬\x87\x077$\x16\x9aJh>àÞ>!\x8eén?.\x82\x14¼\x00')
-2025-03-27 13:58:15,530 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00\x00+\x00\x07\x06::\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
-2025-03-27 13:58:15,533 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03pªP2\x81Ãó\\\x82rDþbÔ+Ò\x7fNãÆMÕ\x84K\x1b\x89')
-2025-03-27 14:20:40,366 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03Ç"úMÔ©aVüáþâÀ>\\Âú?Å\x93')
-2025-03-27 14:20:40,372 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad request version ('\x06ø\x93Z<3Fæ\x8bÍµg\x92\x17l£ð\x19R\x00¨ÍÏ\x9eËìé.é¾ç5Di\x00\x05\x00\x03\x02h2ÿ\x01\x00\x01\x00\x00-\x00\x02\x01\x01\x00+\x00\x07\x06ºº\x03\x04\x03\x03\x00')
-2025-03-27 14:20:41,369 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01ÍZZ\x00\x00\x003\x00+\x00)')
-2025-03-27 14:20:41,374 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93')
+2025-03-27 13:58:15,529 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('ï¿½ï¿½YY$\x8eLï¿½{;\x19ï¿½ï¿½ï¿½ï¿½9ï¿½\x17ï¿½abï¿½iOï¿½T\x8aDï¿½3ï¿½y\x06a*sï¿½~\x0f+z1\x95ï¿½\x7fï¿½\x91ï¿½Ç§ï¿½?\x8fï¿½Åª\x7f\x19\x1aOJï¿½ï¿½Jï¿½ï¿½\x99ï¿½\x1a\x1bt*\x08\x89_ï¿½Ü¤ï¿½ï¿½\x8cï¿½tYH}\x9cï¿½\x9fï¿½ï¿½p\x84)dï¿½\x19yï¿½\x90^ï¿½\x12,ï¿½8ï¿½ï¿½\x87\x077$\x16\x9aJh>ï¿½ï¿½>!\x8eï¿½n?.\x82\x14ï¿½\x00')
+2025-03-27 13:58:15,530 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00\x00+\x00\x07\x06::\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-27 13:58:15,533 - ERROR - 10.14.6.34 - - [27/Mar/2025 13:58:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03pï¿½P2\x81ï¿½ï¿½\\\x82rDï¿½bï¿½+ï¿½\x7fNï¿½ï¿½Mï¿½\x84K\x1b\x89')
+2025-03-27 14:20:40,366 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02:\x01\x00\x026\x03\x03ï¿½"ï¿½MÔ©aVï¿½ï¿½ï¿½ï¿½ï¿½>\\ï¿½ï¿½?ï¿½\x93')
+2025-03-27 14:20:40,372 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:40] code 400, message Bad request version ('\x06ï¿½\x93Z<3Fï¿½\x8bÍµg\x92\x17lï¿½ï¿½\x19R\x00ï¿½ï¿½ï¿½\x9eï¿½ï¿½ï¿½.ï¿½ï¿½5Di\x00\x05\x00\x03\x02h2ï¿½\x01\x00\x01\x00\x00-\x00\x02\x01\x01\x00+\x00\x07\x06ï¿½ï¿½\x03\x04\x03\x03\x00')
+2025-03-27 14:20:41,369 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('\x8a\x8a\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01ï¿½ZZ\x00\x00\x003\x00+\x00)')
+2025-03-27 14:20:41,374 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:20:41] code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93')
 2025-03-27 14:23:07,723 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('\x00\x02\x01\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
-2025-03-27 14:23:07,727 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('¯z\x8cZ\x16Ý\x8a\x08^tB±ìI?²\x95')
-2025-03-27 14:23:07,729 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00')
-2025-03-27 14:23:07,733 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93::\x00\x00\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03ÿ\x01\x00\x01\x00\x00\x17\x00\x00\x00')
+2025-03-27 14:23:07,727 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('ï¿½z\x8cZ\x16ï¿½\x8a\x08^tBï¿½ï¿½I?ï¿½\x95')
+2025-03-27 14:23:07,729 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('ï¿½ï¿½\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93JJ\x00\x00\x00')
+2025-03-27 14:23:07,733 - ERROR - 10.14.6.34 - - [27/Mar/2025 14:23:07] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03ï¿½+ï¿½/ï¿½,ï¿½0Ì©Ì¨ï¿½\x13ï¿½\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93::\x00\x00\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03ï¿½\x01\x00\x01\x00\x00\x17\x00\x00\x00')
 2025-03-27 14:30:51,640 - INFO - Dash is running on http://0.0.0.0:8050/
 
 2025-03-27 14:48:06,384 - INFO - Dash is running on http://0.0.0.0:8050/
@@ -284,7 +284,7 @@ TypeError: 'NoneType' object is not subscriptable
 
 2025-03-27 15:29:51,903 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-27 15:30:16,622 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 15:30:16,622 - WARNING - CNPs nï¿½o encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
 2025-03-27 15:30:16,647 - INFO - Parcela 1 inserida para CNP 822
 2025-03-27 15:30:16,647 - INFO - Parcela 2 inserida para CNP 822
 2025-03-27 15:30:16,743 - INFO - Parcela 3 inserida para CNP 822
@@ -350,13 +350,13 @@ TypeError: 'NoneType' object is not subscriptable
 2025-03-27 15:30:16,794 - INFO - Parcela 3 inserida para CNP 845
 2025-03-27 15:30:16,794 - INFO - Parcela 4 inserida para CNP 845
 2025-03-27 15:30:16,795 - INFO - Parcela 5 inserida para CNP 845
-2025-03-27 15:30:16,828 - INFO - Importação concluída com sucesso!
+2025-03-27 15:30:16,828 - INFO - Importaï¿½ï¿½o concluï¿½da com sucesso!
 2025-03-27 15:31:38,671 - INFO - Iniciando o processo de ETL...
 2025-03-27 15:31:44,358 - INFO - Planilha carregada com sucesso.
-2025-03-27 15:31:44,423 - INFO - Coluna do mês determinada a partir da planilha: dez_24
+2025-03-27 15:31:44,423 - INFO - Coluna do mï¿½s determinada a partir da planilha: dez_24
 2025-03-27 15:31:45,101 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna dez_24.
 2025-03-27 15:31:45,251 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
-2025-03-27 15:31:45,251 - INFO - ETL concluído com sucesso!
+2025-03-27 15:31:45,251 - INFO - ETL concluï¿½do com sucesso!
 2025-03-27 15:42:51,276 - INFO - Dash is running on http://0.0.0.0:8050/
 
 2025-03-27 15:43:10,340 - INFO - Dash is running on http://0.0.0.0:8050/
@@ -365,11 +365,11 @@ TypeError: 'NoneType' object is not subscriptable
 
 2025-03-27 16:07:42,086 - INFO - Iniciando o processo de ETL...
 2025-03-27 16:07:49,716 - INFO - Planilha carregada com sucesso.
-2025-03-27 16:07:49,719 - INFO - Coluna do mês determinada a partir da planilha: dez_24
+2025-03-27 16:07:49,719 - INFO - Coluna do mï¿½s determinada a partir da planilha: dez_24
 2025-03-27 16:07:50,179 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna dez_24.
 2025-03-27 16:07:50,197 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
-2025-03-27 16:07:50,197 - INFO - ETL concluído com sucesso!
-2025-03-27 16:08:52,951 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 16:07:50,197 - INFO - ETL concluï¿½do com sucesso!
+2025-03-27 16:08:52,951 - WARNING - CNPs nï¿½o encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 817, 820, 825, 832, 837, 844, 850, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
 2025-03-27 16:08:52,984 - INFO - Parcela 1 inserida para CNP 822
 2025-03-27 16:08:52,986 - INFO - Parcela 2 inserida para CNP 822
 2025-03-27 16:08:53,521 - INFO - Parcela 3 inserida para CNP 822
@@ -435,13 +435,13 @@ TypeError: 'NoneType' object is not subscriptable
 2025-03-27 16:08:53,590 - INFO - Parcela 3 inserida para CNP 845
 2025-03-27 16:08:53,591 - INFO - Parcela 4 inserida para CNP 845
 2025-03-27 16:08:53,592 - INFO - Parcela 5 inserida para CNP 845
-2025-03-27 16:08:53,730 - INFO - Importação concluída com sucesso!
+2025-03-27 16:08:53,730 - INFO - Importaï¿½ï¿½o concluï¿½da com sucesso!
 2025-03-27 16:10:46,471 - INFO - Iniciando o processo de ETL...
 2025-03-27 16:10:52,628 - INFO - Planilha carregada com sucesso.
-2025-03-27 16:10:52,631 - INFO - Coluna do mês determinada a partir da planilha: fev_25
+2025-03-27 16:10:52,631 - INFO - Coluna do mï¿½s determinada a partir da planilha: fev_25
 2025-03-27 16:10:52,959 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna fev_25.
 2025-03-27 16:10:53,461 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
-2025-03-27 16:10:53,461 - INFO - ETL concluído com sucesso!
+2025-03-27 16:10:53,461 - INFO - ETL concluï¿½do com sucesso!
 2025-03-27 16:43:31,914 - INFO - Dash is running on http://0.0.0.0:8050/
 
 2025-03-27 16:45:26,726 - INFO - Dash is running on http://0.0.0.0:8050/
@@ -452,7 +452,7 @@ TypeError: 'NoneType' object is not subscriptable
 
 2025-03-27 20:12:03,309 - INFO - Dash is running on http://0.0.0.0:8050/
 
-2025-03-27 20:31:08,676 - WARNING - CNPs não encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 820, 825, 832, 837, 844, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
+2025-03-27 20:31:08,676 - WARNING - CNPs nï¿½o encontrados na tabela cnp_data: 769, 770, 771, 774, 776, 777, 779, 780, 783, 784, 785, 791, 792, 797, 798, 800, 806, 808, 820, 825, 832, 837, 844, 851, 853, 855, 858, 860, 861, 863, 864, 866, 869, 870, 871, 873, 874, 875, 878, 882, 885, 887, 888, 889, 894, 895, 896, 898, 703, 704, 706, 711, 712, 713, 714, 715, 717, 718, 719, 720, 722, 723, 724, 726, 728, 729, 730, 731, 737, 739, 741, 745, 748, 749, 752, 753, 755, 756, 759, 760, 764, 766, 767
 2025-03-27 20:31:08,699 - INFO - Parcela 1 inserida para CNP 822
 2025-03-27 20:31:08,700 - INFO - Parcela 2 inserida para CNP 822
 2025-03-27 20:31:08,700 - INFO - Parcela 3 inserida para CNP 822
@@ -528,7 +528,7 @@ TypeError: 'NoneType' object is not subscriptable
 2025-03-27 20:31:08,758 - INFO - Parcela 3 inserida para CNP 845
 2025-03-27 20:31:08,758 - INFO - Parcela 4 inserida para CNP 845
 2025-03-27 20:31:08,759 - INFO - Parcela 5 inserida para CNP 845
-2025-03-27 20:31:08,761 - INFO - Importação concluída com sucesso!
+2025-03-27 20:31:08,761 - INFO - Importaï¿½ï¿½o concluï¿½da com sucesso!
 2025-03-29 20:45:59,911 - INFO - Dash is running on http://0.0.0.0:8050/
 
 2025-03-29 20:47:19,871 - INFO - Dash is running on http://0.0.0.0:8050/
@@ -545,3 +545,468 @@ TypeError: 'NoneType' object is not subscriptable
 
 2025-03-29 21:24:29,422 - INFO - Dash is running on http://0.0.0.0:8050/
 
+2025-04-03 09:53:38,481 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:02:21,062 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:07:36,863 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:12:28,499 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:12:47,016 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "f:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\modules\relatorios.py", line 262, in export_to_pdf
+    doc.build(elements)
+    ~~~~~~~~~^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1322, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1083, in build
+    self.handle_flowable(flowables)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 932, in handle_flowable
+    if frame.add(f, canv, trySplit=self.allowSplitting):
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\frames.py", line 201, in _add
+    flowable.drawOn(canv, self._x + self._leftExtraIndent, y, _sW=aW-w)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\tables.py", line 2301, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\tables.py", line 2530, in _drawCell
+    raise ValueError(f'Invalid justification {just!a}')
+ValueError: Invalid justification 'center'
+2025-04-03 10:13:32,281 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "f:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\modules\relatorios.py", line 262, in export_to_pdf
+    doc.build(elements)
+    ~~~~~~~~~^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1322, in build
+    BaseDocTemplate.build(self,flowables, canvasmaker=canvasmaker)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 1083, in build
+    self.handle_flowable(flowables)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\doctemplate.py", line 932, in handle_flowable
+    if frame.add(f, canv, trySplit=self.allowSplitting):
+       ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\frames.py", line 201, in _add
+    flowable.drawOn(canv, self._x + self._leftExtraIndent, y, _sW=aW-w)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\flowables.py", line 112, in drawOn
+    self._drawOn(canvas)
+    ~~~~~~~~~~~~^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\flowables.py", line 93, in _drawOn
+    self.draw()#this is the bit you overload
+    ~~~~~~~~~^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\tables.py", line 2301, in draw
+    self._drawCell(cellval, cellstyle, (colpos, rowpos), (colwidth, rowheight))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\reportlab\platypus\tables.py", line 2530, in _drawCell
+    raise ValueError(f'Invalid justification {just!a}')
+ValueError: Invalid justification 'center'
+2025-04-03 10:19:14,353 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:38:27,308 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:38:40,033 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\mariadb\cursors.py", line 310, in execute
+    self._readresponse()
+    ~~~~~~~~~~~~~~~~~~^^
+mariadb.ProgrammingError: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''(805, 818, 846, 850)'' at line 15
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "f:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\modules\relatorios.py", line 200, in export_to_pdf
+    df_pdf = pd.read_sql(query, conn, params={"cnp_list": tuple(cnp_list)})
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 1660, in execute
+    return self.con.execute(sql, *args)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\ï¿½rea de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\mariadb\cursors.py", line 310, in execute
+    self._readresponse()
+    ~~~~~~~~~~~~~~~~~~^^
+sqlalchemy.exc.ProgrammingError: (mariadb.ProgrammingError) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''(805, 818, 846, 850)'' at line 15
+[SQL: 
+            SELECT 
+                d.cnp,
+                d.razao_social,
+                s.inicio_vigencia_seguro,
+                s.vencimento,
+                d.cc,
+                d.telefone,
+                d.endereco,
+                d.cidade,
+                d.uf,
+                d.cep,
+                s.valor_proposto
+            FROM cnp_data d
+            LEFT JOIN seguradora s ON d.cnp = s.cnp
+            WHERE d.cnp IN ?
+        ]
+[parameters: ((805, 818, 846, 850),)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+****
+2025-04-03 10:39:43,557 - ERROR - Exception on /_dash-update-component [POST]
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\mariadb\cursors.py", line 310, in execute
+    self._readresponse()
+    ~~~~~~~~~~~~~~~~~~^^
+mariadb.ProgrammingError: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''(805, 818, 846, 850)'' at line 15
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\dash.py", line 1376, in dispatch
+    ctx.run(
+    ~~~~~~~^
+        functools.partial(
+        ^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 507, in add_context
+    raise err
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 496, in add_context
+    output_value = _invoke_callback(func, *func_args, **func_kwargs)
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\dash\_callback.py", line 43, in _invoke_callback
+    return func(*args, **kwargs)  # %% callback invoked %%
+  File "f:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\modules\relatorios.py", line 200, in export_to_pdf
+    df_pdf = pd.read_sql(query, conn, params={"cnp_list": tuple(cnp_list)})
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        sql,
+        ^^^^
+    ...<6 lines>...
+        dtype=dtype,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\pandas\io\sql.py", line 1660, in execute
+    return self.con.execute(sql, *args)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Users\Administrador\OneDrive\Área de Trabalho\Automation System\brb-projetos\Seguro_CNP_Dash\venv\Lib\site-packages\mariadb\cursors.py", line 310, in execute
+    self._readresponse()
+    ~~~~~~~~~~~~~~~~~~^^
+sqlalchemy.exc.ProgrammingError: (mariadb.ProgrammingError) You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''(805, 818, 846, 850)'' at line 15
+[SQL: 
+            SELECT 
+                d.cnp,
+                d.razao_social,
+                s.inicio_vigencia_seguro,
+                s.vencimento,
+                d.cc,
+                d.telefone,
+                d.endereco,
+                d.cidade,
+                d.uf,
+                d.cep,
+                s.valor_proposto
+            FROM cnp_data d
+            LEFT JOIN seguradora s ON d.cnp = s.cnp
+            WHERE d.cnp IN ?
+        ]
+[parameters: ((805, 818, 846, 850),)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-03 10:42:03,015 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:42:13,120 - INFO - CNPs para consulta: [805, 818, 846, 850]
+2025-04-03 10:42:13,120 - INFO - Query gerada: 
+        SELECT 
+            d.cnp,
+            d.razao_social,
+            s.inicio_vigencia_seguro,
+            s.vencimento,
+            d.cc,
+            d.telefone,
+            d.endereco,
+            d.cidade,
+            d.uf,
+            d.cep,
+            s.valor_proposto
+        FROM cnp_data d
+        LEFT JOIN seguradora s ON d.cnp = s.cnp
+        WHERE d.cnp IN (805,818,846,850)
+    
+2025-04-03 10:48:47,337 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 10:48:56,792 - INFO - CNPs para consulta: [805, 818, 846, 850]
+2025-04-03 10:48:56,792 - INFO - Query gerada: 
+        SELECT 
+            d.cnp,
+            d.razao_social,
+            s.inicio_vigencia_seguro,
+            s.vencimento,
+            d.cc,
+            d.telefone,
+            d.endereco,
+            d.cidade,
+            d.uf,
+            d.cep,
+            s.valor_proposto
+        FROM cnp_data d
+        LEFT JOIN seguradora s ON d.cnp = s.cnp
+        WHERE d.cnp IN (805,818,846,850)
+    
+2025-04-03 18:36:10,142 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 18:42:56,770 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 18:48:19,621 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 19:05:47,446 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 20:08:36,787 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 20:08:49,172 - INFO - CNPs para consulta: [805, 818, 846, 850]
+2025-04-03 20:08:49,172 - INFO - Query gerada: 
+        SELECT 
+            d.cnp,
+            d.razao_social,
+            s.inicio_vigencia_seguro,
+            s.vencimento,
+            d.cc,
+            d.telefone,
+            d.endereco,
+            d.cidade,
+            d.uf,
+            d.cep,
+            s.valor_proposto
+        FROM cnp_data d
+        LEFT JOIN seguradora s ON d.cnp = s.cnp
+        WHERE d.cnp IN (805,818,846,850)
+    
+2025-04-03 20:10:01,049 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 20:16:39,442 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-03 20:18:51,023 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-09 20:02:35,958 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-10 19:18:40,958 - INFO - Dash is running on http://0.0.0.0:8050/
+
+2025-04-10 19:47:12,612 - INFO - Iniciando o processo de ETL...
+2025-04-10 19:47:20,087 - INFO - Planilha carregada com sucesso.
+2025-04-10 19:47:20,094 - INFO - Coluna do mês determinada a partir da planilha: fev_25
+2025-04-10 19:47:20,522 - INFO - Tabela cnp_historico atualizada com sucesso para a coluna fev_25.
+2025-04-10 19:47:20,545 - INFO - Tabela seguradora atualizada com sucesso na coluna valor_proposto.
+2025-04-10 19:47:20,546 - INFO - ETL concluído com sucesso!

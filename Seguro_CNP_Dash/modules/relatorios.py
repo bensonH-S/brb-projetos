@@ -14,9 +14,14 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import mm, cm
 import io
 import base64
+import logging
 
-# Definir o tamanho personalizado para metade do A4 (210 mm x 148.5 mm)
-HALF_A4 = (210*mm, 148.5*mm)  # Largura do A4 (210 mm), altura é metade do A4 (297 mm / 2)
+# Configurar logging para depuração
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Definir o tamanho da página como A4 em paisagem (297 mm x 210 mm)
+PAGE_SIZE = (A4[1], A4[0])  # Inverte largura e altura para paisagem: 297 mm x 210 mm
 
 # Layout da página ajustado para espaçamento consistente com seguro.py
 layout = html.Div([
@@ -177,29 +182,79 @@ def export_to_pdf(n_clicks, table_data):
     if not n_clicks or not table_data:
         return None
 
+    # Buscar os dados completos do banco de dados, incluindo os campos adicionais
+    cnp_list = [row["cnp"] for row in table_data]
+    # logger.info(f"CNPs para consulta: {cnp_list}")
+
+    # Construir a cláusula IN manualmente para evitar problemas com SQLAlchemy
+    if not cnp_list:
+        return None  # Evitar query vazia
+
+    cnp_list_str = ",".join(str(cnp) for cnp in cnp_list)
+    query_str = f"""
+        SELECT 
+            d.cnp,
+            d.razao_social,
+            d.cnpj,  # Substituído s.inicio_vigencia_seguro por d.cnpj
+            s.vencimento,
+            d.cc,
+            d.telefone,
+            d.endereco,
+            d.cidade,
+            d.uf,
+            d.cep,
+            s.valor_proposto
+        FROM cnp_data d
+        LEFT JOIN seguradora s ON d.cnp = s.cnp
+        WHERE d.cnp IN ({cnp_list_str})
+    """
+    # logger.info(f"Query gerada: {query_str}")
+
+    with engine.connect() as conn:
+        df_pdf = pd.read_sql(query_str, conn)
+
+        # Formatar o vencimento
+        df_pdf["vencimento"] = df_pdf["vencimento"].apply(
+            lambda x: x.strftime("%d/%m/%y") if pd.notnull(x) else ""
+        )
+        # Formatar o valor proposto
+        df_pdf["valor_proposto"] = df_pdf["valor_proposto"].apply(
+            lambda x: f"R$ {float(x):,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else ""
+        )
+        # Formatar o CNPJ (opcional, se necessário)
+        df_pdf["cnpj"] = df_pdf["cnpj"].apply(
+            lambda x: f"{str(x)[:2]}.{str(x)[2:5]}.{str(x)[5:8]}/{str(x)[8:12]}-{str(x)[12:14]}" if pd.notnull(x) and len(str(x)) == 14 else str(x)
+        )
+
     buffer = io.BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=HALF_A4, leftMargin=1*cm, rightMargin=1*cm, topMargin=1*cm, bottomMargin=1*cm)
+    doc = SimpleDocTemplate(buffer, pagesize=PAGE_SIZE, leftMargin=0.5*cm, rightMargin=0.5*cm, topMargin=1*cm, bottomMargin=1*cm)
     elements = []
 
     styles = getSampleStyleSheet()
     # Estilo personalizado para o título
     title_style = styles['Heading1']
     title_style.alignment = 1  # Centralizado
-    title_style.fontSize = 14  # Ajustado para caber melhor
+    title_style.fontSize = 14
     title_style.spaceAfter = 8
 
     # Estilo para subtítulo (data de geração)
     subtitle_style = styles['Normal']
     subtitle_style.alignment = 1
-    subtitle_style.fontSize = 8  # Ajustado para caber melhor
+    subtitle_style.fontSize = 8
     subtitle_style.textColor = colors.grey
     subtitle_style.spaceAfter = 10
 
     # Estilo para o rodapé
     footer_style = styles['Normal']
     footer_style.alignment = 1
-    footer_style.fontSize = 7  # Ajustado para caber melhor
+    footer_style.fontSize = 7
     footer_style.textColor = colors.grey
+
+    # Estilo para as células da tabela
+    cell_style = styles['Normal']
+    cell_style.fontSize = 8
+    cell_style.leading = 9  # Espaçamento entre linhas
+    cell_style.textColor = colors.black  # Cor preta para o texto
 
     # Cabeçalho
     title = Paragraph("Relatório de Seguros", title_style)
@@ -210,39 +265,44 @@ def export_to_pdf(n_clicks, table_data):
     elements.append(Spacer(1, 10))
 
     # Dados da tabela
-    data = [["CNP", "Razão Social", "Início\nVigência", "Vencimento", "Média Últ.\n12 Meses", "Valor\nCobertura", "Valor Proposta\nCobertura"]]
-    for row in table_data:
+    data = [["CNP", "Razão Social", "CNPJ", "Vencimento", "CC", "Telefone", "Endereço", "Cidade", "UF", "CEP", "Valor Proposto"]]  # Substituído "Início Vig." por "CNPJ"
+    for _, row in df_pdf.iterrows():
         data.append([
-            str(row["cnp"]),
-            row["razao_social"],
-            row["inicio_vigencia_seguro"],
-            row["vencimento"],
-            row["media_ultimos_12_meses"],
-            row["valor_cobertura"],
-            row["valor_proposto"]
+            Paragraph(str(row["cnp"]), cell_style),
+            Paragraph(row["razao_social"], cell_style),
+            Paragraph(row["cnpj"], cell_style),  # Substituído inicio_vigencia_seguro por cnpj
+            Paragraph(row["vencimento"], cell_style),
+            Paragraph(str(row["cc"]), cell_style),
+            Paragraph(str(row["telefone"]), cell_style),
+            Paragraph(row["endereco"], cell_style),
+            Paragraph(row["cidade"], cell_style),
+            Paragraph(row["uf"], cell_style),
+            Paragraph(str(row["cep"]), cell_style),
+            Paragraph(row["valor_proposto"], cell_style)
         ])
 
-    # Definir larguras das colunas (em pontos)
-    col_widths = [35, 240, 55, 55, 65, 65, 65]  # Total: 580 pontos
+    # Definir larguras das colunas (em pontos) para ocupar o espaço disponível
+    # Largura total disponível em paisagem: 297 mm - 1 cm (margens) = 287 mm = 814 pontos
+    col_widths = [38, 160, 78, 60, 60, 55, 162, 63, 30, 50, 70]  # Total: 814 pontos
 
     table = Table(data, colWidths=col_widths)
     table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#023e7c")),  # Alterado para #023e7c
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#023e7c")),  # Cabeçalho azul escuro
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
         ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
-        ('ALIGN', (0, 1), (0, -1), 'CENTER'),
-        ('ALIGN', (1, 1), (1, -1), 'LEFT'),
-        ('ALIGN', (2, 1), (-1, -1), 'CENTER'),
+        ('ALIGN', (0, 1), (0, -1), 'CENTER'),  # CNP
+        ('ALIGN', (1, 1), (1, -1), 'LEFT'),    # Razão Social
+        ('ALIGN', (2, 1), (-1, -1), 'CENTER'), # Demais colunas
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-        ('FONTSIZE', (0, 0), (-1, 0), 8),
+        ('FONTSIZE', (0, 0), (-1, 0), 9),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
         ('LEFTPADDING', (0, 0), (-1, -1), 2),
         ('RIGHTPADDING', (0, 0), (-1, -1), 2),
         ('BACKGROUND', (0, 1), (-1, -1), colors.white),
         ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
         ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
-        ('FONTSIZE', (0, 1), (-1, -1), 7),
-        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('FONTSIZE', (0, 1), (-1, -1), 8),
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
         ('BOX', (0, 0), (-1, -1), 1, colors.black),
     ]))
